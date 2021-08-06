@@ -4,8 +4,10 @@ function Image(props) {
 	const width = (props.width) ? props.width : "100%";
 	const height = (props.height) ? props.height : "100%";
 	const borderRadius = (props.round) ? "50%" : 0;
-	const customClass = (props.class) ? props.class : ""
-	const { src, alt } = props;
+	const { src, alt, onClick } = props;
+
+	var customClass = (props.cName) ? props.cName : "";
+	if (onClick) customClass += " hover";
 
 	return (
 		<div 
@@ -15,6 +17,7 @@ function Image(props) {
 				height:height,
 				borderRadius:borderRadius
 			}}
+			onClick={onClick}
 		>
 			<img src={src} alt={alt} />
 			{props.children}

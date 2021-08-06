@@ -35,7 +35,6 @@ body {
     margin:0px;
     position:relative;
     padding-top:0px;
-    /* padding-bottom:64px; */
     width:100%;
     max-width: 800px;
     margin-left:auto;
@@ -43,7 +42,7 @@ body {
     font-size:16px;
     background-color: var(--background);
 
-    /* font-family: Tahoma, Arial, sans-serif; */
+    font-family: Tahoma, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {    margin:0;   }
@@ -57,19 +56,21 @@ h6, .h6 {    font-size:var(--h6);   font-weight:550;    }
 .h8 {   font-size:var(--h8); }
 
 .App {
+  position: relative;
+  overflow-y: auto;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
 }
-
+.AppHeader {
+  margin-bottom: 32px;
+}
 .AppNav {
-  position:fixed;
-  z-index: 2;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
+  position:relative;
   width:100%;
   max-width: 800px;
   height:140px;
-  padding-top:35px;
-  padding-bottom:35px;
+  padding:35px 16px 35px 16px;
   background: linear-gradient(var(--background) 95%, transparent);
 
   display:flex;
@@ -77,6 +78,10 @@ h6, .h6 {    font-size:var(--h6);   font-weight:550;    }
   justify-content: space-between;
   align-items: flex-end;
 }
+  .AppNav a {
+    text-decoration: none;
+    color: initial;
+  }
   .NavProfile {
     width:auto;
     height:80px;
@@ -88,10 +93,6 @@ h6, .h6 {    font-size:var(--h6);   font-weight:550;    }
     align-items: flex-end;
     flex-wrap: nowrap;
   }
-    .NavProfile a {
-      text-decoration: none;
-      color: initial;
-    }
     .NavProfile .ProfileImageWrapper {
       position:relative;
       width:80px;
@@ -103,21 +104,94 @@ h6, .h6 {    font-size:var(--h6);   font-weight:550;    }
       }
       .NavProfile .ProfileImageWrapper .ProfileImageOverlay {
         position:absolute;
-                left:75%;
-                top:15%;
-                transform:translateY(-50%) rotate(15deg);
-                width:80px;
-                height:40px;
-        
-                color:white;
-                text-align: center;
-            }
-            .NavProfile .profile-social-media-icon {
-                width:16px;
-                height:16px;
-                margin-right:8px;
-            }
-            .NavProfile .profile-social-media-icon:hover {
-                cursor:pointer;
-                opacity:0.8;
-            }
+        left:75%;
+        top:15%;
+        transform:translateY(-50%) rotate(15deg);
+
+        color:white;
+        text-align: center;
+      }
+      .NavProfile .ProfileSocialLinksContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        text-align: center;
+
+        margin-top: 4px;
+      }
+      .NavProfile .ProfileSocialMediaIcon {
+        margin-right:8px;
+      }
+      .NavProfile .ProfileSocialMediaIcon:hover {
+        cursor:pointer;
+        opacity:0.8;
+      }
+.NavLinks {
+  position: relative;
+
+  width: max-content;
+}
+  .NavLinksWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
+    width: 100%;
+  }
+  .NavItem {
+    border-right: 1px solid rgb(230,230,230);
+    padding: 8px 16px 8px 16px;
+    text-decoration: none;
+    margin-right: 0px;
+  }
+  .NavLinksWrapper a:last-child .NavItem {
+    border-right: none;
+  }
+    .NavItem .NavItemDescription {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      opacity: 0;
+      font-style: italic;
+    }
+    .NavItem:hover .NavItemDescription {
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
+    }
+  .NavLinksWrapper.MobileNavLinks {
+    position: absolute;
+    top: 100%;
+    right: -8px;
+    padding: 8px 0px 8px 0px;
+    overflow: hidden;
+    flex-direction: column;
+    width: 0;
+    height: min-content;
+    transition: width 0.25s ease-in-out, padding-left 0.25s ease-in-out, padding-right 0.25s ease-in-out;
+  }
+  .NavLinksWrapper.MobileNavLinks.open {
+    width: 216px;
+    padding: 8px;
+  }
+    .NavLinksWrapper.MobileNavLinks .NavItem {
+      position: relative;
+      width: 200px;
+      border-right: none;
+      padding-left: 0;
+      padding-right: 0;
+      margin-right: 0;
+    }
+    .NavLinksWrapper.MobileNavLinks .NavItem .NavItemDescription {
+      display: none;
+    }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
