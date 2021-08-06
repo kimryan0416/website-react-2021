@@ -1,7 +1,40 @@
-.HomeHeader {
+.SkillBar {
+	width: 100%;
+}
+.SkillBarWrapper {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: flex-start;
 	flex-wrap: nowrap;
+
+	width: 100%;
+	height: 80px;
+	border: 4px solid rgb(240,240,240);
+	box-sizing: border-box;
+	margin-bottom: 8px;
+}
+.SkillBarItem {
+	flex-grow: 0;
+	flex-shrink: 0;
+	height: 100%;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+.Skill {
+	width: 100%;
+}
+.SkillContent {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+
+	width: 100%;
+}
+.SkillProjects {
+	flex-basis: 40%;
+	flex-shrink: 0;
 }
