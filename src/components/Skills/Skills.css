@@ -1,0 +1,65 @@
+.SkillGroup {
+	width: 100%;
+}
+.SkillComponent {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+.SkillComponent .SkillGroup {
+	margin-right: 16px;
+	margin-bottom: 8px;
+	padding: 8px;
+	border-radius: 8px;
+	box-shadow:inset 0px 0px 15px 15px white;
+	font-size: 0.8em;
+
+	flex-basis: max-content;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+.SkillComponent.SkillLanguages .SkillGroup {
+	background-color: rgba(145,198,245, 0.15);
+}
+.SkillComponent.SkillFrameworks .SkillGroup {
+	background-color: rgba(255,189,49, 0.15);
+}
+.SkillComponent.SkillSoftware .SkillGroup {
+	background-color: rgba(255,90,82, 0.15);
+}
+.SkillComponent .SkillGroup .SkillList {
+	list-style: none;
+	padding: 0;
+	margin-top: 8px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+.SkillComponent .SkillGroup .SkillList .Skill {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: nowrap;
+
+	margin-right: 12px;
+}
+.SkillComponent .SkillGroup .SkillList .Skill .SkillIcon {
+	background-color:rgb(240,240,240);
+	padding:10px;
+	border: 1px solid rgba(20,20,20,0.1);
+}

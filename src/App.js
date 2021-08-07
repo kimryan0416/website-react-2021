@@ -10,7 +10,6 @@ import {
 import { 
   profileSquare, 
   heyThere, 
-  menu,
   github, 
   linkedIn, 
   twitter,
@@ -21,7 +20,8 @@ import {
   Button,
 } from "./components";
 import {
-  Home
+  Home,
+  Portfolio,
 } from "./screens";
 import { resume } from "./downloads";
 
@@ -61,8 +61,12 @@ class App extends Component {
           <main>
             <Switch>
               <Route 
+                exact path="/portfolio"
+                component={()=> <Portfolio />}
+              />
+              <Route 
                 path="/" 
-                component={()=> <Home width={this.state.width} height={this.state.height} />} 
+                component={()=> <Home />} 
               />
               <Redirect to="/" />
             </Switch>
