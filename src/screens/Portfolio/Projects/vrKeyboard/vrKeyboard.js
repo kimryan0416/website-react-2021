@@ -1,0 +1,2 @@
+import { thumbnail } from "./assets";
+

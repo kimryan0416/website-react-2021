@@ -60,6 +60,9 @@ h6, .h6 {    font-size:var(--h6);   font-weight:550;    }
 hr {
   margin: 0;
 }
+.no-br, .nobr {
+  white-space: nowrap;
+}
 
 .App {
   position: relative;
@@ -67,6 +70,8 @@ hr {
   width: 100%;
   height: auto;
   min-height: 100vh;
+  padding-bottom: 32px;
+  box-sizing: border-box;
 }
 .AppHeader {
   margin-bottom: 32px;
