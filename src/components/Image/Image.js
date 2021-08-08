@@ -1,16 +1,13 @@
 import "./Image.css";
 
 function Image(props) {
-	const width = (props.width) ? props.width : "auto";
-	const height = (props.height) ? props.height : "auto";
-	const borderRadius = (props.round) ? "50%" : 0;
+
 	const { src, alt, onClick } = props;
 
-	var style = {
-		width:width,
-		height:height,
-		borderRadius:borderRadius
-	};
+	var style = {};
+	if (props.width) style.width = props.width;
+	if (props.height) style.height = props.height;
+	if (props.round) style.borderRadius = "50%";
 	if (props.style) style = {...style, ...props.style};
 
 	var customClass = (props.cName) ? props.cName : "";

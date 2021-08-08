@@ -61,7 +61,7 @@ class App extends Component {
           <main>
             <Switch>
               <Route 
-                exact path="/portfolio"
+                path="/portfolio"
                 component={()=> <Portfolio />}
               />
               <Route 

@@ -1,7 +1,6 @@
 .Image {
 	position: relative;
 	overflow:  hidden;
-	border-radius: 50%;
 }
 .Image > img {
 	position: absolute;
