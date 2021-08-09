@@ -13,6 +13,7 @@ import { Divider, Image, Button } from "../../components";
 
 import { 
 	projects,
+	OnePlace,
 	EasierVRAssets,
 	EasierXRAssets,
 	MoL,
@@ -66,21 +67,22 @@ class Portfolio extends Component {
 				<Divider space={16} />
 				<hr />
 				<Divider space={16} />
-
+				<div className="PortfolioRows">
 				{
 					Object.values(items).map(i=>{
 						return (
-							<div>
+							<div className="PortfolioRow">
 								<h3>{i.label}</h3>
 								<Divider space={8} />
 								<div>
 									{i.items}
 								</div>
+								<Divider space={24} />
 							</div>
 						)
 					})
 				}
-
+				</div>
 				<Switch>
 					<Route 
 						exact path="/portfolio/vrkeyboard" 
@@ -101,6 +103,10 @@ class Portfolio extends Component {
 					<Route 
 						exact path="/portfolio/orbit"
 						component={()=> <PortfolioDisplay goBack={this.goBack}><Orbit /></PortfolioDisplay>}
+					/>
+					<Route 
+						exact path="/portfolio/oneplace"
+						component={()=> <PortfolioDisplay goBack={this.goBack}><OnePlace /></PortfolioDisplay>}
 					/>
 				</Switch>
 
