@@ -56,11 +56,9 @@ const EasierVRAssetsData = {
 	key:"easiervrassets",
 	thumbnail:thumbnail,
 	title:"Easier VR Assets",
-	url:"/portfolio/easierVRAssets"
+	url:"easierVRAssets",
+	content:<EasierVRAssets />
 }
 
 
-export {
-	EasierVRAssets,
-	EasierVRAssetsData
-}
+export default EasierVRAssetsData;

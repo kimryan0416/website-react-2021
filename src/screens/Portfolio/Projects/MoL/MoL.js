@@ -45,10 +45,8 @@ const MoLData = {
 	key:"imol",
 	thumbnail:thumbnail,
 	title:"Method of Loci and Memory Recall in Virtual Reality - A User- Generated Exploration",
-	url:"/portfolio/imol"
+	url:"imol",
+	content:<MoL />
 }
 
-export {
-	MoL,
-	MoLData
-}
+export default MoLData;

@@ -76,10 +76,8 @@ const VRKeyboardData = {
 	key:"vrkeyboard",
 	thumbnail:thumbnail,
 	title:"A Survey and Implementation of Fast-Input Typing Methods in Virtual Reality",
-	url:"/portfolio/vrKeyboard"
+	url:"vrKeyboard",
+	content:<VRKeyboard />
 }
 
-export {
-	VRKeyboard,
-	VRKeyboardData
-}
+export default VRKeyboardData;

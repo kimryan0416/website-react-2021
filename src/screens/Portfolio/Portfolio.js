@@ -4,22 +4,14 @@ import {
 	Switch,
 	Route,
 	Link,
-	withRouter 
+	withRouter,
+	useHistory,
 } from "react-router-dom";
 
 import "./Portfolio.css";
 
 import { Divider, Image, Button } from "../../components";
-
-import { 
-	projects,
-	OnePlace,
-	EasierVRAssets,
-	EasierXRAssets,
-	MoL,
-	VRKeyboard,
-	Orbit,
-} from "./Projects";
+import projects from "./Projects";
 
 class Portfolio extends Component {
 	
@@ -40,103 +32,169 @@ class Portfolio extends Component {
 	}
 
 	render() {
-
-		const items = projects.reduce((accumulator, p)=>{
-			if (!accumulator[p.umbrella]) accumulator[p.umbrella] = {
-				label:p.umbrella,
-				items:[]
-			};
-			accumulator[p.umbrella].items.push(
-				<PortfolioItem 
-					linkTo={p.url}
-					key={p.key}
-					project={p.key}
-					src={p.thumbnail} 
-					title={p.title} 
-					handler={this.handleItemClick}
-				/>
-			);
-			return accumulator;
-		},{});
-
 		return (
 			<Router>
-				<h1>Portfolio</h1>
-				<Divider space={32} />
-				<p>These are a list of several coding projects that I have had the pleasure of partaking in. Some involve websites for clients, others involve personal projects that attempt to expand my knowledge about web programming <span className='no-br'>or prototyping.</span></p>
-				<Divider space={16} />
-				<hr />
-				<Divider space={16} />
-				<div className="PortfolioRows">
-				{
-					Object.values(items).map(i=>{
-						return (
-							<div className="PortfolioRow">
-								<h3>{i.label}</h3>
-								<Divider space={8} />
-								<div>
-									{i.items}
-								</div>
-								<Divider space={24} />
-							</div>
-						)
-					})
-				}
-				</div>
 				<Switch>
 					<Route 
-						exact path="/portfolio/vrkeyboard" 
-						component={()=> <PortfolioDisplay goBack={this.goBack}><VRKeyboard /></PortfolioDisplay>}
-					/>
-					<Route
-						exact path="/portfolio/easierVRAssets"
-						component={()=> <PortfolioDisplay goBack={this.goBack}><EasierVRAssets /></PortfolioDisplay>}
+						path="/portfolio/work" 
+						component={()=> 
+							<PortfolioPage page="Work Experience">
+								<p>Particular experiences working in startups and companies. I've worked both in <strong>contract positions</strong> and <strong>startup companies</strong>.</p>
+								<Divider space={24} />
+								<div className="PortfolioItems">
+									{projects.work.map((p,i)=>{
+										return <PortfolioItem key={`work_${i}`} data={p} linkTo={`/portfolio/work/${p.url}`} handler={this.handleItemClick} />
+									})}
+								</div>
+								<Switch>
+									{projects.work.map(p=>{
+										return (
+											<Route 
+												exact path={`/portfolio/work/${p.url}`}
+												component={()=> <PortfolioDisplay goBack={this.goBack}>{p.content}</PortfolioDisplay>}
+											/>
+										)
+									})}
+								</Switch>
+							</PortfolioPage>
+						}
 					/>
 					<Route 
-						exact path="/portfolio/easierXRAssets"
-						component={()=> <PortfolioDisplay goBack={this.goBack}><EasierXRAssets /></PortfolioDisplay>}
+						path="/portfolio/projects" 
+						component={()=> 
+							<PortfolioPage page="Personal Projects">
+								{projects.projects.map((p,i)=>{
+									return (
+										<>
+											<h4>{p.type}</h4>
+											{p.description}
+											<Divider space={24} />
+											<div key={`projects_${i}`} className="PortfolioItems">
+												{p.items.map((p2,i2)=>{
+													return <PortfolioItem key={`projects_${i}_${i2}`} data={p} linkTo={`/portfolio/projects/${p.url}`} handler={this.handleItemClick} />
+												})}
+											</div>
+										</>
+									)
+								})}
+								<Switch>
+									{projects.projects.map(p=>{
+										return (
+											<Route 
+												exact path={`/portfolio/projects/${p.url}`}
+												component={()=> <PortfolioDisplay goBack={this.goBack}>{p.content}</PortfolioDisplay>}
+											/>
+										)
+									})}
+								</Switch>
+							</PortfolioPage>
+						}
 					/>
 					<Route 
-						exact path="/portfolio/imol"
-						component={()=> <PortfolioDisplay goBack={this.goBack}><MoL /></PortfolioDisplay>}
+						path="/portfolio/research" 
+						component={()=> 
+							<PortfolioPage page="Research Papers">
+								<p></p>
+								<Divider space={24} />
+								<div className="PortfolioItems">
+									{projects.research.map((p,i)=>{
+										return <PortfolioItem key={`research_${i}`} data={p} linkTo={`/portfolio/research/${p.url}`} handler={this.handleItemClick} />
+									})}
+								</div>
+								<Switch>
+									{projects.research.map(p=>{
+										return (
+											<Route 
+												exact path={`/portfolio/research/${p.url}`}
+												component={()=> <PortfolioDisplay goBack={this.goBack}>{p.content}</PortfolioDisplay>}
+											/>
+										)
+									})}
+								</Switch>
+							</PortfolioPage>
+						}
 					/>
 					<Route 
-						exact path="/portfolio/orbit"
-						component={()=> <PortfolioDisplay goBack={this.goBack}><Orbit /></PortfolioDisplay>}
+						path="/portfolio/education" 
+						component={()=> 
+							<PortfolioPage page="Education">
+								<div className="PortfolioItems">
+									
+								</div>
+							</PortfolioPage>
+						}
 					/>
 					<Route 
-						exact path="/portfolio/oneplace"
-						component={()=> <PortfolioDisplay goBack={this.goBack}><OnePlace /></PortfolioDisplay>}
+						path="/portfolio"
+						component={()=> <PortfolioHome changePage={this.changePage} />}
 					/>
 				</Switch>
-
-				{/*
-					<h3>Startups &amp; Case studies</h3>
-					<h3>Virtual Reality Research &amp; Projects</h3>
-					<h3>Web Projects</h3>
-					<h3>Games</h3>
-					<h3>Other Projects</h3>
-				*/}
 			</Router>
 		);
 	}
 }
 
+function PortfolioHome(props) {
+	return (
+		<>
+			<h1>Portfolio</h1>
+			<Divider space={32} />
+			<p>This is a list containing my prior work experience, coding projects, and education. Work experiences involve websites for clients, while personal projects are attempts to expand my knowledge about web programming, virtual reality, or <span className='no-br'>or prototyping.</span></p>
+			<Divider space={16} />
+			<div className="PortfolioPages">
+				<div className="PortfolioPageLink">
+					<Link to="/portfolio/work">
+						<h3>Work Experience</h3>
+						<p className="h7">Particular experiences working in startups and companies. I've worked both in <strong>contract positions</strong> and <strong>startup companies</strong>.</p>
+					</Link>
+				</div>
+				<Divider space={16} />
+				<div className="PortfolioPageLink">
+					<Link to="/portfolio/projects">
+						<h3>Personal Projects</h3>
+						<p className="h7">A collection of personal projects that I had the pleasure of working in during my free time. Subtopics include <strong>Virtual Reality prototypes</strong>, <strong>web projects</strong>, <strong>games/hardware</strong></p>
+					</Link>
+				</div>
+				<Divider space={16} />
+				<div className="PortfolioPageLink">
+					<Link to="/portfolio/research">
+						<h3>Research Papers</h3>
+						<p className="h7">Research papers I've previously written during my degree programs. Two involve <strong>Virtual Reality</strong> and another two involve <strong>User Experiences</strong></p>
+					</Link>
+				</div>
+				<Divider space={16} />
+				<div className="PortfolioPageLink">
+					<Link to="/portfolio/education">
+						<h3>Education</h3>
+						<p className="h7">The degree programs and schools I've attended.</p>
+					</Link>
+				</div>
+			</div>
+		</>
+	);
+}
+
+function PortfolioPage(props) {
+
+	return (
+		<>
+			<div className="PortfolioHeader">
+				<h6><Link to="/portfolio">Portfolio</Link></h6>
+				<h2>{props.page}</h2>
+			</div>
+			<Divider space={32} />
+			{props.children}
+		</>
+	);
+}
+
 function PortfolioItem(props) {
+	const data = props.data;
 	return (
 		<Link to={props.linkTo}>
-			<Button cName="PortfolioItem" onClick={()=>{props.handler(props.project)}}>
-				<Image 
-					src={props.src} 
-					alt="" 
-					width={160} 
-					height={160} 
-					cName="PortfolioItemImage"
-				/>
-				<div className="PortfolioItemHover">
-					<p>Click to learn more</p>
-				</div>
-			</Button>
+			<div className="PortfolioItem" onClick={()=>{props.handler(data.project)}}>
+				<Image width={160} height={160} cName="PortfolioItemImageWrapper" src={data.src} alt="" />
+			</div>
 		</Link>
 	);
 }

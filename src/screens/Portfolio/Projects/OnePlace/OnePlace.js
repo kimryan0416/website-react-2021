@@ -93,10 +93,8 @@ const OnePlaceData = {
 	key:"oneplace",
 	thumbnail:thumbnail,
 	title:"OnePlace: Simple and secure file storage for your family",
-	url:"/portfolio/oneplace"
+	url:"oneplace",
+	content:<OnePlace />
 }
 
-export {
-	OnePlace,
-	OnePlaceData
-}
+export default OnePlaceData;

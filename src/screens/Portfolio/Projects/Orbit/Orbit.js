@@ -61,10 +61,8 @@ const OrbitData = {
 	key:"orbit",
 	thumbnail:thumbnail,
 	title:"Orbit: Your VR Space For Mindfulness",
-	url:"/portfolio/orbit"
+	url:"orbit",
+	content:<Orbit />
 }
 
-export {
-	Orbit,
-	OrbitData
-}
+export default OrbitData;

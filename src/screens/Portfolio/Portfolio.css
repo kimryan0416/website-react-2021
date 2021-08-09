@@ -6,6 +6,39 @@
 	align-items: flex-start;
 	flex-wrap: nowrap;
 }
+.PortfolioHeader {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+.PortfolioPages {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: nowrap;
+}
+.PortfolioPages .PortfolioPageLink {
+	width: calc(100% - 16px);
+	padding-left: 0px;
+	box-sizing: border-box;
+	transition: padding-left 0.25s ease-in-out;
+}
+.PortfolioPages .PortfolioPageLink a {
+	text-decoration: none;
+	color: initial;
+}
+.PortfolioPages .PortfolioPageLink {
+	color: var(--blue);
+}
+.PortfolioPages .PortfolioPageLink:hover {
+	cursor: pointer;
+	padding-left: 16px;
+}
 
 .PortfolioItems {
 	width: 100%;
@@ -19,26 +52,40 @@
 	transition: width 0.25s ease-in-out;
 }
 .PortfolioRows {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	flex-wrap: wrap;
 }
+.PortfolioRow {
+	width: 100%;
+}
 
 .PortfolioItem {
 	position: relative;
-	width: 80px;
-	height: 160px;
-	overflow: hidden;
-	transition: width 0.25s ease-in-out;
+	width: 100%;
+	height: auto;
 	margin: 8px;
+}
+.PortfolioItem .PortfolioItemImageWrapper {
+	position: relative;
+	width: 160px;
+	height: 160px;
+	box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+	padding: 16px;
+	box-sizing: border-box;
+	border-radius: 50%;
 }
 .PortfolioItem .PortfolioItemImage {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
+
+	width: 100%;
+	max-height: 100%;
 }
 .PortfolioItem .PortfolioItemHover {
 	width: 100%;
@@ -69,7 +116,6 @@
 }
 .PortfolioItem:hover {
 	cursor: pointer;
-	width: 120px;
 }
 .PortfolioItem:hover .PortfolioItemHover {
 	opacity: 1;

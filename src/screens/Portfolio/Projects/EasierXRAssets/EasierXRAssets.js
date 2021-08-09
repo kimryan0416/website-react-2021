@@ -37,11 +37,9 @@ const EasierXRAssetsData = {
 	key:"easierxrassets",
 	thumbnail:thumbnail,
 	title:"Easier XR Assets",
-	url:"/portfolio/easierXRAssets"
+	url:"easierXRAssets",
+	content:<EasierXRAssets />
 }
 
 
-export {
-	EasierXRAssets,
-	EasierXRAssetsData
-}
+export default EasierXRAssetsData;
