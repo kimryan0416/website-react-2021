@@ -73,6 +73,7 @@ class Portfolio extends Component {
 													return <PortfolioItem key={`projects_${i}_${i2}`} data={p2} linkTo={`/portfolio/projects/${p2.url}`} handler={this.handleItemClick} />
 												})}
 											</div>
+											<Divider space={24} />
 										</>
 									)
 								})}

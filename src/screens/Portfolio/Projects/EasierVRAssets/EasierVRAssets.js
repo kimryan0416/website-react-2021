@@ -1,4 +1,4 @@
-import { Divider, Image } from "../../../../components";
+import { Divider } from "../../../../components";
 import { thumbnail } from "./assets";
 
 function EasierVRAssets() {
@@ -10,6 +10,10 @@ function EasierVRAssets() {
 				<p><i>Custom scripts as an alternative to Oculus Implementation's OVR scripts.</i></p>
 				<Divider space={16} />
 				<p className="PortfolioStatus Ongoing">Ongoing</p>
+				<Divider space={16} />
+				<p>
+					<a href="https://github.com/kimryan0416/EasierVRAssets" target="_blank" rel="noopener noreferrer">Github Repo</a>
+				</p>
 				<Divider space={16} />
 				<ul>
 					<li>C#/CSharp</li>
@@ -35,11 +39,11 @@ function EasierVRAssets() {
 				<Divider space={16} />
 				<h4><strong>Quick Details:</strong></h4>
 				<Divider space={8} />
-				<ul>
-					<li>Status: Regularly Updated</li>
-					<li>Current Stable Version: V1.2.0</li>
+				<ul className="h7">
+					<li><i><u>Status:</u></i> Regularly Updated</li>
+					<li><i><u>Current Stable Version:</u></i> V1.2.0</li>
 					<li>
-						Equipment:
+						<i><u>Equipment:</u></i>
 						<ul>
 							<li>Oculus Quest</li>
 							<li>Unity</li>

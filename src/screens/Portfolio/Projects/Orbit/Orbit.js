@@ -1,4 +1,4 @@
-import { Divider, Image } from "../../../../components";
+import { Divider } from "../../../../components";
 import { thumbnail } from "./assets";
 
 function Orbit() {
@@ -10,6 +10,12 @@ function Orbit() {
 				<p><i>An audio-logging journey in Virtual Reality.</i></p>
 				<Divider space={16} />
 				<p className="PortfolioStatus Completed">Completed</p>
+				<Divider space={16} />
+				<p>
+					<a href="https://github.com/kimryan0416/Orbit-PublicVer" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
+					<br />
+					<a href="https://sites.google.com/cornell.edu/cs5650-projects-2019/projects/orbit?authuser=0" target="_blank" rel="noopener noreferrer">Project Page</a>
+				</p>
 				<Divider space={16} />
 				<ul>
 					<li>C#/CSharp</li>
@@ -32,19 +38,19 @@ function Orbit() {
 				<Divider space={16} />
 				<h4><strong>Quick Details:</strong></h4>
 				<Divider space={8} />
-				<ul>
-					<li>Status: Completed [December 19, 2019]</li>
-					<li>Current Stable Version: Vertical Slice</li>
+				<ul className="h7">
+					<li><i><u>Status:</u></i> Completed [December 19, 2019]</li>
+					<li><i><u>Current Stable Version:</u></i> Vertical Slice</li>
 					<li>
-						Peer Contributors:
+						<i><u>Peer Contributors:</u></i>
 						<ul>
 							<li>Vini Tripathii- Cornell Tech @ Cornell University [ut33@cornell.edu]</li>
 							<li>Daniel Asper - Cornell Tech @ Cornell University [da494@cornell.edu]</li>
 						</ul>
 					</li>
-					<li>Advisors: Harald Haraldsson - Cornell Tech @ Cornell University [hh586@cornell.edu]</li>
+					<li><i><u>Advisors:</u></i> Harald Haraldsson - Cornell Tech @ Cornell University [hh586@cornell.edu]</li>
 					<li>
-						Equipment:
+						<i><u>Equipment:</u></i>
 						<ul>
 							<li>Oculus Quest</li>
 							<li>Unity</li>

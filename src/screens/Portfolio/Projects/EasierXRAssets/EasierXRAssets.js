@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { Divider, Image } from "../../../../components";
+import { Divider } from "../../../../components";
 import { thumbnail } from "./assets";
 
 function EasierXRAssets() {
@@ -24,7 +24,7 @@ function EasierXRAssets() {
 				<Divider space={16} />
 				<h4><strong>Description</strong></h4>
 				<Divider space={8} />
-				<p>The Easier XR Assets is an offshoot of the <Link to="/portfolio/easierVRAssets">EasierVRAssets</Link> project that is planned to work with Unity's XR Rig system.</p>
+				<p>The Easier XR Assets is an offshoot of the <Link to="/portfolio/projects/easierVRAssets">EasierVRAssets</Link> project that is planned to work with Unity's XR Rig system.</p>
 				<Divider space={8} />
 				<p><i>This project has been put on-hold until later notice.</i></p>
 			</div>

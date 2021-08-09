@@ -65,7 +65,7 @@ hr {
 .no-br, .nobr {
   white-space: nowrap;
 }
-ul {
+ul, ol {
   margin: 0;
   padding-left: 28px;
 }
