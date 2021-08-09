@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { 
-	BrowserRouter as Router, 
 	Switch,
 	Route,
 	Link,
@@ -26,13 +25,12 @@ class Portfolio extends Component {
 		this.setState({project:to});
 	}
 
-	goBack = () => {
-		this.props.history.goBack();
+	goBack = (to) => {
+		this.props.history.push(to);
 	}
 
 	render() {
 		return (
-			<Router>
 				<Switch>
 					<Route 
 						path="/portfolio/work" 
@@ -50,7 +48,7 @@ class Portfolio extends Component {
 										return (
 											<Route 
 												exact path={`/portfolio/work/${p.url}`}
-												component={()=> <PortfolioDisplay goBack={this.goBack}>{p.content}</PortfolioDisplay>}
+												component={()=> <PortfolioDisplay goBack={()=>{this.goBack("/portfolio/work")}}>{p.content}</PortfolioDisplay>}
 											/>
 										)
 									})}
@@ -84,7 +82,7 @@ class Portfolio extends Component {
 												<Route 
 													key={`projects_item_${i}_${i2}`}
 													exact path={`/portfolio/projects/${p2.url}`}
-													component={()=> <PortfolioDisplay goBack={this.goBack}>{p2.content}</PortfolioDisplay>}
+													component={()=> <PortfolioDisplay goBack={()=>{this.goBack("/portfolio/projects")}}>{p2.content}</PortfolioDisplay>}
 												/>
 											)
 										})
@@ -97,7 +95,6 @@ class Portfolio extends Component {
 						path="/portfolio/research" 
 						component={()=> 
 							<PortfolioPage page="Research Papers">
-								<p></p>
 								<Divider space={24} />
 								<div className="PortfolioItems">
 									{projects.research.map((p,i)=>{
@@ -109,7 +106,7 @@ class Portfolio extends Component {
 										return (
 											<Route 
 												exact path={`/portfolio/research/${p.url}`}
-												component={()=> <PortfolioDisplay goBack={this.goBack}>{p.content}</PortfolioDisplay>}
+												component={()=> <PortfolioDisplay goBack={()=>{this.goBack("/portfolio/research")}}>{p.content}</PortfolioDisplay>}
 											/>
 										)
 									})}
@@ -132,7 +129,6 @@ class Portfolio extends Component {
 						component={()=> <PortfolioHome changePage={this.changePage} />}
 					/>
 				</Switch>
-			</Router>
 		);
 	}
 }
@@ -166,12 +162,14 @@ function PortfolioHome(props) {
 					</Link>
 				</div>
 				<Divider space={16} />
+				{/*}
 				<div className="PortfolioPageLink">
 					<Link to="/portfolio/education">
 						<h3>Education</h3>
 						<p className="h7">The degree programs and schools I've attended.</p>
 					</Link>
 				</div>
+				{*/}
 			</div>
 		</>
 	);

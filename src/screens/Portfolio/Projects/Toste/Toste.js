@@ -50,9 +50,9 @@ function Toste() {
 					<li>
 						<strong>Peer Researchers:</strong>
 						<ul>
-							<li>Emilie Burton - Cornell Tech @ Cornell University [eb736@cornell.edu]</li>
-							<li>Arief Hutahaean - Cornell Tech @ Cornell University [arh272@cornell.edu]</li>
-							<li>Jerry Tsou - Cornell Tech @ Cornell University [ct558@cornell.edu]</li>
+							<li><i><u>Emilie Burton</u></i> - Cornell Tech @ Cornell University [eb736@cornell.edu]</li>
+							<li><i><u>Arief Hutahaean</u></i> - Cornell Tech @ Cornell University [arh272@cornell.edu]</li>
+							<li><i><u>Jerry Tsou</u></i> - Cornell Tech @ Cornell University [ct558@cornell.edu]</li>
 						</ul>
 					</li>
 				</ul>

@@ -12,6 +12,11 @@ import EmbarkmentData from "./Embarkment/Embarkment";
 import TosteData from "./Toste/Toste";
 import SMPData from "./SMP/SMP";
 
+import PentatonicData from "./Pentatonic/Pentatonic";
+
+import LivestreamsData from "./Livestreams/Livestreams";
+import ServiceSearchData from "./ServiceSearch/ServiceSearch";
+
 const projects = {
 	work:[
 		OnePlaceData,
@@ -47,11 +52,20 @@ const projects = {
 				ECornellData,
 				ICHDData,
 			]
+		},
+		{
+			type:"Hardware",
+			description:<p>I've also had the opportunity to work with hardware and electronics. While I only have a college course's worth of knowledge, I understand the fundamentals behind electronics and C.</p>,
+			items:[
+				PentatonicData,
+			]
 		}
 	],
 	research:[
 		MoLData,
 		VRKeyboardData,
+		LivestreamsData,
+		ServiceSearchData,
 	],
 	education:[]
 }

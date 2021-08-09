@@ -168,9 +168,10 @@ function NavLinks(props) {
   }
 
   const menu = [
+    L("/", "Index", "Introductions & Skill Set: Nice and Simple."),
     L("/portfolio", "Portfolio", "All my public projects, from VR projects to web applications."),
     //L("/research", "Research", "Research topics I wrote papers for, filtered from my Portfolio."),
-    L("/about", "About Me", "More about me, my skills, work experience, and education."),
+    //L("/about", "About Me", "More about me, my skills, work experience, and education."),
     L(resume, "Resume", "Download my resume in PDF form.", false),
   ];
 
