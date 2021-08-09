@@ -15,7 +15,7 @@ function EasierVRAssets() {
 					<a href="https://github.com/kimryan0416/EasierVRAssets" target="_blank" rel="noopener noreferrer">Github Repo</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>C#/CSharp</li>
 					<li>Oculus Quest</li>
 					<li>Unity</li>

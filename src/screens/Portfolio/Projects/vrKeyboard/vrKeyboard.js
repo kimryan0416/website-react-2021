@@ -31,7 +31,7 @@ function VRKeyboard() {
 					<a href="https://youtu.be/IYpnoIrZA6c" target="_blank" rel="noopener noreferrer">Ver. 1.1 Demonstration</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>C#/CSharp</li>
 					<li>Oculus Quest</li>
 					<li>Unity</li>
@@ -39,18 +39,23 @@ function VRKeyboard() {
 					<li>User Experience (UX) Design</li>
 					<li>User Interfaces (UI)</li>
 				</ul>
-				<Divider space={64} />
-				<img className="PortfolioContentImage" src={v0_1} alt="Ver. 0.1" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={v0_2} alt="Ver. 0.2" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={v0_3} alt="Ver. 0.3" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={v1_0} alt="Ver. 1.0" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={v1_1} alt="Ver. 1.1" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={v1_2} alt="Ver. 1.2" />
+				<div className="ShowInMobile">
+					<Divider space={16} />
+				</div>
+				<div className="HideInMobile">
+					<Divider space={64} />
+					<img className="PortfolioContentImage" src={v0_1} alt="Ver. 0.1" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={v0_2} alt="Ver. 0.2" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={v0_3} alt="Ver. 0.3" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={v1_0} alt="Ver. 1.0" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={v1_1} alt="Ver. 1.1" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={v1_2} alt="Ver. 1.2" />
+				</div>
 			</div>
 			<div className="PortfolioMain">
 				<h3>A Survey and Implementation of Fast-Input Typing Methods in <span className="no-br">Virtual Reality</span></h3>

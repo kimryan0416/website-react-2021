@@ -19,7 +19,7 @@ function ServiceSearch() {
 					<a href={serviceSearchPoster} target="_blank" rel="noopener noreferrer">ServiceSearch Poster</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>Information Interfaces and Presentation</li>
 					<li>User Experience (UX) Design</li>
 					<li>User Interfaces (UI)</li>

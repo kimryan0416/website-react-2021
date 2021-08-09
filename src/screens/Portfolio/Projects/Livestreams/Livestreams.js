@@ -17,7 +17,7 @@ function Livestreams() {
 					<a href={livestreams} target="_blank" rel="noopener noreferrer">Report PDF (229 kB)</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>Computer-Mediated Communication</li>
 					<li>Live Streaming</li>
 					<li>User Experience (UX) Design</li>

@@ -15,7 +15,7 @@ function SMP() {
 					<a href="https://github.com/kimryan0416/simpleMusicPlayer" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>JavaScript</li>

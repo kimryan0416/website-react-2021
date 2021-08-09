@@ -62,7 +62,7 @@ class App extends Component {
             <Switch>
               <Route 
                 path="/portfolio"
-                component={()=> <Portfolio />}
+                component={()=> <Portfolio width={this.state.width} />}
               />
               <Route 
                 path="/" 

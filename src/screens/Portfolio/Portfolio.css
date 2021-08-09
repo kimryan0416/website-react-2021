@@ -128,6 +128,8 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	top: 0;
+	left: 0;
 	background-color:  rgb(0,0,0,0.5);
 }
 .PortfolioBackButton {
@@ -157,6 +159,12 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	flex-wrap: nowrap;
+}
+.Portfolio .HideInMobile {
+	display: initial;
+}
+.Portfolio .ShowInMobile {
+	display: none;
 }
 .PortfolioContent .PortfolioSidebar {
 	flex-basis: 30%;
@@ -196,6 +204,13 @@
 .PortfolioContent .PortfolioStatus.Deprecated {
 	background-color: red;
 	color: white;
+}
+.PortfolioContent .PortfolioLinksWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
 }
 .PortfolioContent .PortfolioContentImage {
 	width: 80%;
@@ -237,4 +252,61 @@
 }
 .PortfolioContent .PortfolioContentColumns .PortfolioContentColumn:last-child {
 	padding-right: 0;
+}
+
+@media only screen and (max-width: 700px) {
+	.PortfolioDisplay {
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 128px;
+	}
+
+	.PortfolioDisplayPanel {
+		height: min-content;
+		max-height: 100%;
+		max-width: 100%;
+		padding: 24px;
+	}
+
+	.PortfolioContent {
+		flex-direction: column;
+		align-items: center;
+	}
+	.PortfolioContent .HideInMobile {
+		display: none;
+	}
+	.PortfolioContent .ShowInMobile {
+		display: initial;
+	}
+
+	.PortfolioContent .PortfolioSidebar {
+		text-align: center;
+		align-items: center;
+		flex-basis: 100%;
+		max-width: 75%;
+	}
+
+	.PortfolioContent h3 {
+		text-align: center;
+		margin-bottom: 32px;
+	}
+
+	.PortfolioContent .PortfolioContentImage.Left,
+	.PortfolioContent .PortfolioContentImage.Right,
+	.PortfolioContent .PortfolioContentImage.Left.Small, 
+	.PortfolioContent .PortfolioContentImage.Right.Small {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+
+	.PortfolioContent .PortfolioContentColumns {
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.PortfolioContent .PortfolioContentColumns .PortfolioContentColumn {
+		width: 100%;
+	}
 }

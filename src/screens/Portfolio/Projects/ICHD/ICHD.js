@@ -17,7 +17,7 @@ function ICHD() {
 					<a href="https://mhl.snu.ac.kr/hyel2018/" target="_blank" rel="noopener noreferrer">HYEL 2018 Website</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>JavaScript</li>

@@ -27,7 +27,7 @@ function Embarkment() {
 					<a href="https://drive.google.com/drive/folders/1kBw8TO8bOcRXW55dNH7mXiCBKTnmTGE5?usp=sharing" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>Video Games</li>
 					<li>Java</li>
 					<li>HTML</li>
@@ -35,18 +35,23 @@ function Embarkment() {
 					<li>JavaScript</li>
 					<li>Adobe Photoshop</li>
 				</ul>
-				<Divider space={64} />
-				<img className="PortfolioContentImage" src={paperPrototype} alt="Paper Prototype" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={earlyConcepts} alt="Early Concept Art" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={turretBulletConcept} alt="Turret Bullet Concept" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={gameplay} alt="Gameplay Screenshot" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={manualPreview2} alt="Manual Preview #2" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={startupMenu} alt="Startup Menu" />
+				<div className="ShowInMobile">
+					<Divider space={16} />
+				</div>
+				<div className="HideInMobile">
+					<Divider space={64} />
+					<img className="PortfolioContentImage" src={paperPrototype} alt="Paper Prototype" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={earlyConcepts} alt="Early Concept Art" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={turretBulletConcept} alt="Turret Bullet Concept" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={gameplay} alt="Gameplay Screenshot" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={manualPreview2} alt="Manual Preview #2" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={startupMenu} alt="Startup Menu" />
+				</div>
 			</div>
 			<div className="PortfolioMain">
 				<h3>Embarkment</h3>

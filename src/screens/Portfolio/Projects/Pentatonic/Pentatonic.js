@@ -19,7 +19,7 @@ function Pentatonic() {
 					<a href="https://youtu.be/X9uepFLdJ9k" target="_blank" rel="noopener noreferrer">Video Demonstration</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>Arduino</li>
 					<li>C/C++</li>
 					<li>Teensy</li>

@@ -27,7 +27,7 @@ function MoL() {
 					<a href="https://youtu.be/AhC4hOWlfGY" target="_blank" rel="noopener noreferrer">Video Demonstration (YouTube)</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>C#/CSharp</li>
 					<li>Oculus Quest</li>
 					<li>Unity</li>

@@ -15,7 +15,7 @@ function Toste() {
 					<a href="https://github.com/ct-studio-buildboard/F19-T022" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>JavaScript</li>
 					<li>Python</li>
 					<li>Natural Language Processing</li>

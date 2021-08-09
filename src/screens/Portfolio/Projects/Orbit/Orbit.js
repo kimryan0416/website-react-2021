@@ -17,7 +17,7 @@ function Orbit() {
 					<a href="https://sites.google.com/cornell.edu/cs5650-projects-2019/projects/orbit?authuser=0" target="_blank" rel="noopener noreferrer">Project Page</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>C#/CSharp</li>
 					<li>Oculus Quest</li>
 					<li>Unity</li>

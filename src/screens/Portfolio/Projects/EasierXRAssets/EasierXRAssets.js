@@ -13,7 +13,7 @@ function EasierXRAssets() {
 				<Divider space={16} />
 				<p className="PortfolioStatus OnHold">On-Hold</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>C#/CSharp</li>
 					<li>Oculus Quest</li>
 					<li>Unity</li>

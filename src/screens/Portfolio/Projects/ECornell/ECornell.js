@@ -11,7 +11,7 @@ function ECornell() {
 				<Divider space={16} />
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>JavaScript</li>

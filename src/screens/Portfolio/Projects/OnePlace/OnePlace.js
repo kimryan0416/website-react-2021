@@ -31,31 +31,36 @@ function OnePlace() {
 					<a href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing" target="_blank" rel="noopener noreferrer">UX Design Resources</a>
 				</p>
 				<Divider space={16} />
-				<ul>
+				<ul className="HideInMobile">
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>JavaScript</li>
 					<li>React Native</li>
 					<li>User Experience (UX) Design</li>
 				</ul>
-				<Divider space={64} />
-				<img className="PortfolioContentImage" src={richPicture} alt="Rich Picture" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={empathyMap} alt="Empathy Map" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={ideasSorted} alt="Ideation" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={taskDelegation} alt="Task Delegation" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={groupSketches} alt="Group Sketches" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={highFidelityWireframe} alt="High Fidelity Wireframe 1" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={highFidelityWireframe2} alt="High Fidelity Wireframe 2" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={highFidelityWireframe3} alt="High Fidelity Wireframe 3" />
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={productPreview} alt="High Fidelity Wireframe 1" />
+				<div className="ShowInMobile">
+					<Divider space={16} />
+				</div>
+				<div className="HideInMobile">
+					<Divider space={64} />
+					<img className="PortfolioContentImage" src={richPicture} alt="Rich Picture" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={empathyMap} alt="Empathy Map" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={ideasSorted} alt="Ideation" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={taskDelegation} alt="Task Delegation" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={groupSketches} alt="Group Sketches" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={highFidelityWireframe} alt="High Fidelity Wireframe 1" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={highFidelityWireframe2} alt="High Fidelity Wireframe 2" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={highFidelityWireframe3} alt="High Fidelity Wireframe 3" />
+					<Divider space={8} />
+					<img className="PortfolioContentImage" src={productPreview} alt="High Fidelity Wireframe 1" />
+				</div>
 			</div>
 			<div className="PortfolioMain">
 				<h3>OnePlace: Simple and secure file storage for your family</h3>
@@ -146,6 +151,7 @@ function OnePlace() {
 							<li>Structuring our design sprints with a distinct process for interview processing, sketching, low-fidelity wireframing, and high-fidelity wireframing helped generate new ideas among team members about how to tackle existing problems and overall allowed us to proceed quickly with our design phase.</li>
 						</ul>
 					</div>
+					<div className="ShowInMobile"><Divider space={16} /></div>
 					<div className="PortfolioContentColumn">
 						<h6><strong>Obstacles:</strong></h6>
 						<Divider space={8} />
