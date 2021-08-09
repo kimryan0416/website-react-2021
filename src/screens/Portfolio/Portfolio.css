@@ -32,8 +32,8 @@
 	text-decoration: none;
 	color: initial;
 }
-.PortfolioPages .PortfolioPageLink {
-	color: var(--blue);
+.PortfolioPages .PortfolioPageLink h3 {
+	color: var(--link);
 }
 .PortfolioPages .PortfolioPageLink:hover {
 	cursor: pointer;
@@ -51,6 +51,10 @@
 
 	transition: width 0.25s ease-in-out;
 }
+.PortfolioItems a {
+	color: initial;
+	text-decoration: none;
+}
 .PortfolioRows {
 	width: 100%;
 	display: flex;
@@ -65,18 +69,20 @@
 
 .PortfolioItem {
 	position: relative;
-	width: 100%;
+	width: 160px;
 	height: auto;
-	margin: 8px;
+	margin: 16px;
+	text-align: center;
 }
 .PortfolioItem .PortfolioItemImageWrapper {
 	position: relative;
 	width: 160px;
-	height: 160px;
+	height: auto;
 	box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
 	padding: 16px;
 	box-sizing: border-box;
 	border-radius: 50%;
+	transition: box-shadow 0.25s ease-in-out;
 }
 .PortfolioItem .PortfolioItemImage {
 	position: absolute;
@@ -87,39 +93,19 @@
 	width: 100%;
 	max-height: 100%;
 }
-.PortfolioItem .PortfolioItemHover {
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.4);
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	opacity: 0;
-	padding: 4px;
-	box-sizing: border-box;
-	font-size: 0;
-
-	transition: opacity 0.25s ease-in-out, font-size 0.25s ease-in-out;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: nowrap;
-}
-.PortfolioItem .PortfolioItemHover p {
-	text-align: center;
-	font-style: italic;
-	color: white;
-	font-weight: bold;
+.PortfolioItem .linkSuggestion {
+	color: var(--link);
+	font-size: calc(var(--h7) * 0.9);
+	transition: font-size 0.25s ease-in-out;
 }
 .PortfolioItem:hover {
 	cursor: pointer;
 }
-.PortfolioItem:hover .PortfolioItemHover {
-	opacity: 1;
-	font-size: var(--h7);
+.PortfolioItem:hover .PortfolioItemImageWrapper {
+	box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+}
+.PortfolioItem:hover .linkSuggestion {
+	text-decoration: underline;
 }
 
 .PortfolioDisplay {
@@ -189,9 +175,7 @@
 	flex-grow: 1;
 }
 .PortfolioContent .PortfolioThumbnail {
-	height: auto;
-	height: 160px;
-	margin: auto;
+	width: 100%;
 }
 .PortfolioContent .PortfolioStatus {
 	width: auto;

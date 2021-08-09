@@ -25,7 +25,7 @@ function Skills() {
 		<div>
         <ul className="SkillComponent SkillLanguages">
           <li className="SkillGroup">
-            <p><i>Web development</i></p>
+            <p><strong><i>Web development</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="HTML," src={markup} /></li>
               <li><Skill skill="CSS," src={css} /></li>
@@ -34,36 +34,36 @@ function Skills() {
             </ul>
           </li>
           <li className="SkillGroup">
-            <p><i>Virtual Reality</i></p>
+            <p><strong><i>Virtual Reality</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="C#" src={js} /></li>
             </ul>
           </li>
           <li className="SkillGroup">
-            <p><i>Databases</i></p>
+            <p><strong><i>Databases</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="MySQL," src={sql} /></li>
               <li><Skill skill="SQLite" src={sql} /></li>
             </ul>
           </li>
           <li className="SkillGroup">
-            <p><i>Data Management</i></p>
+            <p><strong><i>Data Management</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="Python" src={python} /></li>
             </ul>
           </li>
         </ul>
-        <Divider space={16} />
+        <Divider space={8} />
         <ul className="SkillComponent SkillFrameworks">
           <li className="SkillGroup">
-            <p><i>Frameworks</i></p>
+            <p><strong><i>Frameworks</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="Angular," src={js} /></li>
               <li><Skill skill="React Native" src={react} /></li>
             </ul>
           </li>
           <li className="SkillGroup">
-            <p><i>Libraries</i></p>
+            <p><strong><i>Libraries</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="React.js," src={react} /></li>
               <li><Skill skill="jQuery," src={js} /></li>
@@ -71,23 +71,23 @@ function Skills() {
             </ul>
           </li>
           <li className="SkillGroup">
-            <p><i>Runtime Environments</i></p>
+            <p><strong><i>Runtime Environments</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="Node.js" src={js} /></li>
             </ul>
           </li>
         </ul>
-        <Divider space={16} />
+        <Divider space={8} />
         <ul className="SkillComponent SkillSoftware">
           <li className="SkillGroup">
-            <p><i>Design</i></p>
+            <p><strong><i>Design</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="Adobe Photoshop," src={photoshop} /></li>
               <li><Skill skill="Figma" src={figma} /></li>
             </ul>
           </li>
           <li className="SkillGroup">
-            <p><i>Virtual Reality &amp; Games</i></p>
+            <p><strong><i>Virtual Reality &amp; Games</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="Unity3D," src={unity} /></li>
               <li><Skill skill="Cinema4D," src={cube} /></li>
@@ -95,7 +95,7 @@ function Skills() {
             </ul>
           </li>
           <li className="SkillGroup">
-            <p><i>Video Editing</i></p>
+            <p><strong><i>Video Editing</i></strong></p>
             <ul className="SkillList">
               <li><Skill skill="Adobe After Effects" src={afterEffects}/></li>
             </ul>

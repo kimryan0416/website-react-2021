@@ -5,12 +5,11 @@ import {
 	Route,
 	Link,
 	withRouter,
-	useHistory,
 } from "react-router-dom";
 
 import "./Portfolio.css";
 
-import { Divider, Image, Button } from "../../components";
+import { Divider, Image, } from "../../components";
 import projects from "./Projects";
 
 class Portfolio extends Component {
@@ -23,7 +22,7 @@ class Portfolio extends Component {
 	}
 
 	handleItemClick = (project) => {
-		const to = (project == this.state.project) ? null : project;
+		const to = (project === this.state.project) ? null : project;
 		this.setState({project:to});
 	}
 
@@ -71,20 +70,23 @@ class Portfolio extends Component {
 											<Divider space={24} />
 											<div key={`projects_${i}`} className="PortfolioItems">
 												{p.items.map((p2,i2)=>{
-													return <PortfolioItem key={`projects_${i}_${i2}`} data={p} linkTo={`/portfolio/projects/${p.url}`} handler={this.handleItemClick} />
+													return <PortfolioItem key={`projects_${i}_${i2}`} data={p2} linkTo={`/portfolio/projects/${p2.url}`} handler={this.handleItemClick} />
 												})}
 											</div>
 										</>
 									)
 								})}
 								<Switch>
-									{projects.projects.map(p=>{
-										return (
-											<Route 
-												exact path={`/portfolio/projects/${p.url}`}
-												component={()=> <PortfolioDisplay goBack={this.goBack}>{p.content}</PortfolioDisplay>}
-											/>
-										)
+									{projects.projects.map((p,i)=>{
+										return p.items.map((p2,i2)=>{
+											return (
+												<Route 
+													key={`projects_item_${i}_${i2}`}
+													exact path={`/portfolio/projects/${p2.url}`}
+													component={()=> <PortfolioDisplay goBack={this.goBack}>{p2.content}</PortfolioDisplay>}
+												/>
+											)
+										})
 									})}
 								</Switch>
 							</PortfolioPage>
@@ -190,10 +192,20 @@ function PortfolioPage(props) {
 
 function PortfolioItem(props) {
 	const data = props.data;
+	console.log(data);
 	return (
 		<Link to={props.linkTo}>
 			<div className="PortfolioItem" onClick={()=>{props.handler(data.project)}}>
-				<Image width={160} height={160} cName="PortfolioItemImageWrapper" src={data.src} alt="" />
+				<Image 
+					width={160} 
+					height={160} 
+					cName="PortfolioItemImageWrapper" 
+					src={data.thumbnail} 
+					alt="" 
+				/>
+				<Divider space={8} />
+				<p className="h7"><strong>{data.title}</strong></p>
+				<p className="linkSuggestion">Click to read more</p>
 			</div>
 		</Link>
 	);

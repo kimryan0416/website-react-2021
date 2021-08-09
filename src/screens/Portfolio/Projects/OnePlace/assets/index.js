@@ -1,4 +1,4 @@
-import thumbnail from "./thumbnail.svg";
+import thumbnail from "./OnePlaceLogo-Blue.png";
 import groupSketches from "./groupSketches.jpg";
 import highFidelityWireframe from "./highFidelityWireframe.png";
 import highFidelityWireframe2 from "./highFidelityWireframe2.png";

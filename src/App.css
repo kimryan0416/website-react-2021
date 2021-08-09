@@ -6,6 +6,7 @@
   --white: rgb(255,255,255);
   --dark: rgb(100,100,100);
   --purple: rgb(41,54,93);
+  --link: rgb(0,100,255);
   /* --primary: rgb(126,232,151); */
   --primary: rgb(230,230,230);
   --normal-button: rgb(230,230,230);
@@ -145,7 +146,6 @@ ul {
       }
 .NavLinks {
   position: relative;
-
   width: max-content;
 }
   .NavLinksWrapper {
@@ -172,6 +172,7 @@ ul {
       right: 0;
       opacity: 0;
       font-style: italic;
+      text-align: right;
     }
     .NavItem:hover .NavItemDescription {
       opacity: 1;
