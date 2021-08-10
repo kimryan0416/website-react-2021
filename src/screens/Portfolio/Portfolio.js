@@ -138,27 +138,32 @@ function PortfolioHome(props) {
 		<>
 			<h1>Portfolio</h1>
 			<Divider space={32} />
-			<p>This is a list containing my prior work experience, coding projects, and education. Work experiences involve websites for clients, while personal projects are attempts to expand my knowledge about web programming, virtual reality, or <span className='no-br'>or prototyping.</span></p>
-			<Divider space={16} />
+			<p>This is a list containing my prior work experience, coding projects, and research experience. Work experiences involve websites for clients, while personal projects are attempts to expand my knowledge about web programming, virtual reality, or <span className='no-br'>or prototyping.</span></p>
+			<Divider space={8} />
+			<p><i>NOTE: Some portfolio items are cross-referenced between work experiences, projects, and research experiences. In other words, some items may appear more than once.</i></p>
+			<Divider space={32} />
 			<div className="PortfolioPages">
 				<div className="PortfolioPageLink">
 					<Link to="/portfolio/work">
 						<h3>Work Experience</h3>
 						<p className="h7">Particular experiences working in startups and companies. I've worked both in <strong>contract positions</strong> and <strong>startup companies</strong>.</p>
+						<p className="h7 a">- Click here if you're looking for my professional experiences.</p>
 					</Link>
 				</div>
 				<Divider space={16} />
 				<div className="PortfolioPageLink">
 					<Link to="/portfolio/projects">
 						<h3>Personal Projects</h3>
-						<p className="h7">A collection of personal projects that I had the pleasure of working in during my free time. Subtopics include <strong>Virtual Reality prototypes</strong>, <strong>web projects</strong>, <strong>games/hardware</strong></p>
+						<p className="h7">A collection of personal projects that I had the pleasure of working in during my free time. Subtopics include <strong>Virtual Reality prototypes</strong>, <strong>web projects</strong>, <strong>games/hardware</strong>.</p>
+						<p className="h7 a">- Click here if you're interested in the various projects I've participated in or developed.</p>
 					</Link>
 				</div>
 				<Divider space={16} />
 				<div className="PortfolioPageLink">
 					<Link to="/portfolio/research">
 						<h3>Research Papers</h3>
-						<p className="h7">Research papers I've previously written during my degree programs. Two involve <strong>Virtual Reality</strong> and another two involve <strong>User Experiences</strong></p>
+						<p className="h7">Research papers I've previously written during my degree programs. Two involve <strong>Virtual Reality</strong> and another two involve <strong>User Experiences</strong>.</p>
+						<p className="h7 a">- Click here if you're interested in my research experience.</p>
 					</Link>
 				</div>
 				<Divider space={16} />
@@ -191,7 +196,6 @@ function PortfolioPage(props) {
 
 function PortfolioItem(props) {
 	const data = props.data;
-	console.log(data);
 	return (
 		<Link to={props.linkTo}>
 			<div className="PortfolioItem" onClick={()=>{props.handler(data.project)}}>

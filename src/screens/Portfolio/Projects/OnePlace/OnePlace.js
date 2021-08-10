@@ -43,7 +43,7 @@ function OnePlace() {
 				</div>
 				<div className="HideInMobile">
 					<Divider space={64} />
-					<img className="PortfolioContentImage" src={richPicture} alt="Rich Picture" />
+					<img className="PortfolioContentImage" src={richPicture} alt="Rich Pic" />
 					<Divider space={8} />
 					<img className="PortfolioContentImage" src={empathyMap} alt="Empathy Map" />
 					<Divider space={8} />

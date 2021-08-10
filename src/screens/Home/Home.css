@@ -1,0 +1,24 @@
+.Home {
+	text-align: center;
+}
+.HomeContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+.HomeContent .HomeItem {
+	width: 100%;
+}
+.HomeLinks {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+.HomeLinks .HomeLink {
+	width: 30%;
+	text-align: center;
+}

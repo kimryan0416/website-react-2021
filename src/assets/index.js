@@ -24,6 +24,10 @@ import figma from "./icons/figmaIcon.svg";
 import unity from "./icons/unityIcon.svg";
 import cube from "./icons/cubeIcon.svg";
 
+import indexIcon from "./icons/indexIcon.svg";
+import downloadIcon from "./icons/downloadIcon.svg";
+import portfolioIcon from "./icons/portfolioIcon.svg";
+
 export {
 	profileSquare,
 	heyThere,
@@ -50,4 +54,8 @@ export {
 	figma,
 	unity,
 	cube,
+
+	indexIcon,
+	portfolioIcon,
+	downloadIcon,
 }

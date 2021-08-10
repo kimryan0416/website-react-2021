@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, createRef, } from "react";
 import {
   HashRouter as Router,
   Link,
@@ -13,7 +13,10 @@ import {
   github, 
   linkedIn, 
   twitter,
-  wordpress
+  wordpress,
+  indexIcon,
+  portfolioIcon,
+  downloadIcon,
 }  from './assets';
 import { 
   Image, 
@@ -84,6 +87,15 @@ class Nav extends Component {
     this.state = {
       menuOpen: false
     }
+    this.navRef = createRef();
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
   componentDidUpdate(prevProps) {
@@ -99,6 +111,20 @@ class Nav extends Component {
 
   toggleMenu = () => {
     this.setState(prevState => ({menuOpen:!prevState.menuOpen}));
+  }
+  
+  closeMenu = () => {
+    this.setState({menuOpen:false});
+  }
+
+  setWrapperRef = (node) => {
+    this.navRef = node;
+  }
+
+  handleClickOutside = (event) => {
+    if (this.navRef && !this.navRef.contains(event.target)) {
+      this.closeMenu();
+    }
   }
 
   render() {
@@ -119,7 +145,7 @@ class Nav extends Component {
     }
 
     return (
-      <nav className="AppNav">
+      <nav ref={this.setWrapperRef} className="AppNav">
         <div className='NavProfile'>
           <div className='ProfileImageWrapper'>
             <Link to="/">
@@ -147,7 +173,7 @@ class Nav extends Component {
         </div>
         <div className="NavLinks">
           {mobileButton}
-          <NavLinks isMobile={isMobile} open={this.state.menuOpen} />
+          <NavLinks isMobile={isMobile} open={this.state.menuOpen} closeMenu={this.closeMenu} />
         </div>
       </nav>
     );
@@ -156,23 +182,39 @@ class Nav extends Component {
 
 function NavLinks(props) {
 
-  const L = (to, label, desc, l = true) => {
+  const location = window.location.href.split("#")[1].split("/")[1];
+  const extraClasses = {
+    index:"",
+    portfolio:""
+  }
+  switch(location) {
+    case "":
+      extraClasses.index = "CurrentLink";
+      break;
+    case "portfolio":
+      extraClasses.portfolio = "CurrentLink";
+      break;
+    default:
+      break;
+  }
+
+  const L = (key, to, cName, label, desc, l = true) => {
     const c = (
-      <Button cName='NavItem'>
-        <span>{label}</span>
+      <Button cName={`NavItem ${cName}`} onClick={props.closeMenu}>
+        {label}
         <span className='NavItemDescription h7'>{desc}</span>
       </Button>
     );
-    if (!l) return <a href={to} target="_blank" rel="noopener noreferrer">{c}</a>;
-    return <Link to={to}>{c}</Link>;
+    if (!l) return <a key={`NavLink_${key}`} href={to} target="_blank" rel="noopener noreferrer">{c}</a>;
+    return <Link key={`NavLink_${key}`} to={to}>{c}</Link>;
   }
 
   const menu = [
-    L("/", "Index", "Introductions & Skill Set: Nice and Simple."),
-    L("/portfolio", "Portfolio", "All my public projects, from VR projects to web applications."),
-    //L("/research", "Research", "Research topics I wrote papers for, filtered from my Portfolio."),
-    //L("/about", "About Me", "More about me, my skills, work experience, and education."),
-    L(resume, "Resume", "Download my resume in PDF form.", false),
+    L(0, "/", extraClasses.index, <><img src={indexIcon} alt="" className="NavIcon" /><span>Index</span></>, "Why, hello there! Intro & Skill Set"),
+    L(1, "/portfolio", extraClasses.portfolio, <><img src={portfolioIcon} alt="" className="NavIcon" /><span>Portfolio</span></>, "All my public projects, from VR projects to web applications."),
+    //L(2, "/research", "", <span>Research</span>, "Research topics I wrote papers for, filtered from my Portfolio."),
+    //L(3, "/about", "", <span>About Me</span>, "More about me, my skills, work experience, and education."),
+    L(4, resume, "DownloadLink", <><img src={downloadIcon} alt="" className="NavIcon" /><span>Resume <span className="h8">(57 kB)</span></span></>, "Download my resume in PDF form.", false),
   ];
 
   var mobileClass = "";
