@@ -8,8 +8,10 @@ import {
 
 import "./Portfolio.css";
 
-import { Divider, Image, } from "../../components";
+import { Divider, Image, Button } from "../../components";
 import projects from "./Projects";
+
+const oneplace = projects.work.filter(p=>p.key=="oneplace")[0];
 
 class Portfolio extends Component {
 	
@@ -30,6 +32,7 @@ class Portfolio extends Component {
 	}
 
 	render() {
+
 		return (
 				<Switch>
 					<Route 
@@ -115,14 +118,8 @@ class Portfolio extends Component {
 						}
 					/>
 					<Route 
-						path="/portfolio/education" 
-						component={()=> 
-							<PortfolioPage page="Education">
-								<div className="PortfolioItems">
-									
-								</div>
-							</PortfolioPage>
-						}
+						exact path="/portfolio/oneplace"
+						component={()=> <PortfolioDisplay goBack={()=>{this.goBack("/portfolio")}}>{oneplace.content}</PortfolioDisplay>}
 					/>
 					<Route 
 						path="/portfolio"
@@ -142,46 +139,66 @@ function PortfolioHome(props) {
 			<Divider space={8} />
 			<p><i>NOTE: Some portfolio items are cross-referenced between work experiences, projects, and research experiences. In other words, some items may appear more than once.</i></p>
 			<Divider space={32} />
-			<div className="PortfolioPages">
-				<div className="PortfolioPageLink">
-					<Link to="/portfolio/work">
-						<h3>Work Experience</h3>
-						<p className="h7">Particular experiences working in startups and companies. I've worked both in <strong>contract positions</strong> and <strong>startup companies</strong>.</p>
-						<p className="h7 a">- Click here if you're looking for my professional experiences.</p>
+			<div className="Portfolio">
+				<div className="PortfolioPages">
+					<div className="PortfolioPageLink">
+						<Link to="/portfolio/work">
+							<h3>Work Experience</h3>
+							<p className="h7">Particular experiences working in startups and companies. I've worked both in <strong>contract positions</strong> and <strong>startup companies</strong>.</p>
+							<p className="h7 a">- Click here if you're looking for my professional experiences.</p>
+						</Link>
+					</div>
+					<Divider space={16} />
+					<div className="PortfolioPageLink">
+						<Link to="/portfolio/projects">
+							<h3>Personal Projects</h3>
+							<p className="h7">A collection of personal projects that I had the pleasure of working in during my free time. Subtopics include <strong>Virtual Reality prototypes</strong>, <strong>web projects</strong>, <strong>games/hardware</strong>.</p>
+							<p className="h7 a">- Click here if you're interested in the various projects I've participated in or developed.</p>
+						</Link>
+					</div>
+					<Divider space={16} />
+					<div className="PortfolioPageLink">
+						<Link to="/portfolio/research">
+							<h3>Research Papers</h3>
+							<p className="h7">Research papers I've previously written during my degree programs. Two involve <strong>Virtual Reality</strong> and another two involve <strong>User Experiences</strong>.</p>
+							<p className="h7 a">- Click here if you're interested in my research experience.</p>
+						</Link>
+					</div>
+					<Divider space={16} />
+					{/*}
+					<div className="PortfolioPageLink">
+						<Link to="/portfolio/education">
+							<h3>Education</h3>
+							<p className="h7">The degree programs and schools I've attended.</p>
+						</Link>
+					</div>
+					{*/}
+				</div>
+				<div className="PortfolioResources">
+					<h5>Downloadable Resources</h5>
+					<Divider space={8} />
+					<p className="h7">Thanks to the various work experiences and projects, I've amassed a collection of tools and artifacts to help structure my development process in UX-heavy projects. I've made them available at the link below, for anybody curious!</p>
+					<Divider space={16} />
+					<a href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing" target="_blank" rel="noopener noreferrer">
+						<Button>UX Design Resources</Button>
+					</a>
+					<Divider space={16} />
+					<p className="h7"><strong>Related experiences:</strong></p>
+					<Divider space={8} />
+					<Link to="/portfolio/oneplace">
+						<div className="PortfolioMiniItem">
+							<Image width={32} height={32} src={oneplace.thumbnail} alt="" />
+							<Divider horizontal={true} space={8} />
+							<p className="h8">{oneplace.title}</p>
+						</div>
 					</Link>
 				</div>
-				<Divider space={16} />
-				<div className="PortfolioPageLink">
-					<Link to="/portfolio/projects">
-						<h3>Personal Projects</h3>
-						<p className="h7">A collection of personal projects that I had the pleasure of working in during my free time. Subtopics include <strong>Virtual Reality prototypes</strong>, <strong>web projects</strong>, <strong>games/hardware</strong>.</p>
-						<p className="h7 a">- Click here if you're interested in the various projects I've participated in or developed.</p>
-					</Link>
-				</div>
-				<Divider space={16} />
-				<div className="PortfolioPageLink">
-					<Link to="/portfolio/research">
-						<h3>Research Papers</h3>
-						<p className="h7">Research papers I've previously written during my degree programs. Two involve <strong>Virtual Reality</strong> and another two involve <strong>User Experiences</strong>.</p>
-						<p className="h7 a">- Click here if you're interested in my research experience.</p>
-					</Link>
-				</div>
-				<Divider space={16} />
-				{/*}
-				<div className="PortfolioPageLink">
-					<Link to="/portfolio/education">
-						<h3>Education</h3>
-						<p className="h7">The degree programs and schools I've attended.</p>
-					</Link>
-				</div>
-				{*/}
 			</div>
 		</>
 	);
 }
 
 function PortfolioPage(props) {
-
 	return (
 		<>
 			<div className="PortfolioHeader">
