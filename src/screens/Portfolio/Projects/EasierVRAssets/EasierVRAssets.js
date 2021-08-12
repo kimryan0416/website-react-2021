@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { thumbnail } from "./assets";
 
 function EasierVRAssets() {
@@ -12,7 +12,7 @@ function EasierVRAssets() {
 				<p className="PortfolioStatus Ongoing">Ongoing</p>
 				<Divider space={16} />
 				<p>
-					<a href="https://github.com/kimryan0416/EasierVRAssets" target="_blank" rel="noopener noreferrer">Github Repo</a>
+					<ExtURL href="https://github.com/kimryan0416/EasierVRAssets">Github Repo</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">

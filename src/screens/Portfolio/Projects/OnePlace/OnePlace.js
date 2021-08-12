@@ -1,4 +1,8 @@
-import { Divider, Button } from "../../../../components";
+import { 
+	Divider, 
+	Button,
+	ExtURL,
+} from "../../../../components";
 import { 
 	thumbnail,
 	groupSketches,
@@ -24,11 +28,11 @@ function OnePlace() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href="https://www.oneplace.family/" target="_blank" rel="noopener noreferrer">OnePlace Website</a>
+					<ExtURL href="https://www.oneplace.family/">OnePlace Website</ExtURL>
 					<br />
-					<a href="https://medium.com/@ryan_oneplace" target="_blank" rel="noopener noreferrer">My Medium Stories</a>
+					<ExtURL href="https://medium.com/@ryan_oneplace">My Medium Stories</ExtURL>
 					<br />
-					<a href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing" target="_blank" rel="noopener noreferrer">UX Design Resources</a>
+					<ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing">UX Design Resources</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">
@@ -63,7 +67,7 @@ function OnePlace() {
 				</div>
 			</div>
 			<div className="PortfolioMain">
-				<h3>OnePlace: Simple and secure file storage for your family</h3>
+				<h3>OnePlace - Chief Design Offier (CDO) &amp; Lead Front-End Engineer</h3>
 				<Divider space={16} />
 				<h4><strong>Description</strong></h4>
 				<Divider space={8} />
@@ -189,7 +193,7 @@ function OnePlace() {
         <Divider space={8} />
         <p><i>For more info on good practices for user interviews and user data processing, you can access a public resources GDrive folder here:</i></p>
         <Divider space={8} />
-        <a href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing" target="_blank" rel="noopener noreferrer"><Button>UX Design Resources</Button></a>
+        <ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing"><Button>UX Design Resources</Button></ExtURL>
         <Divider space={16} />
 				<h6><strong>User Data Processing - Personas, Empathy Maps, Ethics:</strong></h6>
 				<Divider space={8} />
@@ -266,7 +270,7 @@ const OnePlaceData = {
 	umbrella:"Startups",
 	key:"oneplace",
 	thumbnail:thumbnail,
-	title:"OnePlace: Simple and secure file storage for your family",
+	title:"OnePlace - Chief Design Offier (CDO) & Lead Front-End Engineer",
 	url:"oneplace",
 	content:<OnePlace />
 }

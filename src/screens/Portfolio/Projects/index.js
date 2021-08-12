@@ -1,3 +1,4 @@
+import TucanFitnessData from "./TucanFitness/TucanFitness";
 import OnePlaceData from "./OnePlace/OnePlace";
 import ECornellData from "./ECornell/ECornell";
 import ICHDData from "./ICHD/ICHD"
@@ -19,6 +20,7 @@ import ServiceSearchData from "./ServiceSearch/ServiceSearch";
 
 const projects = {
 	work:[
+		TucanFitnessData,
 		OnePlaceData,
 		ECornellData,
 		ICHDData,
@@ -46,6 +48,7 @@ const projects = {
 			type:"Web Projects",
 			description:<p>As someone who has worked extensively with web programming, I have worked on various projects ranging from browser web apps to JavaScript programs. Work experience and skillset includes HTML, CSS, JavaScript, PHP, SQL, and Python.</p>,
 			items:[
+				TucanFitnessData,
 				OnePlaceData,
 				SMPData,
 				TosteData,

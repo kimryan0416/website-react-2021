@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { thumbnail } from "./assets";
 
 function ICHD() {
@@ -12,9 +12,9 @@ function ICHD() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href="https://mhl.snu.ac.kr/ichd2018/" target="_blank" rel="noopener noreferrer">ICHD 2018 Website</a>
+					<ExtURL href="https://mhl.snu.ac.kr/ichd2018/">ICHD 2018 Website</ExtURL>
 					<br />
-					<a href="https://mhl.snu.ac.kr/hyel2018/" target="_blank" rel="noopener noreferrer">HYEL 2018 Website</a>
+					<ExtURL href="https://mhl.snu.ac.kr/hyel2018/">HYEL 2018 Website</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">
@@ -27,7 +27,7 @@ function ICHD() {
 				</ul>
 			</div>
 			<div className="PortfolioMain">
-				<h3>Seoul National University - Marine Hydrodynamics Lab: International Conference on Hydrodynamics Websites</h3>
+				<h3>Seoul National University - Marine Hydrodynamics Lab: International Conference on Hydrodynamics Website Developer</h3>
 				<Divider space={16} />
 				<h4><strong>Description</strong></h4>
 				<Divider space={8} />

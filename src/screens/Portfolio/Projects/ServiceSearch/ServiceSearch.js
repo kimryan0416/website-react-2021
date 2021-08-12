@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { serviceSearch, serviceSearchPoster } from "../../../../downloads";
 
 import { thumbnail } from "./assets";
@@ -14,9 +14,9 @@ function ServiceSearch() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href={serviceSearch} target="_blank" rel="noopener noreferrer">Report PDF (634 kB)</a>
+					<ExtURL href={serviceSearch}>Report PDF (634 kB)</ExtURL>
 					<br />
-					<a href={serviceSearchPoster} target="_blank" rel="noopener noreferrer">ServiceSearch Poster</a>
+					<ExtURL href={serviceSearchPoster}>ServiceSearch Poster</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">

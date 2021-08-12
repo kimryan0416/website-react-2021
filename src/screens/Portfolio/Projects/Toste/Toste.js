@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { thumbnail } from "./assets";
 
 function Toste() {
@@ -12,7 +12,7 @@ function Toste() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href="https://github.com/ct-studio-buildboard/F19-T022" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
+					<ExtURL href="https://github.com/ct-studio-buildboard/F19-T022">Downloadable Build &amp; Files</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">

@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL} from "../../../../components";
 import { 
 	thumbnail,
 	earlyConcepts,
@@ -24,7 +24,7 @@ function Embarkment() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href="https://drive.google.com/drive/folders/1kBw8TO8bOcRXW55dNH7mXiCBKTnmTGE5?usp=sharing" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
+					<ExtURL href="https://drive.google.com/drive/folders/1kBw8TO8bOcRXW55dNH7mXiCBKTnmTGE5?usp=sharing">Downloadable Build &amp; Files</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">

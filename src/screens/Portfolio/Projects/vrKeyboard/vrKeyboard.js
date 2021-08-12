@@ -1,4 +1,8 @@
-import { Divider, Button } from "../../../../components";
+import { 
+	Divider, 
+	Button,
+	ExtURL,
+} from "../../../../components";
 import { vrkeyboard } from "../../../../downloads";
 import { 
 	thumbnail,
@@ -22,13 +26,13 @@ function VRKeyboard() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href={vrkeyboard} target="_blank" rel="noopener noreferrer">Download PDF (2.2 mB)</a>
+					<ExtURL href={vrkeyboard}>Download PDF (2.2 mB)</ExtURL>
 					<br />
-					<a href="https://sites.google.com/cornell.edu/cs5678-2020sp-projects/home/vrkeyboard?authuser=0" target="_blank" rel="noopener noreferrer">Project Page</a>
+					<ExtURL href="https://sites.google.com/cornell.edu/cs5678-2020sp-projects/home/vrkeyboard?authuser=0">Project Page</ExtURL>
 					<br />
-					<a href="https://youtu.be/AKYRDivoi2c" target="_blank" rel="noopener noreferrer">Ver. 1.0 Demonstration</a>
+					<ExtURL href="https://youtu.be/AKYRDivoi2c">Ver. 1.0 Demonstration</ExtURL>
 					<br />
-					<a href="https://youtu.be/IYpnoIrZA6c" target="_blank" rel="noopener noreferrer">Ver. 1.1 Demonstration</a>
+					<ExtURL href="https://youtu.be/IYpnoIrZA6c">Ver. 1.1 Demonstration</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">
@@ -111,7 +115,7 @@ function VRKeyboard() {
 				<Divider space={8} />
 				<p><i>This segment has been copied from the original report. Download the full report here:</i></p>
 				<Divider space={8} />
-				<a href={vrkeyboard} target="_blank" rel="noopener noreferrer"><Button>Download PDF (2.2 mB)</Button></a>
+				<ExtURL href={vrkeyboard}><Button>Download PDF (2.2 mB)</Button></ExtURL>
 				<Divider space={8} />
 				<p className="h7">This work demonstrates VRKeyboard - a joystick and button-based text input method in Virtual Reality that resembles the semantic appearance and functionality of older T9 phone keyboards. This work also presents a modified version, Cheat VRKeyboard, which attempts to further improve the user experience by adding a short- cut “cheat” layer. These come from a collective goal to design a VR-oriented keyboard that is intuitive in nature and is functionally adequate for VR users’ general needs. Through experimentation with users, VRKeyboard’s two designs were evaluated both qualita- tively and quantitatively to observe if they align with user expecta- tions of functionality while maintaining a consistent performance across multiple users. Key results indicated that on average, users typed 8.49 WPM for the VRKeyboard, and 5.44 WPM for the VR “Cheat” keyboard, with experienced users typing 13.3 WPM for the VRKeyboard. Users made fewer errors with the VR Cheat keyboard, however felt it was more physically and mentally demanding than VRKeyboard.</p>
 			</div>

@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { pentatonic } from "../../../../downloads";
 
 import { thumbnail } from "./assets";
@@ -14,9 +14,9 @@ function Pentatonic() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href={pentatonic} target="_blank" rel="noopener noreferrer">Report PDF (1.4 mB)</a>
+					<ExtURL href={pentatonic}>Report PDF (1.4 mB)</ExtURL>
 					<br />
-					<a href="https://youtu.be/X9uepFLdJ9k" target="_blank" rel="noopener noreferrer">Video Demonstration</a>
+					<ExtURL href="https://youtu.be/X9uepFLdJ9k">Video Demonstration</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">

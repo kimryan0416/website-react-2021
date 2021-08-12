@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { livestreams } from "../../../../downloads";
 
 import { thumbnail } from "./assets";
@@ -14,7 +14,7 @@ function Livestreams() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href={livestreams} target="_blank" rel="noopener noreferrer">Report PDF (229 kB)</a>
+					<ExtURL href={livestreams}>Report PDF (229 kB)</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">

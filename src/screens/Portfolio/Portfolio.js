@@ -8,10 +8,16 @@ import {
 
 import "./Portfolio.css";
 
-import { Divider, Image, Button } from "../../components";
+import { 
+	Divider, 
+	Image, 
+	Button,
+	ExtURL,
+} from "../../components";
 import projects from "./Projects";
 
-const oneplace = projects.work.filter(p=>p.key=="oneplace")[0];
+const oneplace = projects.work.filter(p=>p.key==="oneplace")[0];
+const tucanfitness = projects.work.filter(p=>p.key==="tucanfitness")[0];
 
 class Portfolio extends Component {
 	
@@ -122,6 +128,10 @@ class Portfolio extends Component {
 						component={()=> <PortfolioDisplay goBack={()=>{this.goBack("/portfolio")}}>{oneplace.content}</PortfolioDisplay>}
 					/>
 					<Route 
+						exact path="/portfolio/tucanfitness"
+						component={()=> <PortfolioDisplay goBack={()=>{this.goBack("/portfolio")}}>{tucanfitness.content}</PortfolioDisplay>}
+					/>
+					<Route 
 						path="/portfolio"
 						component={()=> <PortfolioHome changePage={this.changePage} />}
 					/>
@@ -179,9 +189,7 @@ function PortfolioHome(props) {
 					<Divider space={8} />
 					<p className="h7">Thanks to the various work experiences and projects, I've amassed a collection of tools and artifacts to help structure my development process in UX-heavy projects. I've made them available at the link below, for anybody curious!</p>
 					<Divider space={16} />
-					<a href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing" target="_blank" rel="noopener noreferrer">
-						<Button>UX Design Resources</Button>
-					</a>
+					<ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing"><Button>UX Design Resources</Button></ExtURL>
 					<Divider space={16} />
 					<p className="h7"><strong>Related experiences:</strong></p>
 					<Divider space={8} />
@@ -190,6 +198,13 @@ function PortfolioHome(props) {
 							<Image width={32} height={32} src={oneplace.thumbnail} alt="" />
 							<Divider horizontal={true} space={8} />
 							<p className="h8">{oneplace.title}</p>
+						</div>
+					</Link>
+					<Link to="/portfolio/tucanfitness">
+						<div className="PortfolioMiniItem">
+							<Image width={32} height={32} src={tucanfitness.thumbnail} alt="" />
+							<Divider horizontal={true} space={8} />
+							<p className="h8">{tucanfitness.title}</p>
 						</div>
 					</Link>
 				</div>

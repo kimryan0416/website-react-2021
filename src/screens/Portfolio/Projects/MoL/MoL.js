@@ -1,4 +1,8 @@
-import { Divider, Button } from "../../../../components";
+import { 
+	Divider, 
+	Button, 
+	ExtURL,
+} from "../../../../components";
 import { imol } from "../../../../downloads";
 import { 
 	thumbnail,
@@ -20,11 +24,11 @@ function MoL() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href={imol} target="_blank" rel="noopener noreferrer">Download PDF (1.6 mB)</a>
+					<ExtURL href={imol}>Download PDF (1.6 mB)</ExtURL>
 					<br />
-					<a href="https://drive.google.com/drive/folders/1YcBCD0vUy0Oj_lybbf-ZRvfHFcLavCcc?usp=sharing" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
+					<ExtURL href="https://drive.google.com/drive/folders/1YcBCD0vUy0Oj_lybbf-ZRvfHFcLavCcc?usp=sharing">Downloadable Build &amp; Files</ExtURL>
 					<br />
-					<a href="https://youtu.be/AhC4hOWlfGY" target="_blank" rel="noopener noreferrer">Video Demonstration (YouTube)</a>
+					<ExtURL href="https://youtu.be/AhC4hOWlfGY">Video Demonstration (YouTube)</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">
@@ -56,7 +60,7 @@ function MoL() {
 				<Divider space={8} />
 				<p><i>This segment has been taken from the official report. Download the report here:</i></p>
 				<Divider space={8} />
-				<a href={imol} target="_blank" rel="noopener noreferrer"><Button>Download PDF (1.6 mB)</Button></a>
+				<ExtURL href={imol}><Button>Download PDF (1.6 mB)</Button></ExtURL>
 				<Divider space={8} />
 				<div className="h7">
 					<p>In order to test the efficacy of MoL and offer an experience that improves immersion in VR, a prototype system for content creation has been designed. The prototype system uses a combination of 2D and 3D interaction modalities to provide a user flow that feels comfortable to use. Both the prototype system and the virtual environment are developed with Unity3D and are playable on the Oculus Quest and Rift.</p>

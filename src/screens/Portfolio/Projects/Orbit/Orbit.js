@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { thumbnail } from "./assets";
 
 function Orbit() {
@@ -12,9 +12,9 @@ function Orbit() {
 				<p className="PortfolioStatus Completed">Completed</p>
 				<Divider space={16} />
 				<p>
-					<a href="https://github.com/kimryan0416/Orbit-PublicVer" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
+					<ExtURL href="https://github.com/kimryan0416/Orbit-PublicVer">Downloadable Build &amp; Files</ExtURL>
 					<br />
-					<a href="https://sites.google.com/cornell.edu/cs5650-projects-2019/projects/orbit?authuser=0" target="_blank" rel="noopener noreferrer">Project Page</a>
+					<ExtURL href="https://sites.google.com/cornell.edu/cs5650-projects-2019/projects/orbit?authuser=0">Project Page</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">

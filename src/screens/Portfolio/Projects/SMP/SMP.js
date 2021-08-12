@@ -1,4 +1,4 @@
-import { Divider } from "../../../../components";
+import { Divider, ExtURL} from "../../../../components";
 import { thumbnail, ffmp } from "./assets";
 
 function SMP() {
@@ -12,7 +12,7 @@ function SMP() {
 				<p className="PortfolioStatus OnHold">On-Hold</p>
 				<Divider space={16} />
 				<p>
-					<a href="https://github.com/kimryan0416/simpleMusicPlayer" target="_blank" rel="noopener noreferrer">Downloadable Build &amp; Files</a>
+					<ExtURL href="https://github.com/kimryan0416/simpleMusicPlayer">Downloadable Build &amp; Files</ExtURL>
 				</p>
 				<Divider space={16} />
 				<ul className="HideInMobile">
