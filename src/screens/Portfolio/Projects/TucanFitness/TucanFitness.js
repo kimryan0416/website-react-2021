@@ -102,7 +102,7 @@ function TucanFitness() {
 					</div>
 					<div className="ShowInMobile"><Divider space={16} /></div>
 					<div className="PortfolioContentColumn">
-						<h6><strong>Stage 2 2: "Create Race" Feature &amp; Documentation</strong></h6>
+						<h6><strong>Stage 2: "Create Race" Feature &amp; Documentation</strong></h6>
 						<Divider space={16} />
 						<img className="PortfolioContentImage" src={stage2} alt="Stage 2" />
 					</div>
