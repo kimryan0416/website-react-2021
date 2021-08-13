@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.cd76e8e0.chunk.css",
-    "main.js": "/static/js/main.a221737b.chunk.js",
-    "main.js.map": "/static/js/main.a221737b.chunk.js.map",
+    "main.js": "/static/js/main.8c052c27.chunk.js",
+    "main.js.map": "/static/js/main.8c052c27.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cb54ba28.js",
     "runtime-main.js.map": "/static/js/runtime-main.cb54ba28.js.map",
     "static/js/2.048faab9.chunk.js": "/static/js/2.048faab9.chunk.js",
@@ -17,6 +17,10 @@
     "static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.62b4b3b4.pdf": "/static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.62b4b3b4.pdf",
     "static/media/Resume.RyanKim.2020.1ceb5e78.pdf": "/static/media/Resume.RyanKim.2020.1ceb5e78.pdf",
     "static/media/ServiceSearch_Poster.a8f9833f.pdf": "/static/media/ServiceSearch_Poster.a8f9833f.pdf",
+    "static/media/TucanFitnessCreateRace.e6866164.png": "/static/media/TucanFitnessCreateRace.e6866164.png",
+    "static/media/TucanFitnessUISmall.afb0e7be.png": "/static/media/TucanFitnessUISmall.afb0e7be.png",
+    "static/media/TucanFitness_Stage1.b1b26307.svg": "/static/media/TucanFitness_Stage1.b1b26307.svg",
+    "static/media/TucanFitness_Stage2.6ffc0a72.svg": "/static/media/TucanFitness_Stage2.6ffc0a72.svg",
     "static/media/VRKeyboard.a4d5176c.pdf": "/static/media/VRKeyboard.a4d5176c.pdf",
     "static/media/afterEffectsIcon.0029aaa4.svg": "/static/media/afterEffectsIcon.0029aaa4.svg",
     "static/media/biomass-golden-leaf.60adec72.gif": "/static/media/biomass-golden-leaf.60adec72.gif",
@@ -101,6 +105,6 @@
     "static/js/runtime-main.cb54ba28.js",
     "static/js/2.048faab9.chunk.js",
     "static/css/main.cd76e8e0.chunk.css",
-    "static/js/main.a221737b.chunk.js"
+    "static/js/main.8c052c27.chunk.js"
   ]
 }
