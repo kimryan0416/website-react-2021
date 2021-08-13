@@ -1,8 +1,4 @@
-import { 
-	Divider, 
-	Button,
-	ExtURL, 
-} from "../../../../components";
+import { Divider, ExtURL } from "../../../../components";
 import { 
 	thumbnail,
 } from "./assets";
