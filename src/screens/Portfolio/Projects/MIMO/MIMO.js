@@ -26,7 +26,7 @@ function MIMO() {
 				</ul>
 			</div>
 			<div className="PortfolioMain">
-				<h3>MIMO - React.js Content Contractor/Consultant</h3>
+				<h3>MIMO - React.js Content Contractor &amp; Consultant</h3>
 				<Divider space={16} />
 				<h4><strong>Description</strong></h4>
 				<Divider space={8} />
