@@ -69,6 +69,7 @@ const projects = {
 		}
 	],
 	research:[
+		UMichInternData,
 		MoLData,
 		VRKeyboardData,
 		LivestreamsData,
