@@ -1,3 +1,4 @@
+import UMichInternData from "./UMichIntern/UMichIntern";
 import MIMOData from "./MIMO/MIMO";
 import TucanFitnessData from "./TucanFitness/TucanFitness";
 import OnePlaceData from "./OnePlace/OnePlace";
@@ -21,6 +22,7 @@ import ServiceSearchData from "./ServiceSearch/ServiceSearch";
 
 const projects = {
 	work:[
+		UMichInternData,
 		MIMOData,
 		TucanFitnessData,
 		OnePlaceData,

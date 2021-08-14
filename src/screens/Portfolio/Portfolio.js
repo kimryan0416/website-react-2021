@@ -45,7 +45,7 @@ class Portfolio extends Component {
 						path="/portfolio/work" 
 						component={()=> 
 							<PortfolioPage page="Work Experience">
-								<p>Particular experiences working in startups and companies. I've worked both in <strong>contract positions</strong> and <strong>startup companies</strong>.</p>
+								<p>Particular experiences working in universities, startups, and companies. I've worked in <strong>research internships</strong>, <strong>contract positions</strong>, and <strong>startup companies</strong>.</p>
 								<Divider space={24} />
 								<div className="PortfolioItems">
 									{projects.work.map((p,i)=>{
@@ -154,7 +154,7 @@ function PortfolioHome(props) {
 					<div className="PortfolioPageLink">
 						<Link to="/portfolio/work">
 							<h3>Work Experience</h3>
-							<p className="h7">Particular experiences working in startups and companies. I've worked both in <strong>contract positions</strong> and <strong>startup companies</strong>.</p>
+							<p className="h7">Particular experiences working in universities, startups, and companies. I've worked in <strong>research internships</strong>, <strong>contract positions</strong>, and <strong>startup companies</strong>.</p>
 							<p className="h7 a">- Click here if you're looking for my professional experiences.</p>
 						</Link>
 					</div>
