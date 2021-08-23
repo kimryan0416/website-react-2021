@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.cd76e8e0.chunk.css",
-    "main.js": "/static/js/main.7753d94f.chunk.js",
-    "main.js.map": "/static/js/main.7753d94f.chunk.js.map",
+    "main.js": "/static/js/main.a9385bac.chunk.js",
+    "main.js.map": "/static/js/main.a9385bac.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.cb54ba28.js",
     "runtime-main.js.map": "/static/js/runtime-main.cb54ba28.js.map",
     "static/js/2.048faab9.chunk.js": "/static/js/2.048faab9.chunk.js",
@@ -15,7 +15,7 @@
     "static/media/AnnieZhang.BorisChan.CindyWang.RyanKim-ToneSequencerReport.9c4bde3b.pdf": "/static/media/AnnieZhang.BorisChan.CindyWang.RyanKim-ToneSequencerReport.9c4bde3b.pdf",
     "static/media/Brind-Chen-Kee-Kim-Kim-Xu_HCI_ServiceSearch.78dd2414.pdf": "/static/media/Brind-Chen-Kee-Kim-Kim-Xu_HCI_ServiceSearch.78dd2414.pdf",
     "static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.62b4b3b4.pdf": "/static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.62b4b3b4.pdf",
-    "static/media/Resume.RyanKim.2020.1ceb5e78.pdf": "/static/media/Resume.RyanKim.2020.1ceb5e78.pdf",
+    "static/media/RyanKim.Resume.Aug2021.ElectronicVer.75762c0b.pdf": "/static/media/RyanKim.Resume.Aug2021.ElectronicVer.75762c0b.pdf",
     "static/media/ServiceSearch_Poster.a8f9833f.pdf": "/static/media/ServiceSearch_Poster.a8f9833f.pdf",
     "static/media/TucanFitnessCreateRace.e6866164.png": "/static/media/TucanFitnessCreateRace.e6866164.png",
     "static/media/TucanFitnessUISmall.afb0e7be.png": "/static/media/TucanFitnessUISmall.afb0e7be.png",
@@ -107,6 +107,6 @@
     "static/js/runtime-main.cb54ba28.js",
     "static/js/2.048faab9.chunk.js",
     "static/css/main.cd76e8e0.chunk.css",
-    "static/js/main.7753d94f.chunk.js"
+    "static/js/main.a9385bac.chunk.js"
   ]
 }
