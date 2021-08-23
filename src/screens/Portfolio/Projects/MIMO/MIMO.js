@@ -59,7 +59,7 @@ function MIMO() {
 					</div>
 					<div className="ShowInMobile"><Divider space={16} /></div>
 					<div className="PortfolioContentColumn">
-						<iframe src="https://kimryan0416.github.io/mimo-projects/" height={460} width={256} />	
+						<iframe src="https://kimryan0416.github.io/mimo-projects/" height={460} width={256} title="MIMO project samples" />	
 					</div>
 				</div>
 			</div>	

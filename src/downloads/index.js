@@ -1,4 +1,4 @@
-import resume from "./Resume.RyanKim.2020.pdf";
+import resume from "./RyanKim.Resume.Aug2021.ElectronicVer.pdf";
 import imol from "./iMoL-ir01.pdf";
 import vrkeyboard from "./VRKeyboard.pdf";
 import pentatonic from "./AnnieZhang.BorisChan.CindyWang.RyanKim-ToneSequencerReport.pdf"

@@ -12,6 +12,8 @@ function EasierVRAssets() {
 				<p className="PortfolioStatus Ongoing">Ongoing</p>
 				<Divider space={16} />
 				<p>
+					<ExtURL href="https://github.com/kimryan0416/EasierVRAssets/releases/tag/v2.0.0">Latest Release (v2.0.0)</ExtURL>
+					<br />
 					<ExtURL href="https://github.com/kimryan0416/EasierVRAssets">Github Repo</ExtURL>
 				</p>
 				<Divider space={16} />
@@ -41,7 +43,7 @@ function EasierVRAssets() {
 				<Divider space={8} />
 				<ul className="h7">
 					<li><i><u>Status:</u></i> Regularly Updated</li>
-					<li><i><u>Current Stable Version:</u></i> V1.2.0</li>
+					<li><i><u>Current Stable Version:</u></i> V2.0.0</li>
 					<li>
 						<i><u>Equipment:</u></i>
 						<ul>
