@@ -46,7 +46,7 @@ function MIMO() {
 							<li>Formulate lesson plans, split across eight Skills, to help newcomers to React.js get acquainted with the library’s core concepts.</li>
 							<li>Collaborate with MIMO supervisors to ensure that each lesson adhered to MIMO’s content guidelines.</li>
 							<li>Implement lesson content into MIMO’s infrastructure using their proprietary Course Builder tool.</li>
-							<li>Plan, develop, and integrate Projects that encapsulated the learning content from the eight Skills and gave example of how to use React.js to create web applications.</li>
+							<li>Plan, develop, and integrate Projects that encapsulated the learning content from the eight Skills and gave examples of how to use React.js to create web applications.</li>
 						</ul>
 					</li>
 				</ul>

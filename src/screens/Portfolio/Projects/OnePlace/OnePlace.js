@@ -88,7 +88,7 @@ function OnePlace() {
 				<h4><strong>Quick Details:</strong></h4>
 				<Divider space={8} />
 				<ul className="h7">
-					<li><strong>Status:</strong> Left Company [January. 2020 – January 2021]</li>
+					<li><strong>Status:</strong> Left Company [January 21, 2020 – February 24, 2021]</li>
 					<li>
 						<strong>Peer Co-founders:</strong>
 						<ul>

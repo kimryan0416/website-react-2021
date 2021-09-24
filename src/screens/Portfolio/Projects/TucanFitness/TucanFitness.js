@@ -57,7 +57,13 @@ function TucanFitness() {
 				<h4><strong>Quick Details:</strong></h4>
 				<Divider space={8} />
 				<ul className="h7">
-					<li><strong>Status:</strong> Completed [Sep. 22, 2020 – April 12, 2021]</li>
+					<li>
+						<strong>Status:</strong> Completed
+						<ul>
+							<li>Volunteer: [August 04, 2020 - September 21, 2020]</li>
+							<li>Engineer: [September 22, 2020 – April 12, 2021]</li>
+						</ul>
+					</li>
 					<li>
 						<strong>Responsibilities:</strong>
 						<ul>
