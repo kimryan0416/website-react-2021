@@ -1,0 +1,63 @@
+.Blog {
+	width: 100%;
+}
+.blogWrapper {
+	width: 100%;
+	height: auto;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+}
+
+.blogContent {
+	flex-grow: 1;
+	flex-basis: 0%;
+}
+.blogHistory {
+	flex-basis: 240px;
+	flex-shrink: 0;
+	list-style: none;
+	padding-left: 0;
+	font-size: 0.8em;
+}
+.blogHistoryCurrentPost {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.blogPostItem {
+	margin-bottom: 24px;
+	line-height: 1.25em;
+}
+.blogPostItem.visibleMeta {
+	padding-bottom: 16px;
+	border-bottom: 1px solid rgb(230,230,230);
+}
+.blogContent figure {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+.blogContent img {
+	width: 100%;
+}
+.blogContent figcaption {
+	font-size: 0.9em;
+	padding-left: 16px;
+	padding-right: 16px;
+	font-style: italic;
+}
+.blogButtonLink {
+	margin-left: 8px;
+}
+.blogQuote {
+	border-left: 4px solid rgb(230,230,230);
+	padding-left: 16px;
+	line-height: 1.5em;
+	font-style: italic;
+}

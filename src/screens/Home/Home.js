@@ -5,7 +5,6 @@ import {
   Divider, 
   Skills,
   Button,
-  ExtURL,
 } from "../../components";
 
 function Home(props) {
@@ -31,7 +30,7 @@ function Home(props) {
           <div className="HomeLink">
             <p><i>I have a blog where I discuss creating games! Check it out on my Wordpress here:</i></p>
             <Divider space={16} />
-            <ExtURL href="https://ryankimdev.com/blog"><Button>My Blog</Button></ExtURL>
+            <Link to="/blog"><Button>My Blog</Button></Link>
           </div>
         </div>
         <Divider space={32} />

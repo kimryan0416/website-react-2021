@@ -13,7 +13,7 @@ import {
   github, 
   linkedIn, 
   twitter,
-  wordpress,
+//  wordpress,
   indexIcon,
   portfolioIcon,
   downloadIcon,
@@ -25,6 +25,7 @@ import {
 import {
   Home,
   Portfolio,
+  Blog,
 } from "./screens";
 import { resume } from "./downloads";
 
@@ -66,6 +67,10 @@ class App extends Component {
               <Route 
                 path="/portfolio"
                 component={()=> <Portfolio width={this.state.width} />}
+              />
+              <Route 
+                path="/blog"
+                component={()=> <Blog />}
               />
               <Route 
                 path="/" 
@@ -165,9 +170,11 @@ class Nav extends Component {
               <a href='https://twitter.com/ryankimdev' target='_blank' rel="noopener noreferrer">
                 <Image width={16} height={16} src={twitter} alt="Twitter" cName='ProfileSocialMediaIcon' />
               </a>
+              {/*}
               <a href='https://ryankimdev.com/blog' target='_blank' rel="noopener noreferrer">
                 <Image width={16} height={16} src={wordpress} alt="Wordpress" cName='ProfileSocialMediaIcon' />
               </a>
+              {*/}
             </div>
           </div>
         </div>
@@ -185,7 +192,8 @@ function NavLinks(props) {
   const location = window.location.href.split("#")[1].split("/")[1];
   const extraClasses = {
     index:"",
-    portfolio:""
+    portfolio:"",
+    blog:"",
   }
   switch(location) {
     case "":
@@ -193,6 +201,9 @@ function NavLinks(props) {
       break;
     case "portfolio":
       extraClasses.portfolio = "CurrentLink";
+      break;
+    case "blog":
+      extraClasses.blog = "CurrentLink";
       break;
     default:
       break;
@@ -212,9 +223,10 @@ function NavLinks(props) {
   const menu = [
     L(0, "/", extraClasses.index, <><img src={indexIcon} alt="" className="NavIcon" /><span>Index</span></>, "Why, hello there! Intro & Skill Set"),
     L(1, "/portfolio", extraClasses.portfolio, <><img src={portfolioIcon} alt="" className="NavIcon" /><span>Portfolio</span></>, "All my public projects, from VR projects to web applications."),
-    //L(2, "/research", "", <span>Research</span>, "Research topics I wrote papers for, filtered from my Portfolio."),
-    //L(3, "/about", "", <span>About Me</span>, "More about me, my skills, work experience, and education."),
-    L(4, resume, "DownloadLink", <><img src={downloadIcon} alt="" className="NavIcon" /><span>Resume <span className="h8">(57 kB)</span></span></>, "Download my resume in PDF form.", false),
+    L(2, "/blog", extraClasses.blog, <><span>My Blog</span></>, "My blog, where I occasionally post updates and stuff."),
+    //L(3, "/research", "", <span>Research</span>, "Research topics I wrote papers for, filtered from my Portfolio."),
+    //L(4, "/about", "", <span>About Me</span>, "More about me, my skills, work experience, and education."),
+    L(5, resume, "DownloadLink", <><img src={downloadIcon} alt="" className="NavIcon" /><span>Resume <span className="h8">(57 kB)</span></span></>, "Download my resume in PDF form.", false),
   ];
 
   var mobileClass = "";
