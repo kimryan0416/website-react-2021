@@ -15,6 +15,7 @@
 .blogContent {
 	flex-grow: 1;
 	flex-basis: 0%;
+	position: relative;
 }
 .blogHistory {
 	flex-basis: 240px;
@@ -28,36 +29,82 @@
 	margin-bottom: 4px;
 }
 
-.blogPostItem {
+.visibleMeta, .blogBlock {
 	margin-bottom: 24px;
-	line-height: 1.25em;
 }
-.blogPostItem.visibleMeta {
+.visibleMeta p, .blogBlock p {
+	line-height: 1.5em;
+}
+.visibleMeta {
 	padding-bottom: 16px;
 	border-bottom: 1px solid rgb(230,230,230);
 }
-.blogContent figure {
-	margin-left: 0;
-	margin-right: 0;
+.blogBlock h2, .blogBlock h3, .blogBlock h4 {
+	padding-top: 16px;
+}
+.blogBlock figure {
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 0;
-	padding-left: 32px;
-	padding-right: 32px;
+	width: 90%;
 }
-.blogContent img {
+.blogBlock img {
 	width: 100%;
+	border:  1px solid rgb(235,235,235);
 }
-.blogContent figcaption {
-	font-size: 0.9em;
-	padding-left: 16px;
-	padding-right: 16px;
+.blogBlock figcaption {
+	font-size: 0.8em;
+	margin-top: 4px;
 	font-style: italic;
+}
+.blogBlock pre {
+	white-space: pre-wrap;
+	overflow-x:  auto;
+	font-size:  0.8em;
+    background-color: rgb(235,235,235);
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 0px;
+}
+.blogBlock code { 
+    background: rgb(235,235,235); 
+    padding: 1px 5px 1px 5px;
+    border:  1px solid rgba(220,220,220, 0.7);
+}
+.blogBlock pre code {
+	border:  none;
 }
 .blogButtonLink {
 	margin-left: 8px;
 }
-.blogQuote {
+.blogBlock blockquote {
 	border-left: 4px solid rgb(230,230,230);
 	padding-left: 16px;
 	line-height: 1.5em;
 	font-style: italic;
+}
+.blogBlock .blogColumnList {
+	display:flex;
+	flex-direction:row;
+	column-gap:32px;
+	flex-wrap:nowrap;
+}
+.blogBlock .blogColumnList .blogColumn {
+	flex-grow: 1;
+    flex-basis: 0;
+    max-width: 50%;
+}
+
+.blogBlock .blogBlockChildren {
+	padding-left: 24px;
+	box-sizing: border-box;
+}
+
+.blogBlock .blogBlockChild {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.blogError {
+	color: red;
 }
