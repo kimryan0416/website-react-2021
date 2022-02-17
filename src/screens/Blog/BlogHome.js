@@ -12,7 +12,7 @@ import {
 function BlogHome(props) {
   return props.posts.map((post,i)=>{
     return (
-      <div key={`home_blog_item_${i}`}>
+      <div className='blogHomeItem' key={`home_blog_item_${i}`}>
         <h3>{post.title}</h3>
         <Divider space={16} />
         <p>{post.preview_text}</p>

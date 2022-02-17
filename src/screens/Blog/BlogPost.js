@@ -54,6 +54,7 @@ class BlogPost extends Component {
         {this.state.contents.map((block,index)=>{
           return <BlogBlock key={`${block.id}`} block={block} index={index} />
         })}
+        {this.props.children}
       </div>
     );
   }

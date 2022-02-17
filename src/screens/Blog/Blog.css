@@ -17,12 +17,33 @@
 	flex-basis: 0%;
 	position: relative;
 }
+.blogContent p {
+	line-height: 1.5em;
+}
 .blogHistory {
 	flex-basis: 240px;
 	flex-shrink: 0;
 	list-style: none;
 	padding-left: 0;
 	font-size: 0.8em;
+}
+.blogHomeItem {
+	margin-bottom: 48px;
+}
+
+.blogHeaderNavigation {
+	padding: 12px 16px 12px 16px;
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	background-color: rgb(240,240,240);
+	border-radius: 8px;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 .blogHistoryCurrentPost {
 	margin-top: 4px;
@@ -31,9 +52,6 @@
 
 .visibleMeta, .blogBlock {
 	margin-bottom: 24px;
-}
-.visibleMeta p, .blogBlock p {
-	line-height: 1.5em;
 }
 .visibleMeta {
 	padding-bottom: 16px;

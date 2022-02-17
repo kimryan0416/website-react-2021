@@ -35,8 +35,8 @@ html {
 body {
     margin:0px;
     position:relative;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
     width:100%;
     box-sizing: border-box;
     max-width: 1000px;
