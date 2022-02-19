@@ -246,18 +246,39 @@ function PortfolioItem(props) {
 	);
 }
 
-function PortfolioDisplay(props) {
-	return (
-		<div className="PortfolioDisplay">
-			<div className="PortfolioDisplayCover" onClick={props.goBack}></div>
-			<div className="PortfolioDisplayPanel">
-				{/*}
-					<Button cName="PortfolioBackButton" onClick={props.goBack}>Close</Button>
-				{*/}
-					{props.children}
+class PortfolioDisplay extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			enlargened:false
+		}
+	}
+	toggleEnlarge = () => {
+		this.setState({
+			enlargened: !this.state.enlargened
+		});
+	}
+	render() {
+		const enlargedPanelClass = (this.state.enlargened)
+			? 'enlargedPanel'
+			: ''
+		const enlargeButtonText = (this.state.enlargened)
+			? 'Smaller panel'
+			: 'Enlarge panel';
+		return (
+			<div className={`PortfolioDisplay ${enlargedPanelClass}`}>
+				<div className="PortfolioDisplayCover" onClick={this.props.goBack}></div>
+				<div className={`PortfolioDisplayPanel ${enlargedPanelClass}`}>
+					<div className='PortfolioDisplayHeader'>
+						<Button cName="PortfolioBackButton" onClick={this.props.goBack}>Close</Button>
+						<Button cName="PortfolioEnlargeButton" onClick={this.toggleEnlarge}>{enlargeButtonText}</Button>
+					</div>
+					<Divider space={16} />
+					{this.props.children}
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 }
 
 export default withRouter(Portfolio);

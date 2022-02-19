@@ -6,6 +6,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+import axios from 'axios';
 
 import { 
   profileSquare, 
@@ -27,29 +28,63 @@ import {
   Portfolio,
   Blog,
 } from "./screens";
+import { ConvertDate } from './screens/Blog/Blog';
 import { resume } from "./downloads";
 
 import './App.css';
+
+const _MOBILE_WIDTH = 700;
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      width: window.innerWidth,
-      height: window.innerHeight,
+      isMobile: window.innerWidth <= _MOBILE_WIDTH,
+      //width: window.innerWidth,
+      //height: window.innerHeight,
+      
+      blog_first_loading:true,
+      blog_loading:true,
+      blog_posts:null,
+      blog_error:null,
     };
   }
 
   updateDimensions = () => {
+    let width = window.innerWidth;
+    //let height = window.innerHeight;
     this.setState({ 
-      width: window.innerWidth, 
-      height: window.innerHeight 
+      isMobile: width <= _MOBILE_WIDTH
     });
+  }
+
+  refreshBlogDatabase = () => {
+    console.log('GETTING BLOG DATABASE...');
+      axios.get(`https://hidden-savannah-61825.herokuapp.com/`).then(res => {
+        console.log('BLOG DATABASE RESPONSE RECEIVED');
+        if (res.status === 200) {
+          this.setState({
+            blog_first_loading:false,
+            blog_loading:false,
+            blog_posts: res.data.map(d=>{
+              return {...d, publish_date:ConvertDate(d.publish_date)}
+            }),
+            blog_error:null
+          });
+        } else {
+          this.setState({
+            blog_first_loading:false,
+            blog_loading:false,
+            blog_error:res.statusText
+          });
+        }
+      });
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.updateDimensions);
+    this.refreshBlogDatabase();
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateDimensions);
@@ -60,17 +95,22 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="AppHeader">
-            <Nav width={this.state.width} />
+            <Nav isMobile={this.state.isMobile} refreshBlogDatabase={this.refreshBlogDatabase} />
           </header>
           <main>
             <Switch>
               <Route 
                 path="/portfolio"
-                component={()=> <Portfolio width={this.state.width} />}
+                component={()=> <Portfolio />}
               />
               <Route 
                 path="/blog"
-                component={()=> <Blog />}
+                component={()=> <Blog 
+                  posts={this.state.blog_posts} 
+                  loading={this.state.blog_loading} 
+                  error={this.state.blog_error} 
+                  refreshBlogDatabase={this.refreshBlogDatabase} 
+                />}
               />
               <Route 
                 path="/" 
@@ -104,8 +144,8 @@ class Nav extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.width !== this.props.width) {
-      const to = this.isMobile() ? this.state.menuOpen : false
+    if (prevProps.isMobile !== this.props.isMobile) {
+      const to = this.props.isMobile ? this.state.menuOpen : false
       this.setState({menuOpen:to});
     }
   }
@@ -133,7 +173,8 @@ class Nav extends Component {
   }
 
   render() {
-    const isMobile = this.isMobile();
+    //const isMobile = this.isMobile();
+    const isMobile = this.props.isMobile;
     var mobileButton = null;
     if (isMobile) {
       // now in mobile mode
@@ -180,7 +221,7 @@ class Nav extends Component {
         </div>
         <div className="NavLinks">
           {mobileButton}
-          <NavLinks isMobile={isMobile} open={this.state.menuOpen} closeMenu={this.closeMenu} />
+          <NavLinks isMobile={isMobile} open={this.state.menuOpen} closeMenu={this.closeMenu} refreshBlogDatabase={this.props.refreshBlogDatabase} />
         </div>
       </nav>
     );
@@ -209,7 +250,7 @@ function NavLinks(props) {
       break;
   }
 
-  const L = (key, to, cName, label, desc, l = true) => {
+  const L = (key, to, cName, label, desc, l = true, clickHandler = null) => {
     const c = (
       <Button cName={`NavItem ${cName}`} onClick={props.closeMenu}>
         {label}
@@ -217,13 +258,13 @@ function NavLinks(props) {
       </Button>
     );
     if (!l) return <a key={`NavLink_${key}`} href={to} target="_blank" rel="noopener noreferrer">{c}</a>;
-    return <Link key={`NavLink_${key}`} to={to}>{c}</Link>;
+    return <Link key={`NavLink_${key}`} to={to} onClick={(e)=>{if(clickHandler)clickHandler()}}>{c}</Link>;
   }
 
   const menu = [
     L(0, "/", extraClasses.index, <><img src={indexIcon} alt="" className="NavIcon" /><span>Index</span></>, "Why, hello there! Intro & Skill Set"),
     L(1, "/portfolio", extraClasses.portfolio, <><img src={portfolioIcon} alt="" className="NavIcon" /><span>Portfolio</span></>, "All my public projects, from VR projects to web applications."),
-    L(2, "/blog", extraClasses.blog, <><span>My Blog</span></>, "My blog, where I occasionally post updates and stuff."),
+    L(2, "/blog", extraClasses.blog, <><span>My Blog</span></>, "My blog, where I occasionally post updates and stuff.", true, props.refreshBlogDatabase),
     //L(3, "/research", "", <span>Research</span>, "Research topics I wrote papers for, filtered from my Portfolio."),
     //L(4, "/about", "", <span>About Me</span>, "More about me, my skills, work experience, and education."),
     L(5, resume, "DownloadLink", <><img src={downloadIcon} alt="" className="NavIcon" /><span>Resume <span className="h8">(57 kB)</span></span></>, "Download my resume in PDF form.", false),

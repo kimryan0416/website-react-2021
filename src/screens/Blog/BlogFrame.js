@@ -39,26 +39,35 @@ class BlogFrame extends Component {
       );
     }
     return (
-      <BlogFrameStructure>
-        <div className='blogContent'>
+      <>
+        <div className='blogHeaderNavigation'>
           <h2>My Blog</h2>
-          <Divider space={32} />
-          <BlogHome posts={posts} />
+          <Button onClick={this.props.refreshBlogDatabase}><i>Refresh blog content</i></Button>
         </div>
-        <Divider space={24} horizontal={true} />
-        <ul className='blogHistory'>
-          {posts.map((post,i)=>{
-            if (currentPost != null && post.blog_url === currentPost.blog_url) {
-              return <li key={`bloghist_date_${post.blog_url}`} className='blogHistoryCurrentPost'><strong>&gt; {post.publish_date}</strong></li>;
-            }
-            return (
-              <li key={`bloghist_date_${post.blog_url}`}>
-                <Link to={`/blog/${post.blog_url}`}>{post.publish_date}</Link>
-              </li>
-            )
-          })}
-        </ul>
-      </BlogFrameStructure>
+        <Divider space={32} />
+        <BlogFrameStructure>
+          <div className='blogContent'>
+            <BlogHome posts={posts} />
+          </div>
+          <Divider space={24} horizontal={true} />
+          <div className='blogHistory'>
+            <p><strong>Post History</strong></p>
+            <Divider space={8} />
+            <ul>
+              {posts.map((post,i)=>{
+                if (currentPost != null && post.blog_url === currentPost.blog_url) {
+                  return <li key={`bloghist_date_${post.blog_url}`} className='blogHistoryCurrentPost'><strong>&gt; {post.publish_date}</strong></li>;
+                }
+                return (
+                  <li key={`bloghist_date_${post.blog_url}`}>
+                    <Link to={`/blog/${post.blog_url}`}>{post.publish_date}</Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </BlogFrameStructure>
+      </>
     );
   }
 }
