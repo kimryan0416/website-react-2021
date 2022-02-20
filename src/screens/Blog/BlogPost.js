@@ -28,7 +28,7 @@ class BlogPost extends Component {
       return;
     }
 
-    axios.get(`https://hidden-savannah-61825.herokuapp.com/blog?id=${this.props.post.notion_page_id}`).then(res => {
+    axios.get(`https://hidden-savannah-61825.herokuapp.com/blog_post?id=${this.props.post.notion_page_id}`).then(res => {
       if (res.status !== 200) {
         this.setState({
           loading:false,

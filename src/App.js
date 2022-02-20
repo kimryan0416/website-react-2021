@@ -61,7 +61,7 @@ class App extends Component {
 
   refreshBlogDatabase = () => {
     console.log('GETTING BLOG DATABASE...');
-      axios.get(`https://hidden-savannah-61825.herokuapp.com/`).then(res => {
+      axios.get(`https://hidden-savannah-61825.herokuapp.com/blog`).then(res => {
         console.log('BLOG DATABASE RESPONSE RECEIVED');
         if (res.status === 200) {
           this.setState({
