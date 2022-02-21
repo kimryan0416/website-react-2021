@@ -6,7 +6,6 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import axios from 'axios';
 
 import { 
   profileSquare, 
@@ -20,6 +19,7 @@ import {
   downloadIcon,
 }  from './assets';
 import { 
+  BlogAPI,
   Image, 
   Button,
 } from "./components";
@@ -28,7 +28,7 @@ import {
   Portfolio,
   Blog,
 } from "./screens";
-import { ConvertDate } from './screens/Blog/Blog';
+
 import { resume } from "./downloads";
 
 import './App.css';
@@ -54,32 +54,34 @@ class App extends Component {
   updateDimensions = () => {
     let width = window.innerWidth;
     //let height = window.innerHeight;
+
+    let isMobile = width <= _MOBILE_WIDTH;
+    if (isMobile !== this.state.isMobile) {
+      console.log('SWITCHING BETWEEN DESKTOP AND MOBILE');
+    }
+
     this.setState({ 
-      isMobile: width <= _MOBILE_WIDTH
+      isMobile: isMobile
     });
   }
 
-  refreshBlogDatabase = () => {
-    console.log('GETTING BLOG DATABASE...');
-      axios.get(`https://hidden-savannah-61825.herokuapp.com/blog`).then(res => {
-        console.log('BLOG DATABASE RESPONSE RECEIVED');
-        if (res.status === 200) {
-          this.setState({
-            blog_first_loading:false,
-            blog_loading:false,
-            blog_posts: res.data.map(d=>{
-              return {...d, publish_date:ConvertDate(d.publish_date)}
-            }),
-            blog_error:null
-          });
-        } else {
-          this.setState({
-            blog_first_loading:false,
-            blog_loading:false,
-            blog_error:res.statusText
-          });
-        }
+  refreshBlogDatabase = async() => {
+    let res = await BlogAPI.getBlogDatabase();
+    if (res.status !== 200) {
+      // error happened... cannot update database
+      this.setState({
+        blog_first_loading:false,
+        blog_loading:false,
+        blog_error:res.error
       });
+      return
+    }
+    this.setState({
+      blog_first_loading:false,
+      blog_loading:false,
+      blog_posts: res.posts,
+      blog_error:null
+    })
   }
 
   componentDidMount() {

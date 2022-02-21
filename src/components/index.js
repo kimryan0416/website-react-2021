@@ -6,6 +6,8 @@ import ExtURL from "./ExtURL/ExtURL";
 import Skills from "./Skills/Skills";
 import Skill from "./Skills/Skill";
 
+import * as BlogAPI from './BlogAPI/BlogAPI';
+
 export {
 	Image,
 	Button,
@@ -14,4 +16,6 @@ export {
 
 	Skills,
 	Skill,
+
+	BlogAPI,
 }

@@ -1,9 +1,11 @@
 import { Component } from "react";
-import axios from 'axios';
 
 import BlogBlock, { parseRawData } from './BlogBlock';
 
-import { Divider } from "../../components";
+import { 
+  BlogAPI,
+  Divider 
+} from "../../components";
 
 class BlogPost extends Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class BlogPost extends Component {
       error: null
     }
   }
-  componentDidMount() {
+  async componentDidMount() {
     if (
       typeof this.props.post === 'undefined' 
       || this.props.post == null 
@@ -28,20 +30,19 @@ class BlogPost extends Component {
       return;
     }
 
-    axios.get(`https://hidden-savannah-61825.herokuapp.com/blog/post?id=${this.props.post.notion_page_id}`).then(res => {
-      if (res.status !== 200) {
-        this.setState({
-          loading:false,
-          error:res.statusText
-        });
-        return;
-      }
+    let res = await BlogAPI.getBlogPost(this.props.post.notion_page_id);
+    if (res.status === 200) {
       const return_data = parseRawData(res.data);
       this.setState({
         loading:false,
         contents: return_data
       });
-    });
+    } else {
+      this.setState({
+        loading:false,
+        error:res.error
+      });
+    }
   }
 
   render() {
