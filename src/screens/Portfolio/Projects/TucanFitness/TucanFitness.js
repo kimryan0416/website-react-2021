@@ -2,6 +2,7 @@ import {
 	Divider, 
 	Button,
 	ExtURL, 
+	Image, 
 } from "../../../../components";
 import { 
 	thumbnail,
@@ -12,22 +13,34 @@ import {
 } from "./assets";
 
 function TucanFitness() {
-	return (
-		<div className="PortfolioContent">
-			<div className="PortfolioSidebar">
-				<img src={thumbnail} alt="" className="PortfolioThumbnail" />
-				<Divider space={16} />
-				<p><i>Introducing the UX Design process into a fitness web app to help runners race remotely across the country.</i></p>
-				<Divider space={16} />
-				<p className="PortfolioStatus Completed">Completed</p>
-				<Divider space={16} />
-				<p>
-					<ExtURL href="https://tucan.fitness/">Tucan Fitness Website</ExtURL>
-					<br />
-					<ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing">UX Design Resources</ExtURL>
-				</p>
-				<Divider space={16} />
-				<ul className="HideInMobile">
+
+	const headerTable = [
+		{
+			key: "Status",
+			value: (<p className="PortfolioStatus Completed">Completed</p>)
+		},
+		{
+			key: "Dates",
+			value: (
+				<ul>
+					<li>Volunteer: [August 04, 2020 - September 21, 2020]</li>
+					<li>Engineer: [September 22, 2020 – April 12, 2021]</li>
+				</ul>
+			)
+		},
+		{
+			key: "External Links",
+			value: (
+				<ul>
+					<li><ExtURL href="https://tucan.fitness/">Tucan Fitness Website</ExtURL></li>
+					<li><ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing">UX Design Resources</ExtURL></li>
+				</ul>
+			)
+		},
+		{
+			key: "Skills & Topics",
+			value: (
+				<ul>
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>JavaScript</li>
@@ -37,69 +50,89 @@ function TucanFitness() {
 					<li>User Experience (UX) Design</li>
 					<li>User Interfaces (UI)</li>
 				</ul>
+			)
+		},	
+	]
+
+	return (
+		<div className="PortfolioContent">
+			<div className="PortfolioContentHeader">
+				<div className='PortfolioContentHeaderImage'>
+					<Image src={thumbnail} alt="" width={150} height={150} round cName="PortfolioThumbnail" />
+				</div>
+				<div className='PortfolioContentHeaderMain'>
+					<h3>Tucan Fitness – Lead UX Developer and Front-End Engineer</h3>
+					<p><i>Introducing the UX Design process into a fitness web app to help runners race remotely across the country.</i></p>
+					<Divider space={16} />
+					<div className='PortfolioContentHeaderMainTable'>
+						{headerTable.map((row,i)=>{
+							return (
+								<div key={`PortfolioHeaderTableRow-${i}`} className='PortfolioContentHeaderMainTableRow'>
+									<div className='PortfolioContentHeaderMainTableRowKey'>
+										<p><strong>{row.key}:</strong></p>
+									</div>
+									<div className='PortfolioContentHeaderMainTableRowValue'>
+										{row.value}
+									</div>
+								</div>
+							)
+						})}
+					</div>
+				</div>
 			</div>
+			<Divider space={24} />
 			<div className="PortfolioMain">
-				<h3>Tucan Fitness – Lead UX Developer and Front-End Engineer</h3>
-				<Divider space={16} />
 				<h4><strong>Description</strong></h4>
 				<Divider space={8} />
-				<p>
-					<img className="PortfolioContentImage Right" src={uiScreenshot} alt="Screenshot of the Tucan Fitness web app user interface" />
-					I was largely responsible for helping the Tucan Fitness front-end development team update their existing user interface and introduce UX Design concepts into their development process.
-				</p>
-				<Divider space={8} />
-				<p>While on this project, I spearheaded the design process by teaching TF’s core staff and developers about how to integrate user interview findings into key feature sets. I also acted as the platform’s primary front-end developer, working closely together with the team’s back-end engineers to add new functions and update outdated processes.</p>
+				<div className='PortfolioMainBlock'>
+					<div className='PortfolioBlockText'>
+						<p>I was largely responsible for helping the Tucan Fitness front-end development team update their existing user interface and introduce UX Design concepts into their development process.</p>
+						<Divider space={8} />
+						<p>While on this project, I spearheaded the design process by teaching TF’s core staff and developers about how to integrate user interview findings into key feature sets. I also acted as the platform’s primary front-end developer, working closely together with the team’s back-end engineers to add new functions and update outdated processes.</p>
+					</div>
+					<div className='PortfolioBlockImageWrapper Right'>
+						<img className="PortfolioContentImage" src={uiScreenshot} alt="Screenshot of the Tucan Fitness web app user interface" />
+					</div>
+				</div>
 				<Divider space={16} />
 				<h4><strong>About Tucan Fitness</strong></h4>
 				<Divider space={8} />
 				<p>Tucan Fitness was a startup venture led by graduates of Cornell University and Cornell Tech that aimed to allow people to participate in "virtual races". Participants would track the distance they ran while exercising in private, upload that data either manually or automatically through <ExtURL href="https://www.strava.com/">Strava</ExtURL> to Tucan Fitness's servers, and avatars on a virtual map would proceed along the virtual route. In doing so, racers could still exercise in private while participating in competitive racing.</p>
 				<Divider space={16} />
-				<h4><strong>Quick Details:</strong></h4>
+				<h4><strong>Responsibilities</strong></h4>
 				<Divider space={8} />
-				<ul className="h7">
-					<li>
-						<strong>Status:</strong> Completed
-						<ul>
-							<li>Volunteer: [August 04, 2020 - September 21, 2020]</li>
-							<li>Engineer: [September 22, 2020 – April 12, 2021]</li>
-						</ul>
-					</li>
-					<li>
-						<strong>Responsibilities:</strong>
-						<ul>
-							<li>Provide consultation and design suggestions for existing visual elements within the web app.</li>
-							<li>Introduce UX Design processes into the development cycle, including the use of empathy maps, personas, wireframes, and brand guidelines.</li>
-							<li>Optimize front-end processes to make the app visually consistent and faster.</li>
-							<li>Work with back-end engineers to add new functions such as the ability for normal users to create new races.</li>
-							<li>Contribute to front-end documentation on the structure and components of the Angular framework.</li>
-						</ul>
-					</li>
-					<li>
-						<strong>Peer developers, designers, and engineers:</strong>
-						<ul>
-    						<li><i><u>Katherine Donahoe</u></i> - COO [<ExtURL href="https://www.linkedin.com/in/katie-donahoe-90a241121/">LinkedIn Profile</ExtURL>]</li>
-    						<li><i><u>Alexander Popeil</u></i> - CTO [<ExtURL href="https://www.linkedin.com/in/alexander-popeil-b4440410b/">LinkedIn Profile</ExtURL>]</li>
-    						<li><i><u>Nathan Cinnamond</u></i> - CDO [<ExtURL href="https://www.linkedin.com/in/nathancinnamond/">LinkedIn Profile</ExtURL>]</li>
-    						<li><i><u>Billy Grenis</u></i> - CEO [<ExtURL href="https://www.linkedin.com/in/grenis/">LinkedIn Profile</ExtURL>]</li>
-    						<li><i><u>Angela Nat</u></i> - Lead UX Designer [<ExtURL href="https://www.linkedin.com/in/tanangela/">LinkedIn Profile</ExtURL>]</li>
-    						<li><i><u>Emily Casale</u></i> - Lead Graphic Designer [<ExtURL href="https://www.linkedin.com/in/emily-casale/">LinkedIn Profile</ExtURL>]</li>
-						</ul>
-					</li>
-					<li>
-						<strong>Tools:</strong>
-						<ul>
-							<li><i><u>Angular.js</u></i> – Front-End Framework</li>
-							<li><i><u>Figma</u></i> – Wireframes, Asset Creation</li>
-							<li><i><u>Google Drive</u></i> – Resource Management</li>
-							<li><i><u>Slack</u></i> – Communication</li>
-						</ul>
-					</li>
+				<ul>
+					<li>Provide consultation and design suggestions for existing visual elements within the web app.</li>
+					<li>Introduce UX Design processes into the development cycle, including the use of empathy maps, personas, wireframes, and brand guidelines.</li>
+					<li>Optimize front-end processes to make the app visually consistent and faster.</li>
+					<li>Work with back-end engineers to add new functions such as the ability for normal users to create new races.</li>
+					<li>Contribute to front-end documentation on the structure and components of the Angular framework.</li>
+				</ul>
+				<Divider space={16} />
+				<h4><strong>Peer developers, designers, and engineers</strong></h4>
+				<Divider space={8} />
+				<ul>
+    			<li><i><u>Katherine Donahoe</u></i> - COO [<ExtURL href="https://www.linkedin.com/in/katie-donahoe-90a241121/">LinkedIn Profile</ExtURL>]</li>
+    			<li><i><u>Alexander Popeil</u></i> - CTO [<ExtURL href="https://www.linkedin.com/in/alexander-popeil-b4440410b/">LinkedIn Profile</ExtURL>]</li>
+    			<li><i><u>Nathan Cinnamond</u></i> - CDO [<ExtURL href="https://www.linkedin.com/in/nathancinnamond/">LinkedIn Profile</ExtURL>]</li>
+    			<li><i><u>Billy Grenis</u></i> - CEO [<ExtURL href="https://www.linkedin.com/in/grenis/">LinkedIn Profile</ExtURL>]</li>
+    			<li><i><u>Angela Nat</u></i> - Lead UX Designer [<ExtURL href="https://www.linkedin.com/in/tanangela/">LinkedIn Profile</ExtURL>]</li>
+    			<li><i><u>Emily Casale</u></i> - Lead Graphic Designer [<ExtURL href="https://www.linkedin.com/in/emily-casale/">LinkedIn Profile</ExtURL>]</li>
+				</ul>
+				<Divider space={16} />
+				<h4><strong>Tools</strong></h4>
+				<Divider space={8} />
+				<ul>
+					<li><i><u>Angular.js</u></i> – Front-End Framework</li>
+					<li><i><u>Figma</u></i> – Wireframes, Asset Creation</li>
+					<li><i><u>Google Drive</u></i> – Resource Management</li>
+					<li><i><u>Slack</u></i> – Communication</li>
 				</ul>
 				<Divider space={16} />
 				<h4><strong>Development Process</strong></h4>
 				<Divider space={8} />
 				<p>Progress in Tucan Fitness during my work period was split into two major stages. The first stage required me to improve the user interface of the Tucan Fitness web application, whereas the second required me to fully create, test, and launch a new collection of screens and functions that would allow normal users to create virtual races of their own.</p>
-				<Divider space={8} />
+				<Divider space={16} />
 				<div className="PortfolioContentColumns">
 					<div className="PortfolioContentColumn">
 						<h6><strong>Stage 1: UI Updates and Optimization</strong></h6>
@@ -113,7 +146,7 @@ function TucanFitness() {
 						<img className="PortfolioContentImage" src={stage2} alt="Stage 2" />
 					</div>
 				</div>
-				<Divider space={8} />
+				<Divider space={16} />
 				<p>Crucial to Stage 1 was the introduction of UX Design concepts that would solve a crucial issue: the lack of direction regarding which features to incorporate into the web app. This conundrum came from two distinct issues:</p>
 				<Divider space={8} />
 				<ol>
@@ -125,10 +158,14 @@ function TucanFitness() {
 				<Divider space={8} />
 				<p>By continously iterating on these interviews and personas within a span of several weeks, similar to an Agile UX process, we were able to update the web app's visual identity and functionality in a way that satisfied a majority of our users.</p>
 				<Divider space={8} />
-				<p>
-					<img className="PortfolioContentImage Right" src={createRace} alt="Screenshot of the Tucan Fitness race creation interface" />
-					The insights gained from users, particularly race directors, from Stage 1 also fueled many of the functionalities we added in Stage 2. Our foresight in gathering user interviews from both racers and race directories enabled us to move quickly in code development, for we already had the personas and empathy maps needed to determine which features to add to the "Create Race" part of the web app.
-				</p>
+				<div className='PortfolioMainBlock'>
+					<div className='PortfolioBlockText'>
+						<p>The insights gained from users, particularly race directors, from Stage 1 also fueled many of the functionalities we added in Stage 2. Our foresight in gathering user interviews from both racers and race directories enabled us to move quickly in code development, for we already had the personas and empathy maps needed to determine which features to add to the "Create Race" part of the web app.</p>
+					</div>
+					<div className='PortfolioBlockImageWrapper Right'>
+						<img className="PortfolioContentImage" src={createRace} alt="Screenshot of the Tucan Fitness race creation interface" />
+					</div>
+				</div>
 				<Divider space={16} />
 				<h4><strong>UX Design Resources:</strong></h4>
 				<Divider space={8} />

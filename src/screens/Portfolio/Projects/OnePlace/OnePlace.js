@@ -2,6 +2,7 @@ import {
 	Divider, 
 	Button,
 	ExtURL,
+	Image,
 } from "../../../../components";
 import { 
 	thumbnail,
@@ -18,125 +19,119 @@ import {
 } from "./assets";
 
 function OnePlace() {
-	return (
-		<div className="PortfolioContent">
-			<div className="PortfolioSidebar">
-				<img src={thumbnail} alt="OnePlace Logo" className="PortfolioThumbnail" />
-				<Divider space={16} />
-				<p><i>Designing and engineering the front-end of a SaaS product built to help families share important documents online.</i></p>
-				<Divider space={16} />
-				<p className="PortfolioStatus Completed">Completed</p>
-				<Divider space={16} />
-				<p>
-					<ExtURL href="https://www.oneplace.family/">OnePlace Website</ExtURL>
-					<br />
-					<ExtURL href="https://medium.com/@ryan_oneplace">My Medium Stories</ExtURL>
-					<br />
-					<ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing">UX Design Resources</ExtURL>
-				</p>
-				<Divider space={16} />
-				<ul className="HideInMobile">
+
+	const headerTable = [
+		{
+			key: "Status",
+			value: (<p className="PortfolioStatus Completed">Completed</p>)
+		},
+		{
+			key: "Dates",
+			value: (<p>January 21, 2020 – February 24, 2021</p>)
+		},
+		{
+			key: "External Links",
+			value: (
+				<ul>
+					<li><ExtURL href="https://www.oneplace.family/">OnePlace Website</ExtURL></li>
+					<li><ExtURL href="https://medium.com/@ryan_oneplace">My Medium Stories</ExtURL></li>
+					<li><ExtURL href="https://drive.google.com/drive/folders/1ASUIEqFgnIcWpw2DQM48Okq1c-1PLm8x?usp=sharing">UX Design Resources</ExtURL></li>
+				</ul>
+			)
+		},
+		{
+			key: "Skills & Topics",
+			value: (
+				<ul>
 					<li>HTML</li>
 					<li>CSS</li>
 					<li>JavaScript</li>
 					<li>React Native</li>
 					<li>User Experience (UX) Design</li>
 				</ul>
-				<div className="ShowInMobile">
-					<Divider space={16} />
+			)
+		},	
+	]
+
+	return (
+		<div className="PortfolioContent">
+			<div className="PortfolioContentHeader">
+				<div className='PortfolioContentHeaderImage'>
+					<Image src={thumbnail} alt="OnePlace Logo" width={150} height={150} round cName="PortfolioThumbnail" />
 				</div>
-				<div className="HideInMobile">
-					<Divider space={64} />
-					<img className="PortfolioContentImage" src={richPicture} alt="Rich Pic" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={empathyMap} alt="Empathy Map" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={ideasSorted} alt="Ideation" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={taskDelegation} alt="Task Delegation" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={groupSketches} alt="Group Sketches" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={highFidelityWireframe} alt="High Fidelity Wireframe 1" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={highFidelityWireframe2} alt="High Fidelity Wireframe 2" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={highFidelityWireframe3} alt="High Fidelity Wireframe 3" />
-					<Divider space={8} />
-					<img className="PortfolioContentImage" src={productPreview} alt="High Fidelity Wireframe 1" />
+				<div className='PortfolioContentHeaderMain'>
+					<h3>OnePlace - Chief Design Offier (CDO) &amp; Lead Front-End Engineer</h3>
+					<p><i>Designing and engineering the front-end of a SaaS product built to help families share important documents online.</i></p>
+					<Divider space={16} />
+					<div className='PortfolioContentHeaderMainTable'>
+						{headerTable.map((row,i)=>{
+							return (
+								<div key={`PortfolioHeaderTableRow-${i}`} className='PortfolioContentHeaderMainTableRow'>
+									<div className='PortfolioContentHeaderMainTableRowKey'>
+										<p><strong>{row.key}:</strong></p>
+									</div>
+									<div className='PortfolioContentHeaderMainTableRowValue'>
+										{row.value}
+									</div>
+								</div>
+							)
+						})}
+					</div>
 				</div>
 			</div>
+			<Divider space={24} />
 			<div className="PortfolioMain">
-				<h3>OnePlace - Chief Design Offier (CDO) &amp; Lead Front-End Engineer</h3>
-				<Divider space={16} />
 				<h4><strong>Description</strong></h4>
 				<Divider space={8} />
-				<p>
-					<img className="PortfolioContentImage Right" src={productPreview} alt="Product Preview" />
-					"OnePlace" initially started out as a Startup Studio venture from Cornell Tech between four colleagues, as part of CT's 2019-2020 studio-based master's degree. United by the idea of helping families share important documents online, the four of us wished to ultimately change how families interacted with each other online and how they cooperated to share critical information using the latest web technology.</p>
+				<p>"OnePlace" initially started out as a Startup Studio venture from Cornell Tech between four colleagues, as part of CT's 2019-2020 studio-based master's degree. United by the idea of helping families share important documents online, the four of us wished to ultimately change how families interacted with each other online and how they cooperated to share critical information using the latest web technology.</p>
 				<Divider space={8} />
-				<p>
-					I joined the project, originally coined "Software for Families," as the lead front-end engineer. I was responsible for designing and building out a user interface that would satisfy both tech-savvy millenials and older potential users who may not be as experienced in web technologies.
-				</p>
+				<p>I joined the project, originally coined "Software for Families," as the lead front-end engineer. I was responsible for designing and building out a user interface that would satisfy both tech-savvy millenials and older potential users who may not be as experienced in web technologies.</p>
 				<Divider space={8} />
-				<p>
-					It was an interesting challenge and concept, and I quickly grew fond of the idea of engendering positive change by helping families adapt to modern conventions of file-sharing and communication while encouraging safe practices when using the Internet.
-				</p>
-				<Divider space={8} />
-				<img className="PortfolioContentImage" src={teamPhoto} alt="The Team" />
+				<p>It was an interesting challenge and concept, and I quickly grew fond of the idea of engendering positive change by helping families adapt to modern conventions of file-sharing and communication while encouraging safe practices when using the Internet.</p>
 				<Divider space={16} />
-				<h4><strong>Quick Details:</strong></h4>
+				<div className="PortfolioMainImageGallery HideInMobile">
+					<img className="PortfolioContentImage" src={productPreview} alt="Product Preview" />
+					<img className="PortfolioContentImage" src={teamPhoto} alt="The Team" />
+				</div>
+				<Divider space={16} />
+				<h4><strong>Peer Co-founders</strong></h4>
 				<Divider space={8} />
-				<ul className="h7">
-					<li><strong>Status:</strong> Left Company [January 21, 2020 – February 24, 2021]</li>
-					<li>
-						<strong>Peer Co-founders:</strong>
-						<ul>
-							<li><i><u>Daniel Asper</u></i> - Co-CEO</li>
-							<li><i><u>Yasmin Lalani</u></i> - Co-CEO + Marketing Lead</li>
-							<li><i><u>Sunny Ladkani</u></i> - CPO + DevOps</li>
-							<li><i><u>Ryan Kim (Me)</u></i> - CDO + Front-end Engineer</li>
-						</ul>
-					</li>
-					<li>
-						<strong>Roles & Responsibilities:</strong>
-						<ul>
-							<li><i><u>Co-Founder:</u></i><br />Work together with our teams' leaders on corporate management, team building, and long-term planning</li>
-							<li><i><u>Front-end Engineer:</u></i><br />Work with our core engineering team to develop a user-friendly user interface and workflow while keeping best practices in security and design theory in mind.</li>
-							<li><i><u>Chief Design Officer (CDO):</u></i><br />Lead the direction of all aspects of the product's functionality and design, from using the design process to guide the team on conceptualizing the User Experience of the product to interacting with our Marketing and Dev Ops teams on ensuring consistency between our external-facing marketing material and our app's capabilities.</li>
-						</ul>
-					</li>
-					<li>
-						<strong>Tools:</strong>
-						<ul>
-							<li>
-								<i><u>Front-End:</u></i>
-								<ul>
-									<li>React Native + Expo CLI: Main code base and framework</li>
-									<li>Figma: Wireframing and Design</li>
-									<li>Github: Version control and backup</li>
-								</ul>
-							</li>
-							<li>
-								<i><u>Back-End:</u></i>
-								<ul>
-									<li>AWS Amplify: Main API service hander + user authentication service</li>
-									<li>Loopback: API Orchestration layer for our API service</li>
-									<li>Mixpanel: User Analytics</li>
-									<li>Github: Version control and backup</li>
-								</ul>
-							</li>
-							<li>
-								<i><u>Internal:</u></i>
-								<ul>
-									<li>Notion: Note-taking, code documentation, scheduling</li>
-									<li>Google Drive: Asset sharing</li>
-									<li>Zoom: Conferencing tool</li>
-									<li>Slack: Team communication</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
+				<ul>
+					<li><i><u>Daniel Asper</u></i> - Co-CEO</li>
+					<li><i><u>Yasmin Lalani</u></i> - Co-CEO + Marketing Lead</li>
+					<li><i><u>Sunny Ladkani</u></i> - CPO + DevOps</li>
+					<li><i><u>Ryan Kim (Me)</u></i> - CDO + Front-end Engineer</li>
+				</ul>
+				<Divider space={16} />
+				<h4><strong>Roles &amp; Responsibilities</strong></h4>
+				<Divider space={8} />
+				<ul>
+					<li><i><u>Co-Founder:</u></i><br />Work together with our teams' leaders on corporate management, team building, and long-term planning</li>
+					<li><i><u>Front-end Engineer:</u></i><br />Work with our core engineering team to develop a user-friendly user interface and workflow while keeping best practices in security and design theory in mind.</li>
+					<li><i><u>Chief Design Officer (CDO):</u></i><br />Lead the direction of all aspects of the product's functionality and design, from using the design process to guide the team on conceptualizing the User Experience of the product to interacting with our Marketing and Dev Ops teams on ensuring consistency between our external-facing marketing material and our app's capabilities.</li>
+				</ul>	
+				<h4><strong>Tools:</strong></h4>
+				<Divider space={8} />
+				<h6><i><u>Front-End:</u></i></h6>
+				<Divider space={8} />
+				<ul>
+					<li>React Native + Expo CLI: Main code base and framework</li>
+					<li>Figma: Wireframing and Design</li>
+					<li>Github: Version control and backup</li>
+				</ul>
+				<h6><i><u>Back-End:</u></i></h6>
+				<ul>
+					<li>AWS Amplify: Main API service hander + user authentication service</li>
+					<li>Loopback: API Orchestration layer for our API service</li>
+					<li>Mixpanel: User Analytics</li>
+					<li>Github: Version control and backup</li>
+				</ul>
+				<h6><i><u>Internal:</u></i></h6>
+				<ul>
+					<li>Notion: Note-taking, code documentation, scheduling</li>
+					<li>Google Drive: Asset sharing</li>
+					<li>Zoom: Conferencing tool</li>
+					<li>Slack: Team communication</li>
 				</ul>
 				<Divider space={16} />
 				<h4><strong>Lessons Learned: A Retrospective</strong></h4>
@@ -261,6 +256,19 @@ function OnePlace() {
   					</ul>
   				</li>
         </ul>
+        <Divider space={16} />
+        <Divider space={64} cName="HideInMobile" />
+        <div className="PortfolioMainImageGallery HideInMobile">
+					<img className="PortfolioContentImage" src={richPicture} alt="Rich Pic" />
+					<img className="PortfolioContentImage" src={empathyMap} alt="Empathy Map" />
+					<img className="PortfolioContentImage" src={ideasSorted} alt="Ideation" />
+					<img className="PortfolioContentImage" src={taskDelegation} alt="Task Delegation" />
+					<img className="PortfolioContentImage" src={groupSketches} alt="Group Sketches" />
+					<img className="PortfolioContentImage" src={highFidelityWireframe} alt="High Fidelity Wireframe 1" />
+					<img className="PortfolioContentImage" src={highFidelityWireframe2} alt="High Fidelity Wireframe 2" />
+					<img className="PortfolioContentImage" src={highFidelityWireframe3} alt="High Fidelity Wireframe 3" />
+					<img className="PortfolioContentImage" src={productPreview} alt="High Fidelity Wireframe 1" />
+				</div>
 			</div>
 		</div>
 	);

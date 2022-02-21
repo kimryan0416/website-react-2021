@@ -271,10 +271,12 @@ class PortfolioDisplay extends Component {
 				<div className={`PortfolioDisplayPanel ${enlargedPanelClass}`}>
 					<div className='PortfolioDisplayHeader'>
 						<Button cName="PortfolioBackButton" onClick={this.props.goBack}>Close</Button>
-						<Button cName="PortfolioEnlargeButton" onClick={this.toggleEnlarge}>{enlargeButtonText}</Button>
+						<Button cName="PortfolioEnlargeButton HideInMobile" onClick={this.toggleEnlarge}>{enlargeButtonText}</Button>
 					</div>
 					<Divider space={16} />
-					{this.props.children}
+					<div className='PortfolioDisplayContents'>
+						{this.props.children}
+					</div>
 				</div>
 			</div>
 		);

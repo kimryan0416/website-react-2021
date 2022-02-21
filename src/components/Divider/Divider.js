@@ -9,8 +9,9 @@ function Divider(props) {
 			width:"100%",
 			marginBottom:space
 		};
+	const cName = (props.cName) ? props.cName : ''
 	return <div 
-		className="Divider"
+		className={`Divider ${cName}`}
 		style={style}></div>;
 }
 
