@@ -1,63 +1,87 @@
-import { Link } from "react-router-dom";
-
-import { Divider, Image } from "../../../../components";
+import PortfolioItemContent from '../../PortfolioItemContent';
 import { thumbnail } from "./assets";
 
-function EasierXRAssets() {
-
-	const headerTable = [
-		{
-			key: "Status",
-			value: (<p className="PortfolioStatus OnHold">On-Hold</p>)
-		},
-		{
-			key: "Skills & Topics",
-			value: (
-				<ul>
-					<li>C#/CSharp</li>
-					<li>Oculus Quest</li>
-					<li>Unity</li>
-				</ul>
-			)
-		}
-	]
-
-	return (
-		<div className="PortfolioContent">
-			<div className="PortfolioContentHeader">
-				<div className='PortfolioContentHeaderImage'>
-					<Image src={thumbnail} alt="" width={150} height={150} round cName="PortfolioThumbnail" />
-				</div>
-				<div className='PortfolioContentHeaderMain'>
-					<h3>Easier <span className="no-br">XR Assets</span></h3>
-					<p><i>Premade template scripts for Unity developers to easily make VR experiences.</i></p>
-					<Divider space={16} />
-					<div className='PortfolioContentHeaderMainTable'>
-						{headerTable.map((row,i)=>{
-							return (
-								<div key={`PortfolioHeaderTableRow-${i}`} className='PortfolioContentHeaderMainTableRow'>
-									<div className='PortfolioContentHeaderMainTableRowKey'>
-										<p><strong>{row.key}:</strong></p>
-									</div>
-									<div className='PortfolioContentHeaderMainTableRowValue'>
-										{row.value}
-									</div>
-								</div>
-							)
-						})}
-					</div>
-				</div>
-			</div>
-			<Divider space={24} />
-			<div className="PortfolioMain">
-				<h4><strong>Description</strong></h4>
-				<Divider space={8} />
-				<p>The Easier XR Assets is an offshoot of the <Link to="/portfolio/projects/easierVRAssets">EasierVRAssets</Link> project that is planned to work with Unity's XR Rig system.</p>
-				<Divider space={8} />
-				<p><i>This project has been put on-hold until later notice.</i></p>
-			</div>
-		</div>
-	);
+const content = {
+  "header": {
+	  "id": "51a16ca1-5510-4d27-acd5-3acdee180e03",
+	  "title": "Easier XR Assets",
+	  "icon_url": thumbnail,
+	  "description": "Premade template scripts for Unity developers to easily make VR experiences.",
+	  "status": "On-Hold",
+	  "dates": null,
+	  "latest_version": null,
+	  "external_links": [],
+	  "platforms": [],
+	  "skills": [
+	    "C#/CSharp",
+	    "Oculus Quest",
+	    "Unity"
+	  ],
+	  "categories": [
+	  	"Personal Projects"
+	  ],
+	  "sub_category": "VR"
+  },
+  "content": [
+    {
+      "id": "766ee830-f75a-4dc1-a881-0d6c90e5aeed",
+      "type": "heading_2",
+      "contents": [
+        {
+          "content": "Description",
+          "href": null,
+          "annotations": ["bold"]
+        }
+      ],
+      "children": [],
+      "misc": null
+    },
+    {
+      "id": "87100e69-92cc-4c1b-987a-cdaf5d2d2216",
+      "type": "paragraph",
+      "contents": [
+                {
+                    "content": "The Easier XR Assets is an offshoot of the ",
+                    "href": null,
+                    "annotations": []
+                },
+                {
+                    "content": "EasierVRAssets",
+                    "href": "https://www.rkim.dev/#/portfolio/projects/easierVRAssets",
+                    "annotations": []
+                },
+                {
+                    "content": " project that is planned to work with Unity's XR Rig system.",
+                    "href": null,
+                    "annotations": []
+                }
+            ],
+            "children": [],
+            "misc": null
+        },
+        {
+            "id": "33aa36fe-fe69-4533-bb92-6bb7248b2762",
+            "type": "paragraph",
+            "contents": [
+                {
+                    "content": "This project has been put on-hold until later notice.",
+                    "href": null,
+                    "annotations": [
+                        "italic"
+                    ]
+                }
+            ],
+            "children": [],
+            "misc": null
+        },
+        {
+            "id": "5cee29d4-0395-45e8-8d36-223a03d636fb",
+            "type": "paragraph",
+            "contents": [],
+            "children": [],
+            "misc": null
+        }
+    ]
 }
 
 const EasierXRAssetsData = {
@@ -66,7 +90,7 @@ const EasierXRAssetsData = {
 	thumbnail:thumbnail,
 	title:"Easier XR Assets",
 	url:"easierXRAssets",
-	content:<EasierXRAssets />
+	content:<PortfolioItemContent data={content} />
 }
 
 

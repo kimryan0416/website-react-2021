@@ -14,6 +14,10 @@ import {
 	Button,
 	ExtURL,
 } from "../../components";
+
+import PortfolioItem from './PortfolioItem';
+import PortfolioDisplay from './PortfolioDisplay';
+
 import projects from "./Projects";
 
 const oneplace = projects.work.filter(p=>p.key==="oneplace")[0];
@@ -224,63 +228,6 @@ function PortfolioPage(props) {
 			{props.children}
 		</>
 	);
-}
-
-function PortfolioItem(props) {
-	const data = props.data;
-	return (
-		<Link to={props.linkTo}>
-			<div className="PortfolioItem" onClick={()=>{props.handler(data.project)}}>
-				<Image 
-					width={160} 
-					height={160} 
-					cName="PortfolioItemImageWrapper" 
-					src={data.thumbnail} 
-					alt="" 
-				/>
-				<Divider space={8} />
-				<p className="h7"><strong>{data.title}</strong></p>
-				<p className="linkSuggestion">Click to read more</p>
-			</div>
-		</Link>
-	);
-}
-
-class PortfolioDisplay extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			enlargened:false
-		}
-	}
-	toggleEnlarge = () => {
-		this.setState({
-			enlargened: !this.state.enlargened
-		});
-	}
-	render() {
-		const enlargedPanelClass = (this.state.enlargened)
-			? 'enlargedPanel'
-			: ''
-		const enlargeButtonText = (this.state.enlargened)
-			? 'Smaller panel'
-			: 'Enlarge panel';
-		return (
-			<div className={`PortfolioDisplay ${enlargedPanelClass}`}>
-				<div className="PortfolioDisplayCover" onClick={this.props.goBack}></div>
-				<div className={`PortfolioDisplayPanel ${enlargedPanelClass}`}>
-					<div className='PortfolioDisplayHeader'>
-						<Button cName="PortfolioBackButton" onClick={this.props.goBack}>Close</Button>
-						<Button cName="PortfolioEnlargeButton HideInMobile" onClick={this.toggleEnlarge}>{enlargeButtonText}</Button>
-					</div>
-					<Divider space={16} />
-					<div className='PortfolioDisplayContents'>
-						{this.props.children}
-					</div>
-				</div>
-			</div>
-		);
-	}
 }
 
 export default withRouter(Portfolio);

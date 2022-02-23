@@ -237,8 +237,8 @@ function convertBlock(block) {
       content = <blockquote>{text}</blockquote>;
       break;
     case 'callout':
-      console.log('CALLOUT');
-      content = null;
+      text = block.contents.map((c,i)=>parseText(c,i));
+      content = <blockquote className='callout'>{text}</blockquote>;
       break;
     case 'image':
       text = (block.misc.caption && block.misc.caption.length > 0) 

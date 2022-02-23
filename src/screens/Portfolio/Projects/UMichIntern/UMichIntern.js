@@ -1,82 +1,134 @@
-import { Divider, ExtURL, Image } from "../../../../components";
+import PortfolioItemContent from '../../PortfolioItemContent';
 import { 
 	thumbnail,
 } from "./assets";
 
-function UMichIntern() {
-
-	const headerTable = [
-		{
-			key: "Status",
-			value: (<p className="PortfolioStatus Ongoing">Ongoing</p>)
-		},
-		{
-			key: "Dates",
-			value: (<p>June 2, 2021 – Present</p>)
-		},
-		{
-			key: "External Links",
-			value: (<ExtURL href="https://www.mi2lab.com/">Information Interaction Lab Website</ExtURL>)
-		},
-		{
-			key: "Skills & Topics",
-			value: (
-				<ul>
-					<li>Virtual Reality (VR)</li>
-					<li>Extended Reality (XR)</li>
-					<li>Human-Computer Interaction</li>
-					<li>Online Collaboration</li>
-					<li>Education</li>
-				</ul>
-			)
-		},	
-	]
-
-	return (
-		<div className="PortfolioContent">
-			<div className="PortfolioContentHeader">
-				<div className='PortfolioContentHeaderImage'>
-					<Image src={thumbnail} alt="" width={150} height={150} round cName="PortfolioThumbnail" />
-				</div>
-				<div className='PortfolioContentHeaderMain'>
-					<h3>University of Michigan: Information Interaction Laboratory – Research Intern</h3>
-					<p><i>Investigating reasons for miscommunication between college-level instructors and VR developers.</i></p>
-					<Divider space={16} />
-					<div className='PortfolioContentHeaderMainTable'>
-						{headerTable.map((row,i)=>{
-							return (
-								<div key={`PortfolioHeaderTableRow-${i}`} className='PortfolioContentHeaderMainTableRow'>
-									<div className='PortfolioContentHeaderMainTableRowKey'>
-										<p><strong>{row.key}:</strong></p>
-									</div>
-									<div className='PortfolioContentHeaderMainTableRowValue'>
-										{row.value}
-									</div>
-								</div>
-							)
-						})}
-					</div>
-				</div>
-			</div>
-			<Divider space={24} />
-			<div className="PortfolioMain">
-				<h4><strong>Description</strong></h4>
-				<Divider space={8} />
-				<p>I am currently participating as a research intern at the University of Michigan’s Information Interaction Laboratory, under the supervision of Professor Michael Nebeling.</p>
-				<Divider space={8} />
-				<p>Our current project is a research inquiry into the development of Virtual Reality Learning Environments, or VRLEs. Particularly, we are curious how both instructors (who have few to no experiences with VR) and VR developers understand the application of VR in learning environments.</p>
-				<Divider space={8} />
-				<p>The project is a collaborative effort with two other peer researchers alongside our supervisor, Professor Nebeling. The project's paper is slated to be submitted to conferences either later in 2021 or early in 2022.</p>
-				<Divider space={16} />
-				<h4><strong>Responsibilities</strong></h4>
-				<Divider space={8} />
-				<ul>
-					<li>Remotely collaborate with peer researchers from the Information Interaction Lab and the University of Michigan’s REMS program to investigate the development of VRLEs.</li>
-					<li>Participate in weekly meetings with other research groups at the Information Interaction Laboratory to share progress and suggestions.</li>
-				</ul>
-			</div>	
-		</div>
-	);
+const content = {
+  "header": {
+    "id": "87da1273-f997-4942-99e4-7e88940a59b1",
+    "title": "University of Michigan: Information Interaction Laboratory – Research Intern",
+    "icon_url": thumbnail,
+    "description": "Investigating reasons for miscommunication between college-level instructors and VR developers.",
+    "status": "Ongoing",
+    "dates": "June 2, 2021 – Present",
+    "latest_version": null,
+    "external_links": [
+      {
+        "text": "Information Interaction Lab Website",
+        "url": "https://www.mi2lab.com/"
+      }
+    ],
+    "platforms": [],
+    "skills": [
+      "Virtual Reality (VR)",
+      "Extended Reality (XR)",
+      "Human-Computer Interaction (HCI)",
+      "Online Collaboration",
+      "Education"
+    ],
+    "categories": [
+      "Work Experience",
+      "Research Papers"
+    ],
+    "sub_category": null
+  },
+  "content": [
+    {
+      "id": "4490c35f-0122-4766-acef-41a6d70bba5b",
+      "type": "heading_2",
+      "contents": [
+        {
+          "content": "Description",
+          "href": null,
+          "annotations": [
+            "bold"
+          ]
+        }
+      ],
+      "children": [],
+      "misc": null
+    },
+    {
+      "id": "82feee6c-4f89-4c43-921c-bb24a2172449",
+      "type": "paragraph",
+      "contents": [
+        {
+          "content": "I am currently participating as a research intern at the University of Michigan’s Information Interaction Laboratory, under the supervision of Professor Michael Nebeling.",
+          "href": null,
+          "annotations": []
+        }
+      ],
+      "children": [],
+      "misc": null
+    },
+    {
+      "id": "cde0fb2d-fb66-478d-b158-c452ed63df82",
+      "type": "paragraph",
+      "contents": [
+        {
+          "content": "Our current project is a research inquiry into the development of Virtual Reality Learning Environments, or VRLEs. Particularly, we are curious how both instructors (who have few to no experiences with VR) and VR developers understand the application of VR in learning environments.",
+          "href": null,
+          "annotations": []
+        }
+      ],
+      "children": [],
+      "misc": null
+    },
+    {
+      "id": "fa0029e9-4cb7-4d37-a5d1-5fe5635ef6df",
+      "type": "paragraph",
+      "contents": [
+        {
+          "content": "The project is a collaborative effort with two other peer researchers alongside our supervisor, Professor Nebeling. The project's paper is slated to be submitted to conferences either later in 2021 or early in 2022.",
+          "href": null,
+          "annotations": []
+        }
+      ],
+      "children": [],
+      "misc": null
+    },
+    {
+      "id": "a4d5ca5e-2e3f-4056-865d-f755671f3776",
+      "type": "heading_2",
+      "contents": [
+        {
+          "content": "Responsibilities",
+          "href": null,
+          "annotations": [
+            "bold"
+          ]
+        }
+      ],
+      "children": [],
+      "misc": null
+    },
+    {
+      "id": "daee2d2f-2e8c-4cbb-bc28-1c1c2a343114",
+      "type": "bulleted_list_item",
+      "contents": [
+        {
+          "content": "Remotely collaborate with peer researchers from the Information Interaction Lab and the University of Michigan’s REMS program to investigate the development of VRLEs.",
+          "href": null,
+          "annotations": []
+        }
+      ],
+      "children": [],
+      "misc": null
+    },
+    {
+      "id": "631ed37f-2dfe-475c-a3a6-564dfcb1d965",
+      "type": "bulleted_list_item",
+      "contents": [
+        {
+          "content": "Participate in weekly meetings with other research groups at the Information Interaction Laboratory to share progress and suggestions.",
+          "href": null,
+          "annotations": []
+        }
+      ],
+      "children": [],
+      "misc": null
+    }
+  ]
 }
 
 const UMichInternData = {
@@ -85,7 +137,7 @@ const UMichInternData = {
 	thumbnail:thumbnail,
 	title:"University of Michigan: Information Interaction Laboratory – Research Intern",
 	url:"umich_intern",
-	content:<UMichIntern />
+	content:<PortfolioItemContent data={content} />
 }
 
 export default UMichInternData;

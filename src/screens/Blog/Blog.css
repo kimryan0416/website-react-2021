@@ -105,6 +105,13 @@
 	line-height: 1.5em;
 	font-style: italic;
 }
+.blogBlock blockquote.callout {
+	border: none;
+	padding: 16px;
+	background-color: rgb(230,230,230);
+	font-size: initial;
+}
+
 .blogBlock .blogColumnList {
 	display:flex;
 	flex-direction:row;
