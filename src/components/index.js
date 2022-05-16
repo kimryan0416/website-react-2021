@@ -6,7 +6,7 @@ import ExtURL from "./ExtURL/ExtURL";
 import Skills from "./Skills/Skills";
 import Skill from "./Skills/Skill";
 
-import * as BlogAPI from './BlogAPI/BlogAPI';
+//import * as BlogAPI from './BlogAPI/BlogAPI';
 
 import Nav from './Nav';
 
@@ -19,7 +19,7 @@ export {
 	Skills,
 	Skill,
 
-	BlogAPI,
+	//BlogAPI,
 
 	Nav,
 }
