@@ -27,6 +27,7 @@ import cube from "./icons/cubeIcon.svg";
 import indexIcon from "./icons/indexIcon.svg";
 import downloadIcon from "./icons/downloadIcon.svg";
 import portfolioIcon from "./icons/portfolioIcon.svg";
+import blogIcon from './icons/blogIcon.svg';
 
 export {
 	profileSquare,
@@ -58,4 +59,5 @@ export {
 	indexIcon,
 	portfolioIcon,
 	downloadIcon,
+	blogIcon,
 }

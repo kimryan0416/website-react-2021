@@ -1,0 +1,186 @@
+.AppHeader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 240px;
+  height: 100vh;
+  background-color: rgb(0,0,0,0.2);
+
+  transition: left 0.25s ease-in-out, width 0.25s ease-in-out;
+}
+
+.AppNav {
+  position:relative;
+  width:240px;
+  height:100%;
+  padding:16px;
+  /*background: linear-gradient(var(--background) 95%, transparent);*/
+  background-color: var(--background);
+
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+  .AppNav a {
+    text-decoration: none;
+    color: initial;
+  }
+
+.NavProfile {
+  width:auto;
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+  .NavProfile .ProfileImageWrapper {
+    position:relative;
+    width:80px;
+    height:80px;
+    margin-right:16px;
+  }
+    .NavProfile .ProfileImageWrapper a {
+      text-decoration: none;
+    }
+    .NavProfile .ProfileImageWrapper .ProfileImageOverlay {
+      position:absolute;
+      left:75%;
+      top:15%;
+      transform:translateY(-50%) rotate(15deg);
+      color:white;
+      text-align: center;
+    }
+    .NavProfile .ProfileSocialLinksContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      text-align: center;
+      margin-top: 4px;
+    }
+    .NavProfile .ProfileSocialMediaIcon {
+      margin-right:8px;
+    }
+    .NavProfile .ProfileSocialMediaIcon:hover {
+      cursor:pointer;
+      opacity:0.8;
+    }
+
+.NavLinks {
+  position: relative;
+  width: 100%;
+}
+  .NavLinksWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+  }
+  .NavItem {
+    width: 100%;
+    padding: 8px 16px 8px 16px;
+    text-decoration: none;
+    margin-bottom: 4px;
+    border-left: 2px solid var(--normal-button);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .NavItem.CurrentLink {
+    background-color: rgb(235,235,235);
+  }
+  .NavItem.DownloadLink {
+    background-color: rgb(202,240,255);
+  }
+  .NavLinksWrapper a:last-child .NavItem {
+    border-right: none;
+  }
+    .NavItem .NavItemDescription {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      opacity: 0;
+      font-style: italic;
+    }
+    .NavItem:hover .NavItemDescription {
+      opacity: 1;
+      transition: opacity 0.25s ease-in-out;
+    }
+    .NavItem .NavIcon {
+      width: 16px;
+      padding-right: 4px;
+    }
+    /*
+  .NavLinksWrapper.MobileNavLinks {
+    position: absolute;
+    top: 100%;
+    right: -8px;
+    padding: 8px 0px 8px 0px;
+    overflow: hidden;
+    flex-direction: column;
+    width: 0;
+    height: min-content;
+    transition: width 0.25s ease-in-out, padding-left 0.25s ease-in-out, padding-right 0.25s ease-in-out;
+  }
+  .NavLinksWrapper.MobileNavLinks.open {
+    width: 216px;
+    padding: 8px;
+  }
+    .NavLinksWrapper.MobileNavLinks .NavItem {
+      position: relative;
+      width: 200px;
+      border-right: none;
+      padding-left: 0;
+      padding-right: 0;
+      margin-right: 0;
+    }
+    .NavLinksWrapper.MobileNavLinks .NavItem .NavItemDescription {
+      display: none;
+    }
+  */
+
+
+.AppHeader.Mobile {
+  width: 240px;
+  left: -240px;
+  position: fixed;
+}
+  .AppHeader.Mobile.Open {
+    width: 100%;
+    left: 0px;
+  }
+.AppNav.Mobile {
+  box-shadow: 2px 0px 10px 5px rgba(0,0,0,0.2);
+}
+.NavMobileButtonContainer {
+  position: fixed;
+  z-index: 500;
+  left: calc(100% - 16px);
+  transform: translateX(-100%);
+  top: 16px;
+  padding: 8px;
+  background-color: var(--background);
+  box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 
+    background-color 0.25s ease-in-out, 
+    left 0.25s ease-in-out, 
+    transform 0.25s ease-in-out;
+}
+  .NavMobileButtonContainer:hover {
+    background-color: var(--normal-button);
+  }
+.AppNav.Mobile.Open .NavMobileButtonContainer {
+  left: 256px;
+  transform: translateX(0%);
+}

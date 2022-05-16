@@ -1,38 +1,51 @@
-import { Component, createRef, } from "react";
+import React from "react";
 import {
-  HashRouter as Router,
-  Link,
   Switch,
   Route,
   Redirect
 } from "react-router-dom";
 
 import { 
-  profileSquare, 
-  heyThere, 
-  github, 
-  linkedIn, 
-  twitter,
-//  wordpress,
-  indexIcon,
-  portfolioIcon,
-  downloadIcon,
-}  from './assets';
-import { 
-  BlogAPI,
-  Image, 
-  Button,
+  Nav,
 } from "./components";
 import {
   Home,
   Portfolio,
   Blog,
 } from "./screens";
-
-import { resume } from "./downloads";
+import {
+  useMobile,
+} from './hooks';
 
 import './App.css';
 
+const App = () => {
+  const isMobile = useMobile();
+  return (
+    <div className={(isMobile)?"App Mobile":"App"}>
+      <Nav />
+      <main>
+        <Switch>
+          <Route 
+            path="/portfolio" 
+            component={()=> <Portfolio />} 
+          />
+          <Route 
+            path="/blog"
+            component={()=> <Blog />}
+          />
+          <Route 
+            path="/" 
+            component={()=> <Home />} 
+          />
+          <Redirect to="/" />
+        </Switch>
+      </main>
+    </div>
+  );
+}
+
+/*
 const _MOBILE_WIDTH = 700;
 
 class App extends Component {
@@ -126,7 +139,9 @@ class App extends Component {
     );
   }
 }
+*/
 
+/*
 class Nav extends Component {
 
   constructor(props) {
@@ -180,15 +195,6 @@ class Nav extends Component {
     var mobileButton = null;
     if (isMobile) {
       // now in mobile mode
-      /*
-      mobileButton = <Image 
-        width={24} 
-        height={24} 
-        src={menu} 
-        alt="Menu" 
-        onClick={this.toggleMenu}
-      />;
-      */
       mobileButton = <Button cName="NavItem" onClick={this.toggleMenu}>MENU</Button>
     }
 
@@ -213,11 +219,6 @@ class Nav extends Component {
               <a href='https://twitter.com/ryankimdev' target='_blank' rel="noopener noreferrer">
                 <Image width={16} height={16} src={twitter} alt="Twitter" cName='ProfileSocialMediaIcon' />
               </a>
-              {/*}
-              <a href='https://ryankimdev.com/blog' target='_blank' rel="noopener noreferrer">
-                <Image width={16} height={16} src={wordpress} alt="Wordpress" cName='ProfileSocialMediaIcon' />
-              </a>
-              {*/}
             </div>
           </div>
         </div>
@@ -279,6 +280,7 @@ function NavLinks(props) {
 
   return <div className={`NavLinksWrapper ${mobileClass}`}>{menu}</div>;
 }
+*/
 
 
 export default App;

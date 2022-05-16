@@ -1,64 +1,56 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
 
 import BlogBlock, { parseRawData } from './BlogBlock';
 
 import { 
-  BlogAPI,
   Divider 
 } from "../../components";
+import { useBlog } from '../../hooks';
 
-class BlogPost extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true,
-      contents: null,
-      error: null
+const BlogPost = (props) => {
+  const { getPost } = useBlog();
+  const [ loading, setLoading ] = useState(true);
+  const [ contents, setContents ] = useState(null);
+  const [ error, setError ] = useState(null);
+
+  useEffect(()=>{
+    const PreparePost = async() => {
+      let res = await getPost(props.post.notion_page_id);
+      console.log(res);
+      if (res.status === 200) {
+        const return_data = parseRawData(res.data);
+        setContents(return_data);
+        setLoading(false);
+      } else {
+        setError(res.error);
+        setLoading(false);
+      }
     }
-  }
-  async componentDidMount() {
     if (
-      typeof this.props.post === 'undefined' 
-      || this.props.post == null 
-      || typeof this.props.post.notion_page_id === 'undefined' 
-      || this.props.post.notion_page_id == null
+      typeof props.post === 'undefined' 
+      || props.post == null 
+      || typeof props.post.notion_page_id === 'undefined' 
+      || props.post.notion_page_id == null
     ) {
-      this.setState({
-        loading: false,
-        error: "Unable to load blog content due to missing blog data."
-      });
-      return;
-    }
-
-    let res = await BlogAPI.getBlogPost(this.props.post.notion_page_id);
-    if (res.status === 200) {
-      const return_data = parseRawData(res.data);
-      this.setState({
-        loading:false,
-        contents: return_data
-      });
+      setError("Unable to load blog content due to missing blog data.");
+      setLoading(false);
     } else {
-      this.setState({
-        loading:false,
-        error:res.error
-      });
+      PreparePost();
     }
-  }
+  },[props.post, getPost])
 
-  render() {
-    if (this.state.loading) return <p>Loading blog content from server...</p>;
-    if (this.state.error) return <p>{this.state.error}</p>
-    return (
-      <div>
-        <BlogMetadata {...this.props.post} />
-        <Divider space={16} />
-        {this.state.contents.map((block,index)=>{
-          return <BlogBlock key={`${block.id}`} block={block} index={index} />
-        })}
-        {this.props.children}
-      </div>
-    );
-  }
+  if (loading) return <p>Loading blog content from server...</p>;
+  if (error) return <p>{error}</p>
+  return (
+    <div>
+      <BlogMetadata {...props.post} />
+      <Divider space={16} />
+      {contents.map((block,index)=>{
+        return <BlogBlock key={`${block.id}`} block={block} index={index} />
+      })}
+      {props.children}
+    </div>
+  );
 }
 
 function BlogMetadata(props) {

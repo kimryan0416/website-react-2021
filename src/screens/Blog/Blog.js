@@ -2,17 +2,19 @@ import {
 	Switch,
 	Route,
 	Redirect,
-	withRouter,
 } from "react-router-dom";
+import {
+	useBlog
+} from '../../hooks';
 
 import "./Blog.css";
 
 import BlogFrame from './BlogFrame';
 
-function Blog(props) {
-
-	if (props.loading) return <h2>Loading blog info...</h2>;
-	if (props.error) {
+const Blog = (props) => {
+	const { blog } = useBlog();
+	if (blog == null) return <h2>Loading blog info...</h2>;
+	if (blog.error != null) {
 		return (
 			<div>
 				<h2>Error loading blog</h2>
@@ -22,23 +24,23 @@ function Blog(props) {
 	}
 	return (
 		<Switch>
-			{props.posts.map((p,i)=>{
+			{blog.posts.map((p,i)=>{
 				return (
 					<Route 
 						key={`blog_post_item_${i}`}
 						exact path={`/blog/${p.blog_url}`}
-						component={()=> <BlogFrame posts={props.posts} current={p} />}
+						component={()=> <BlogFrame current={p} />}
 					/>
 				)
 			})}
 			<Route
 				exact 
 				path="/blog"
-				component={()=> <BlogFrame posts={props.posts} refreshBlogDatabase={props.refreshBlogDatabase} />}
+				component={()=> <BlogFrame />}
 			/>
 			<Redirect to='/blog' />
 		</Switch>
 	);
 }
 
-export default withRouter(Blog);
+export default Blog;

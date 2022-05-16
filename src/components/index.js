@@ -8,6 +8,8 @@ import Skill from "./Skills/Skill";
 
 import * as BlogAPI from './BlogAPI/BlogAPI';
 
+import Nav from './Nav';
+
 export {
 	Image,
 	Button,
@@ -18,4 +20,6 @@ export {
 	Skill,
 
 	BlogAPI,
+
+	Nav,
 }

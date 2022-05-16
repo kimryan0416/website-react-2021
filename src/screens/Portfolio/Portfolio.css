@@ -6,6 +6,26 @@
 	align-items: flex-start;
 	flex-wrap: nowrap;
 }
+	.PortfolioHeader .PortfolioHeaderLinks {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	.PortfolioHeader .PortfolioHeaderOtherLinks {
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: nowrap;
+		grid-column-gap: 16px;
+	}
+	.PortfolioHeader .PortfolioHeaderOtherLinks .PortfolioCurrentOtherLink {
+		opacity: 0.5;
+	}
 .Portfolio {
 	width: 100%;
 	padding-bottom: 32px;

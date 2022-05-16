@@ -4,9 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { MobileProvider, BlogProvider } from './hooks';
+import { HashRouter as Router } from 'react-router-dom';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <MobileProvider>
+        <BlogProvider>
+          <App />
+        </BlogProvider>
+      </MobileProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -7,10 +7,14 @@ import {
   Divider, 
   Button,
 } from "../../components";
+import {
+  useBlog
+} from '../../hooks';
 
 
-function BlogHome(props) {
-  return props.posts.map((post,i)=>{
+function BlogHome() {
+  const { blog } = useBlog();
+  return blog.posts.map((post,i)=>{
     return (
       <div className='blogHomeItem' key={`home_blog_item_${i}`}>
         <h3>{post.title}</h3>
