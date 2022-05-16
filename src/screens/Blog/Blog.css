@@ -1,7 +1,7 @@
 .Blog {
 	width: 100%;
 }
-.blogWrapper {
+.BlogWrapper {
 	width: 100%;
 	height: auto;
 
@@ -11,30 +11,31 @@
 	align-items: flex-start;
 	flex-wrap: nowrap;
 }
+	.BlogContent {
+		flex-shrink: 1;
+		flex-grow: 0;
+		flex-basis: 100%;
+		position: relative;
+	}
+		.BlogContent p {
+			line-height: 1.5em;
+		}
+			.BlogHomeItem {
+				margin-bottom: 48px;
+			}
 
-.blogContent {
-	flex-grow: 1;
-	flex-basis: 0%;
-	position: relative;
-	width: 100%;
-}
-.blogContent p {
-	line-height: 1.5em;
-}
-.blogHistory {
-	flex-basis: 240px;
-	flex-shrink: 0;
-	border-left: 1px solid rgba(230,230,230);
-	padding-left:  16px;
-}
-.blogHistory ul {
-	list-style: none;
-	padding-left: 0;
-	font-size: 0.7em;
-}
-.blogHomeItem {
-	margin-bottom: 48px;
-}
+	.BlogHistory {
+		flex-basis: 240px;
+		flex-shrink: 0;
+		border-left: 1px solid rgba(230,230,230);
+		margin-left:  16px;
+		padding-left: 16px;
+	}
+		.BlogHistory ul {
+			list-style: none;
+			padding-left: 0;
+			font-size: 0.7em;
+		}
 
 .blogHeaderNavigation {
 	width: 100%;
@@ -135,3 +136,11 @@
 .blogError {
 	color: red;
 }
+
+.Mobile .blogColumnList {
+	flex-direction: column;
+}
+	.Mobile .blogColumnList .blogColumn {
+		max-width: 100%;
+
+	}

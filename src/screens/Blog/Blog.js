@@ -3,12 +3,14 @@ import {
 	Route,
 	Redirect,
 } from "react-router-dom";
+
 import {
 	useBlog
 } from '../../hooks';
 
 import "./Blog.css";
 
+import BlogHome from './BlogHome';
 import BlogFrame from './BlogFrame';
 
 const Blog = (props) => {
@@ -23,23 +25,25 @@ const Blog = (props) => {
 		);
 	}
 	return (
-		<Switch>
-			{blog.posts.map((p,i)=>{
-				return (
-					<Route 
-						key={`blog_post_item_${i}`}
-						exact path={`/blog/${p.blog_url}`}
-						component={()=> <BlogFrame current={p} />}
-					/>
-				)
-			})}
-			<Route
-				exact 
-				path="/blog"
-				component={()=> <BlogFrame />}
-			/>
-			<Redirect to='/blog' />
-		</Switch>
+		<div className="Blog">
+			<Switch>
+				{blog.posts.map((p,i)=>{
+					return (
+						<Route 
+							key={`blog_post_item_${i}`}
+							exact path={`/blog/${p.blog_url}`}
+							component={()=> <BlogFrame current={p} />}
+						/>
+					)
+				})}
+				<Route
+					exact 
+					path="/blog"
+					component={()=> <BlogHome />}
+				/>
+				<Redirect to='/blog' />
+			</Switch>
+		</div>
 	);
 }
 

@@ -5,9 +5,13 @@ import BlogBlock, { parseRawData } from './BlogBlock';
 import { 
   Divider 
 } from "../../components";
-import { useBlog } from '../../hooks';
+import { 
+  useMobile,
+  useBlog 
+} from '../../hooks';
 
 const BlogPost = (props) => {
+  const isMobile = useMobile();
   const { getPost } = useBlog();
   const [ loading, setLoading ] = useState(true);
   const [ contents, setContents ] = useState(null);
@@ -42,7 +46,7 @@ const BlogPost = (props) => {
   if (loading) return <p>Loading blog content from server...</p>;
   if (error) return <p>{error}</p>
   return (
-    <div>
+    <div className={(isMobile)?"Mobile":""}>
       <BlogMetadata {...props.post} />
       <Divider space={16} />
       {contents.map((block,index)=>{

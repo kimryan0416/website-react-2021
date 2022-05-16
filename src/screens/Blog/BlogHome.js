@@ -1,34 +1,55 @@
-import { 
-  Link,
-  withRouter,
-} from "react-router-dom";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import { 
-  Divider, 
-  Button,
-} from "../../components";
+import { Divider } from "../../components";
 import {
-  useBlog
+  useMobile,
+  useBlog,
 } from '../../hooks';
 
 
-function BlogHome() {
+const BlogHome = () => {
   const { blog } = useBlog();
-  return blog.posts.map((post,i)=>{
-    return (
-      <div className='blogHomeItem' key={`home_blog_item_${i}`}>
-        <h3>{post.title}</h3>
-        <Divider space={16} />
-        <p>{post.preview_text}</p>
-        <Divider space={12} />
-        <div className='blogBlock'>
-          <Link to={`/blog/${post.blog_url}`}>
-            <Button cName='blogButtonLink'>Read More!</Button>
-          </Link>
+  const isMobile = useMobile();
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[]);
+  return (
+    <>
+      <h1>Blog</h1>
+      <Divider space={32} />
+      <div className="BlogWrapper">
+        <div className="BlogContent">
+          { blog.posts.map((post,i)=>{
+            return (
+              <div className='BlogHomeItem' key={`home_blog_item_${i}`}>
+                <Link to={`/blog/${post.blog_url}`}><h3>{post.title}</h3></Link>
+                <p><i>{post.publish_date}</i></p>
+                <Divider space={8} />
+                <p>{post.preview_text}</p>
+              </div>
+            )
+          })}
         </div>
+        {
+          (!isMobile) &&
+          <div className="BlogHistory">
+            <p><strong>Post History</strong></p>
+            <Divider space={8} />
+            <ul>
+              {blog.posts.map((post,i)=>{
+                return (
+                  <li key={`bloghist_date_${post.blog_url}`}>
+                    <Link to={`/blog/${post.blog_url}`}>{post.publish_date}</Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        }
       </div>
-    );
-  });
+    </>
+  )
 }
 
-export default withRouter(BlogHome);
+export default BlogHome;
