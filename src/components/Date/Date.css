@@ -1,0 +1,27 @@
+div.Date {
+	text-align: center;
+	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.1);
+	border-radius: 4px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: nowrap;
+}
+div.Date p {
+	margin: 0px;
+	line-height: 20px;
+}
+div.Date .DateTop {
+	flex-basis: 28px;
+	padding: 4px;
+	box-sizing: border-box;
+	background-color: #ef4136;
+	color: white;
+}
+div.Date .DateBottom {
+	flex-basis: 28px;
+	padding: 8px;
+	box-sizing: border-box;
+}

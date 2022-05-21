@@ -19,3 +19,44 @@
 	width: 30%;
 	text-align: center;
 }
+
+.Education ul {
+	list-style: none;
+	padding: 0px;
+}
+.Education ul li {
+	margin-bottom: 48px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;	
+	flex-wrap: nowrap;
+	grid-gap: 24px;
+}
+.Education .EducationLogo {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: nowrap;
+	grid-gap: 24px;
+}
+.Education .EducationLocation {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	grid-gap: 8px;
+}
+.Education .EducationLocation p {
+	font-size: 0.8em;
+}
+.Education .DatesContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	grid-gap: 16px;
+	flex-wrap: nowrap;
+}

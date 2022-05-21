@@ -6,6 +6,8 @@ import ExtURL from "./ExtURL/ExtURL";
 import Skills from "./Skills/Skills";
 import Skill from "./Skills/Skill";
 
+import Date from './Date/Date';
+
 //import * as BlogAPI from './BlogAPI/BlogAPI';
 
 import Nav from './Nav';
@@ -18,6 +20,8 @@ export {
 
 	Skills,
 	Skill,
+
+	Date,
 
 	//BlogAPI,
 

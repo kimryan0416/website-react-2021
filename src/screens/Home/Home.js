@@ -2,6 +2,7 @@ import {
   Divider, 
   Skills,
 } from "../../components";
+import Education from './Education';
 
 import "./Home.css";
 
@@ -37,7 +38,15 @@ const Home = (props) => {
         <Divider space={32} />
         {*/}
         <div className="HomeItem">
+          <h4>Skills</h4>
+          <Divider space={24} />
           <Skills />
+        </div>
+        <Divider space={32} />
+        <div className="HomeItem">
+          <h4>Education</h4>
+          <Divider space={24} />
+          <Education />
         </div>
       </div>
     </div>

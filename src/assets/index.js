@@ -29,6 +29,9 @@ import downloadIcon from "./icons/downloadIcon.svg";
 import portfolioIcon from "./icons/portfolioIcon.svg";
 import blogIcon from './icons/blogIcon.svg';
 
+import cornellLogo from './icons/cornellIcon.svg';
+import cornellTechLogo from './icons/cornellTechIcon.svg';
+
 export {
 	profileSquare,
 	heyThere,
@@ -60,4 +63,7 @@ export {
 	portfolioIcon,
 	downloadIcon,
 	blogIcon,
+
+	cornellLogo,
+	cornellTechLogo,
 }
