@@ -187,6 +187,7 @@ const MIMOData = {
 	umbrella:"Startups",
 	key:"mimo",
 	thumbnail:thumbnail,
+    thumbnailImageStyle:{padding:16},
 	title:"MIMO - React.js Content Contractor/Consultant",
 	url:"mimo",
 	content:(

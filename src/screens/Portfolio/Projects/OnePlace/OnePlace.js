@@ -1656,6 +1656,7 @@ const OnePlaceData = {
 	umbrella:"Startups",
 	key:"oneplace",
 	thumbnail:thumbnail,
+  thumbnailStyle:{backgroundColor:"#5a91f5"},
 	title:"OnePlace - Chief Design Offier (CDO) & Lead Front-End Engineer",
 	url:"oneplace",
 	content:<PortfolioItemContent data={content} />

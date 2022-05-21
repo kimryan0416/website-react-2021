@@ -10,6 +10,8 @@ import {
 
 function PortfolioItem(props) {
 	const data = props.data;
+	const thumbnailStyle = (data.thumbnailStyle != null) ? data.thumbnailStyle : null;
+	const thumbnailImageStyle = (data.thumbnailImageStyle != null) ? data.thumbnailImageStyle : null;
 	return (
 		<Link to={props.linkTo}>
 			<div className="PortfolioItem" onClick={()=>{props.handler(data.project)}}>
@@ -19,6 +21,8 @@ function PortfolioItem(props) {
 					cName="PortfolioItemImageWrapper" 
 					src={data.thumbnail} 
 					alt="" 
+					style={thumbnailStyle}
+					imageStyle={thumbnailImageStyle}
 				/>
 				<Divider space={8} />
 				<p className="h7"><strong>{data.title}</strong></p>

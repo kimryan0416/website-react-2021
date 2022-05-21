@@ -305,6 +305,8 @@ const PentatonicData = {
 	umbrella:"Hardware",
 	key:"pentatonic",
 	thumbnail:thumbnail,
+  thumbnailStyle:{backgroundColor:"rgb(230,230,230)"},
+  thumbnailImageStyle:{padding:16},
 	title:"Pentatonic Tone Sequencer",
 	url:"pentatonic",
 	content:<PortfolioItemContent data={content} />
