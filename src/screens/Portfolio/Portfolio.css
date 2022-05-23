@@ -261,7 +261,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	flex-wrap: nowrap;
-	margin-bottom: 8px;
+	margin-bottom: 16px;
 }
 .PortfolioContent .PortfolioContentHeader .PortfolioContentHeaderMain .PortfolioContentHeaderMainTable .PortfolioContentHeaderMainTableRow .PortfolioContentHeaderMainTableRowKey {
 	flex-basis: 100px;
@@ -287,8 +287,32 @@
 .PortfolioContent .PortfolioStatus {
 	width: max-content;
 	padding: 8px 16px 8px 16px;
-	border-radius: 16px;
+	border-radius: 8px;
+	font-size: 0.8em;
 }
+.PortfolioContent .DatePeriodContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	grid-row-gap: 2px;
+	font-size: 0.8em;
+	margin-bottom: 8px;
+}
+	.PortfolioContent .DatePeriodContainer:last-child {
+		margin-bottom: 2px;
+	}
+	.PortfolioContent .DatePeriodContainer .DateContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: nowrap;
+	}
+	.PortfolioContent .DatePeriodContainer .DateContainer.WithHeader {
+		padding-left: 8px;
+		border-left: 2px solid rgb(240,240,240);
+	}
 .PortfolioContent .PortfolioStatus.Ongoing {
 	background-color: blue;
 	color: white;
@@ -387,21 +411,8 @@
 		justify-content: center;
 	}
 
-	.PortfolioDisplay {
-		padding-bottom: 0px;
-		padding-left: 0px;
-		padding-right: 0px;
-		padding-top: 0px;
-	}
-
 	.PortfolioDisplayPanel {
-		height: min-content;
-		width: 100%;
-		min-width: 0px;
-		max-height: 100%;
-		max-width: 100%;
 		padding: 24px;
-		margin: 0;
 	}
 
 
@@ -460,4 +471,20 @@
 		padding-right: 4px;
 		width: 100%;
 	}
+}
+
+.PortfolioDisplay.Mobile {
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+.PortfolioDisplay.Mobile .PortfolioDisplayPanel {
+	height: min-content;
+	width: 100%;
+	min-width: 0px;
+	max-height: 100%;
+	max-width: 100%;
+	margin: 0;
+	border-radius: 0px;
 }

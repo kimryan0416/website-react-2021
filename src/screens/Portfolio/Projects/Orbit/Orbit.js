@@ -8,7 +8,14 @@ const content = {
     "icon_url": thumbnail,
     "description": "An audio-logging journey in Virtual Reality.",
     "status": "Completed",
-    "dates": "Ended: December 19, 2019",
+    "dates":[
+      {
+        header:"Ended",
+        dates:[
+          {year:"2019",day:"Dec. 19"}
+        ]
+      }
+    ],
     "latest_version": null,
     "external_links": [
       {

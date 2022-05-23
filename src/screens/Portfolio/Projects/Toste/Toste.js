@@ -8,7 +8,12 @@ const content = {
     "icon_url": thumbnail,
     "description": "A browser extension capable of summarizing Terms of Service.",
     "status": "Completed",
-    "dates": "Completed: December, 2019",
+    "dates":[
+      {
+        header:"Completed",
+        dates:[{year:'2019',day:'Dec.'}]
+      }
+    ],
     "latest_version": "1.0 (FIREFOX ONLY)",
     "external_links": [
       {

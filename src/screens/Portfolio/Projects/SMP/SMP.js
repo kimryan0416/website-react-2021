@@ -8,7 +8,15 @@ const content = {
     "icon_url": thumbnail,
     "description": "A browser-based media player for personal use.",
     "status": "On-Hold",
-    "dates": "August 2017 – December 2017",
+    "dates":[
+      {
+        header:null,
+        dates:[
+          {year:'2017',day:'Aug.'},
+          {year:'2017',day:'Dec.'}
+        ]
+      }
+    ],
     "latest_version": "1.0.1",
     "external_links": [
       {

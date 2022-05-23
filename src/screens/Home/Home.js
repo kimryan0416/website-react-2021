@@ -1,7 +1,7 @@
 import { 
   Divider, 
-  Skills,
 } from "../../components";
+import Skills from './Skills';
 import Education from './Education';
 
 import "./Home.css";

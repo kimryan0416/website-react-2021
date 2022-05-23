@@ -16,7 +16,15 @@ const content = {
     "icon_url": thumbnail,
     "description": "A report on the efficacy of memory retention in VR.",
     "status": "Completed",
-    "dates": "January 2020 - May 10, 2020",
+    "dates":[
+      {
+        header:null,
+        dates:[
+          {year:"2020",day:"Jan."},
+          {year:"2020",day:"May 10"}
+        ]
+      }
+    ],
     "latest_version": null,
     "external_links": [
       {

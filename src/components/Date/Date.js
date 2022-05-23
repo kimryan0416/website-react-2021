@@ -1,10 +1,11 @@
 import './Date.css';
 
 const Date = (props) => {
-	const width = (props.width) ? props.width : "72px";
-	const height = (props.height) ? props.height : "64px";
+	let style = {};
+	if (props._width != null) style.width = props._width;
+	if (props._height != null) style.height = props._height;
 	return (
-		<div className="Date" style={{width:width,height:height}}>
+		<div className="Date" style={style}>
 			<div className="DateTop">
 				<p><strong>{props.top}</strong></p>
 			</div>

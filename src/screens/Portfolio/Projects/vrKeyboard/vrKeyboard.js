@@ -18,7 +18,9 @@ const content = {
     "icon_url": thumbnail,
     "description": "An input interface realized for easy use in virtual reality. The interface is a joystick-based control scheme where characters are selected via joystick orientation and characters are typed by using a mechanism similar to that of 9-pin cell phone keyboards.",
     "status": "Completed",
-    "dates": "Completed: May 10, 2020",
+    "dates":[
+      {header:'Completed',dates:[{year:'2020',day:'May 10'}]}
+    ],
     "latest_version": "1.2",
     "external_links": [
       {

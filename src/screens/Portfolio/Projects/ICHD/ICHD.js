@@ -8,7 +8,15 @@ const content = {
         "icon_url": thumbnail,
         "description": "Landing pages for two conferences hosted by SNU's Marine Hydrodynamics Lab.",
         "status": "Completed",
-        "dates": "June 2017 - August 2017",
+        "dates":[
+            {
+                header:null,
+                dates:[
+                    {year:"2017",day:"June"},
+                    {year:"2017",day:"Aug."}
+                ]
+            }
+        ],
         "latest_version": null,
         "external_links": [
             {

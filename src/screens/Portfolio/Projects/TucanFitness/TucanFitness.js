@@ -14,7 +14,16 @@ const content = {
     "icon_url": thumbnail,
     "description": "Introducing the UX Design process into a fitness web app to help runners race remotely across the country.",
     "status": "Completed",
-    "dates": "Volunteer: [August 04, 2020 - September 21, 2020]\nEngineer: [September 22, 2020 – April 12, 2021]",
+    "dates":[
+      {
+        header:'Volunteer',
+        dates:[{year:'2020',day:'Aug. 4'},{year:'2020',day:'Sep. 21'}]
+      },
+      {
+        header:'Engineer',
+        dates:[{year:'2020',day:'Sep. 22'},{year:'2021',day:'Apr. 12'}]
+      }
+    ],
     "latest_version": null,
     "external_links": [
       {

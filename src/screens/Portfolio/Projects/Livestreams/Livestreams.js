@@ -10,7 +10,15 @@ const content = {
         "icon_url": thumbnail,
         "description": "A report about why live stream viewers interact with live streamers.",
         "status": "Completed",
-        "dates": "January 2018 – May 2018",
+        "dates":[
+            {
+                header:null,
+                dates:[
+                    {year:"2018",day:"Jan."},
+                    {year:"2018",day:"May"}
+                ]
+            }
+        ],
         "latest_version": null,
         "external_links": [
             {

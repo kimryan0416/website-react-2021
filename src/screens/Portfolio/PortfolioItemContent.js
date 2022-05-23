@@ -2,6 +2,7 @@ import {
 	Divider, 
 	ExtURL,
 	Image,
+	Date,
 } from "../../components";
 import BlogBlock, { parseRawData } from '../Blog/BlogBlock';
 
@@ -29,6 +30,7 @@ function PortfolioItemContent(props) {
 
 	// Dates
 	if (dates && dates.length > 0) {
+		/*
 		let d = dates.split('\n');
 	 	if (d.length > 0) {
 	 		headerTable.push({
@@ -36,6 +38,39 @@ function PortfolioItemContent(props) {
 				value: <>{d.map((date,i)=><p key={`${id}_dates_${i}`}>{date}</p>)}</>
 			});
 		}
+		*/
+		let d = dates.map((date_period,date_period_index)=>{
+			console.log(date_period);
+			const dts = (date_period.dates.length === 2)
+				? <>
+						{ (typeof date_period.dates[0] === "object")
+							? <Date top={date_period.dates[0].year} bottom={date_period.dates[0].day} _width={60} />
+							: <p>{date_period.dates[0]}</p>
+						}
+						<Divider horizontal space={8} />
+						<p>-</p>
+						<Divider horizontal space={8} />
+						{
+							(typeof date_period.dates[1] === "object")
+								? <Date top={date_period.dates[1].year} bottom={date_period.dates[1].day} _width={60} /> 
+								: <p>{date_period.dates[1]}</p>
+						}
+					</>
+				: <Date top={date_period.dates[0].year} bottom={date_period.dates[0].day} _width={60} />
+			return (
+				<div key={date_period_index} className='DatePeriodContainer'>
+					{
+						date_period.header != null &&
+						<p><strong>{date_period.header}:</strong></p>
+					}
+					<div className={(date_period.header != null)?'DateContainer WithHeader':'DateContainer'}>{dts}</div>
+				</div>
+			)
+		});
+		headerTable.push({
+			key: "Dates",
+			value: d
+		});
 	}
 
 	// External Links

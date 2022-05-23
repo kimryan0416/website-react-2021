@@ -20,7 +20,15 @@ const content = {
     "icon_url": thumbnail,
     "description": "Designing and engineering the front-end of a SaaS product built to help families share important documents online.",
     "status": "Completed",
-    "dates": "January 21, 2020 – February 24, 2021",
+    "dates":[
+      {
+        header:null,
+        dates:[
+          {year:"2020",day:"Jan. 21"},
+          {year:"2021",day:"Feb. 24"}
+        ]
+      }
+    ],
     "latest_version": null,
     "external_links": [
       {

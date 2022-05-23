@@ -8,7 +8,15 @@ const content = {
         "icon_url": thumbnail,
         "description": "Creating lesson plans and content for MIMO’s “React Basics” module.",
         "status": "Completed",
-        "dates": "May 17, 2021 – August 10, 2021",
+        "dates":[
+            {
+                header:null,
+                dates:[
+                    {year:"2021",day:"May 17"},
+                    {year:"2021",day:"Aug. 10"}
+                ]
+            }
+        ],
         "latest_version": null,
         "external_links": [
             {

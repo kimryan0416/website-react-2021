@@ -10,7 +10,15 @@ const content = {
     "icon_url": thumbnail,
     "description": "Teaching young children about music scales.",
     "status": "Completed",
-    "dates": "September 2017 - December 2017",
+    "dates":[
+      {
+        header:null,
+        dates:[
+          {year:"2017",day:"Sep."},
+          {year:"2017",day:"Dec."}
+        ]
+      }
+    ],
     "latest_version": "1.0 (FIREFOX ONLY)",
     "external_links": [
       {

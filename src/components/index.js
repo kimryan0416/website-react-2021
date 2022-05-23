@@ -3,8 +3,8 @@ import Button from "./Button/Button";
 import Divider from "./Divider/Divider";
 import ExtURL from "./ExtURL/ExtURL";
 
-import Skills from "./Skills/Skills";
-import Skill from "./Skills/Skill";
+//import Skills from "./Skills/Skills";
+//import Skill from "./Skills/Skill";
 
 import Date from './Date/Date';
 
@@ -18,8 +18,8 @@ export {
 	Divider,
 	ExtURL,
 
-	Skills,
-	Skill,
+	//Skills,
+	//Skill,
 
 	Date,
 

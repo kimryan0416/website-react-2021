@@ -10,7 +10,9 @@ const content = {
     "icon_url": thumbnail,
     "description": "Investigating reasons for miscommunication between college-level instructors and VR developers.",
     "status": "Ongoing",
-    "dates": "June 2, 2021 – Present",
+    "dates":[
+      {header:null,dates:[{year:'2021',day:'June 2'},'Current']}
+    ],
     "latest_version": null,
     "external_links": [
       {

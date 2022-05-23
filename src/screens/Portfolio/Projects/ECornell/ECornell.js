@@ -8,7 +8,15 @@ const content = {
         "icon_url": thumbnail,
         "description": "A contract position where I was responsible for a Node.JS-based autograder capable of evaluating student website submissions.",
         "status": "Completed",
-        "dates": "June 2018 - August 2019",
+        "dates": [
+            {
+                header:null,
+                dates:[
+                    {year:"2018",day:"June"},
+                    {year:"2019",day:"Aug."}
+                ]
+            }
+        ],
         "latest_version": null,
         "external_links": [],
         "platforms": [],

@@ -10,7 +10,15 @@ const content = {
     "icon_url": thumbnail,
     "description": "A report on volunteering behavior amongst college students.",
     "status": "Completed",
-    "dates": "August 2017 – December 2017",
+    "dates":[
+      {
+        header:null,
+        dates:[
+          {year:'2017',day:'Aug.'},
+          {year:'2017',day:'Dec.'}
+        ]
+      }
+    ],
     "latest_version": null,
     "external_links": [
       {
