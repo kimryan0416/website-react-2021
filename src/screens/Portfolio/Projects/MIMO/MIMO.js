@@ -7,15 +7,16 @@ const content = {
         "title": "MIMO - React.js Content Contractor & Consultant",
         "icon_url": thumbnail,
         "description": "Creating lesson plans and content for MIMO’s “React Basics” module.",
-        "status": "Completed",
+        "status": "Ongoing",
         "dates":[
             {
-                header:null,
+                header:"React Basics and Intermediate",
                 dates:[
                     {year:"2021",day:"May 17"},
                     {year:"2021",day:"Aug. 10"}
                 ]
-            }
+            },
+            {header:"React Advanced",dates:[{year:'2021',day:'Dec. 22'},{year:'2022',day:'July 31'}]}
         ],
         "latest_version": null,
         "external_links": [
@@ -56,7 +57,7 @@ const content = {
             "type": "paragraph",
             "contents": [
                 {
-                    "content": "I was responsible for the planning, generation, and execution of lessons that taught newcomers to React.js about the library’s key concepts and how to navigate its component-based infrastructure. These lessons are integrated into MIMO’s “React Basics” module, split across eight “Skills” that each represent major aspects of React.js such as state and Functional Components.",
+                    "content": "I was responsible for the planning, writing, and building of MIMO's online courses lessons around the \"React.js\" JavaScript library. These lessons, aimed towards newcomers to React.js, introduced the library's key concepts and how to navigate its component-based infrastructure. The implementation of lesson content involved writing both the student code, unit tests that evaluated the students' efforts in each lesson, and challenges that tested students’ comprehension. Afterwards, time was spent bug-fixing and polishing the lessons.",
                     "href": null,
                     "annotations": []
                 }
@@ -69,7 +70,7 @@ const content = {
             "type": "paragraph",
             "contents": [
                 {
-                    "content": "Content for each Skill consists of lessons. Each lesson consists of a description and executable code that students had to complete in order to move to the next lesson. As the lesson planner, I was allowed to decide not just what the content was but also how they would build off of one another sequentially across the eight Skills.",
+                    "content": "These lessons are integrated into MIMO's \"React Basics\", \"React Intermediate\", and \"React Advanced\" modules, split across fourteen \"Skills\" that each represent major aspects of React.js such as State Handling, Functional Components, and Hooks. Content for each Skill consists of lessons; each lesson consists of a description and executable code that students had to complete in order to move to the next lesson. As the lesson planner, I was allowed to decide not just what the content was but also how they would build off of one another sequentially across the fourteen Skills.",
                     "href": null,
                     "annotations": []
                 }
@@ -82,7 +83,7 @@ const content = {
             "type": "paragraph",
             "contents": [
                 {
-                    "content": "Since “React Basics” was meant for newcomers to React.js, I had to consider how to convey the lesson content in a manner that was easy to understand. The planning phase of the development process took the largest amount of time, whereas the implementation of lesson content into MIMO’s infrastructure took less time as a result of careful planning and adherence to MIMO’s content guidelines.",
+                    "content": "Since the three modules were meant for newcomers to React.js, I had to consider how to convey the lesson content in a manner that was easy to understand. The planning phase of the development process took the largest amount of time, whereas the implementation of lesson content into MIMO's infrastructure took less time as a result of careful planning and adherence to MIMO’s content guidelines. Bug-fixing took the majority of my time afterwards.",
                     "href": null,
                     "annotations": []
                 }
@@ -108,7 +109,7 @@ const content = {
             "type": "bulleted_list_item",
             "contents": [
                 {
-                    "content": "Formulate lesson plans, split across eight Skills, to help\nnewcomers to React.js get acquainted with the library’s core concepts.",
+                    "content": "Formulate lesson plans, split across fourteen Skills, to help\nnewcomers to React.js get acquainted with the library’s core concepts.",
                     "href": null,
                     "annotations": []
                 }
@@ -121,7 +122,7 @@ const content = {
             "type": "bulleted_list_item",
             "contents": [
                 {
-                    "content": "Collaborate with MIMO supervisors to ensure that each lesson adhered to MIMO’s content guidelines.",
+                    "content": "Collaborate with MIMO supervisors to ensure that each lesson adhered to MIMO's content guidelines.",
                     "href": null,
                     "annotations": []
                 }
@@ -134,7 +135,7 @@ const content = {
             "type": "bulleted_list_item",
             "contents": [
                 {
-                    "content": "Implement lesson content into MIMO’s infrastructure using their proprietary Course Builder tool.",
+                    "content": "Implement lesson content into MIMO's infrastructure using their proprietary Course Builder tool.",
                     "href": null,
                     "annotations": []
                 }
@@ -147,7 +148,7 @@ const content = {
             "type": "bulleted_list_item",
             "contents": [
                 {
-                    "content": "Plan, develop, and integrate Projects that encapsulated the learning content\nfrom the eight Skills and gave examples of how to use React.js to create web applications.",
+                    "content": "Plan, develop, and integrate Projects that encapsulated the learning content\nfrom the fourteen Skills and gave examples of how to use React.js to create web applications.",
                     "href": null,
                     "annotations": []
                 }
@@ -160,7 +161,7 @@ const content = {
             "type": "heading_2",
             "contents": [
                 {
-                    "content": "Project Code",
+                    "content": "Project Sample Code",
                     "href": null,
                     "annotations": [
                         "bold"
@@ -175,7 +176,7 @@ const content = {
             "type": "paragraph",
             "contents": [
                 {
-                    "content": "Presented here is a public version of the code used inside of the \"React Basics\" Projects. Students are required to modify each using the concepts taught in the module's Skills. The code samples below are the completed versions of each Project.",
+                    "content": "Presented here is a public, sample version of the code projects used inside of the \"React Basics\" Projects. Students are required to modify each using the concepts taught in the module's Skills.",
                     "href": null,
                     "annotations": []
                 }

@@ -9,9 +9,9 @@ const content = {
     "title": "University of Michigan: Information Interaction Laboratory – Research Intern",
     "icon_url": thumbnail,
     "description": "Investigating reasons for miscommunication between college-level instructors and VR developers.",
-    "status": "Ongoing",
+    "status": "Completed",
     "dates":[
-      {header:null,dates:[{year:'2021',day:'June 2'},'Current']}
+      {header:null,dates:[{year:'2021',day:'June 2'},{year:'2022',day:'April 15'}]},
     ],
     "latest_version": null,
     "external_links": [
@@ -55,7 +55,7 @@ const content = {
       "type": "paragraph",
       "contents": [
         {
-          "content": "I am currently participating as a research intern at the University of Michigan’s Information Interaction Laboratory, under the supervision of Professor Michael Nebeling.",
+          "content": "I participated as a research intern at the University of Michigan’s Information Interaction Laboratory, under the supervision of Professor Michael Nebeling.",
           "href": null,
           "annotations": []
         }
@@ -68,7 +68,7 @@ const content = {
       "type": "paragraph",
       "contents": [
         {
-          "content": "Our current project is a research inquiry into the development of Virtual Reality Learning Environments, or VRLEs. Particularly, we are curious how both instructors (who have few to no experiences with VR) and VR developers understand the application of VR in learning environments.",
+          "content": "Our project was a research inquiry into the development of Virtual Reality Learning Environments, or VRLEs. Particularly, we were curious how both instructors (who have few to no experiences with VR) and VR developers understand the application of VR in learning environments.",
           "href": null,
           "annotations": []
         }
@@ -81,7 +81,7 @@ const content = {
       "type": "paragraph",
       "contents": [
         {
-          "content": "The project is a collaborative effort with two other peer researchers alongside our supervisor, Professor Nebeling. The project's paper is slated to be submitted to conferences either later in 2021 or early in 2022.",
+          "content": "The project was a collaborative effort with two other peer researchers alongside our supervisor, Professor Nebeling. The project's paper was planned to be submitted to conferences either later in 2021 or early in 2022, but a lack of adequate, sufficient data prevented us from forming concrete findings. Subsequently, a paper was never published or fully written.",
           "href": null,
           "annotations": []
         }
@@ -109,7 +109,7 @@ const content = {
       "type": "bulleted_list_item",
       "contents": [
         {
-          "content": "Remotely collaborate with peer researchers from the Information Interaction Lab and the University of Michigan’s REMS program to investigate the development of VRLEs.",
+          "content": "Remotely collaborated with peer researchers from the Information Interaction Lab and the University of Michigan’s REMS program to investigate the development of VRLEs.",
           "href": null,
           "annotations": []
         }
@@ -122,7 +122,7 @@ const content = {
       "type": "bulleted_list_item",
       "contents": [
         {
-          "content": "Participate in weekly meetings with other research groups at the Information Interaction Laboratory to share progress and suggestions.",
+          "content": "Participated in weekly meetings with other research groups at the Information Interaction Laboratory to share progress and suggestions.",
           "href": null,
           "annotations": []
         }

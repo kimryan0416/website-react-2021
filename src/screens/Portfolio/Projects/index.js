@@ -22,8 +22,8 @@ import ServiceSearchData from "./ServiceSearch/ServiceSearch";
 
 const projects = {
 	work:[
-		UMichInternData,
 		MIMOData,
+		UMichInternData,
 		TucanFitnessData,
 		OnePlaceData,
 		ECornellData,
