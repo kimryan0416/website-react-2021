@@ -20,6 +20,7 @@ const Profile = _ => {
         </Link>
       </div>
       <div>
+        <p className='h7'>kim.ryan[AT]nyu.edu</p>
         <p className='h7'>kimryan0416[AT]gmail.com</p>
         <div className='ProfileSocialLinksContainer'>
           <a href='https://www.linkedin.com/in/kimryan0416/' target='_blank' rel="noopener noreferrer">
