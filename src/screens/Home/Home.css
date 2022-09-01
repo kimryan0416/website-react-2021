@@ -147,6 +147,23 @@
 	grid-gap: 16px;
 	flex-wrap: nowrap;
 }
+	.Education .DatesContainer .DateStatus {
+		width: max-content;
+		padding: 8px 16px 8px 16px;
+		border-radius: 8px;
+		font-size: 0.8em;
+	}
+	.Education .DatesContainer .DateStatus.Current {
+		background-color: blue;
+		color: white;
+	}
+	.Education .DatesContainer .DateStatus.OnHold {
+		background-color: yellow;
+	}
+	.Education .DatesContainer .DateStatus.Completed {
+		background-color: green;
+		color: white;
+	}
 
 	.Skills.Mobile {
 		width: 70%;

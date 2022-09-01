@@ -45,6 +45,7 @@ const Skills = () => {
             <li><Skill skill="PHP 5 & 7" src={php} /></li>
             <li><Skill skill="C#" src={js} /></li>
             <li><Skill skill="Python" src={python} /></li>
+            <li><Skill skill="C++" src={js} /></li>
           </ul>
           <Divider space={4} />
           <hr className="faded" />
@@ -60,6 +61,8 @@ const Skills = () => {
           <p><strong>Frameworks &amp; Libraries</strong></p>
           <Divider space={8} />
           <ul className="SkillList">
+            <li><Skill skill="OpenXR" src={unity} /></li>
+            <li><Skill skill="Oculus Integrations" src={unity} /></li>
             <li><Skill skill="Angular" src={js} /></li>
             <li><Skill skill="React Native" src={react} /></li>
           </ul>

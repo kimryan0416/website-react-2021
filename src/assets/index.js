@@ -31,6 +31,7 @@ import blogIcon from './icons/blogIcon.svg';
 
 import cornellLogo from './icons/cornellIcon.svg';
 import cornellTechLogo from './icons/cornellTechIcon.svg';
+import tandonLogo from './icons/tandonIcon.svg';
 
 export {
 	profileSquare,
@@ -66,4 +67,5 @@ export {
 
 	cornellLogo,
 	cornellTechLogo,
+	tandonLogo,
 }
