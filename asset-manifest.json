@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.8d658fe0.chunk.css",
-    "main.js": "/static/js/main.301fa27a.chunk.js",
-    "main.js.map": "/static/js/main.301fa27a.chunk.js.map",
+    "main.css": "/static/css/main.2da3e067.chunk.css",
+    "main.js": "/static/js/main.c76c19cd.chunk.js",
+    "main.js.map": "/static/js/main.c76c19cd.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.431b0d4c.js",
     "runtime-main.js.map": "/static/js/runtime-main.431b0d4c.js.map",
     "static/js/2.e4b27a74.chunk.js": "/static/js/2.e4b27a74.chunk.js",
@@ -10,12 +10,12 @@
     "static/js/3.f65cf5be.chunk.js": "/static/js/3.f65cf5be.chunk.js",
     "static/js/3.f65cf5be.chunk.js.map": "/static/js/3.f65cf5be.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8d658fe0.chunk.css.map": "/static/css/main.8d658fe0.chunk.css.map",
+    "static/css/main.2da3e067.chunk.css.map": "/static/css/main.2da3e067.chunk.css.map",
     "static/js/2.e4b27a74.chunk.js.LICENSE.txt": "/static/js/2.e4b27a74.chunk.js.LICENSE.txt",
     "static/media/AnnieZhang.BorisChan.CindyWang.RyanKim-ToneSequencerReport.9c4bde3b.pdf": "/static/media/AnnieZhang.BorisChan.CindyWang.RyanKim-ToneSequencerReport.9c4bde3b.pdf",
     "static/media/Brind-Chen-Kee-Kim-Kim-Xu_HCI_ServiceSearch.78dd2414.pdf": "/static/media/Brind-Chen-Kee-Kim-Kim-Xu_HCI_ServiceSearch.78dd2414.pdf",
     "static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.62b4b3b4.pdf": "/static/media/Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.62b4b3b4.pdf",
-    "static/media/RyanKim.Resume.Aug2021.ElectronicVer.fbddcebb.pdf": "/static/media/RyanKim.Resume.Aug2021.ElectronicVer.fbddcebb.pdf",
+    "static/media/RyanKim.Resume.Sep2022.ElectronicVer.837b8c2f.pdf": "/static/media/RyanKim.Resume.Sep2022.ElectronicVer.837b8c2f.pdf",
     "static/media/ServiceSearch_Poster.a8f9833f.pdf": "/static/media/ServiceSearch_Poster.a8f9833f.pdf",
     "static/media/TucanFitnessCreateRace.e6866164.png": "/static/media/TucanFitnessCreateRace.e6866164.png",
     "static/media/TucanFitnessUISmall.afb0e7be.png": "/static/media/TucanFitnessUISmall.afb0e7be.png",
@@ -76,6 +76,7 @@
     "static/media/spawn.5ef8ade7.gif": "/static/media/spawn.5ef8ade7.gif",
     "static/media/sqlIcon.3dd979d5.svg": "/static/media/sqlIcon.3dd979d5.svg",
     "static/media/startup_menu.bc757037.png": "/static/media/startup_menu.bc757037.png",
+    "static/media/tandonIcon.a87b083a.svg": "/static/media/tandonIcon.a87b083a.svg",
     "static/media/taskDelegation.f7d0a869.jpg": "/static/media/taskDelegation.f7d0a869.jpg",
     "static/media/teamPhoto.0c434452.png": "/static/media/teamPhoto.0c434452.png",
     "static/media/thumbnail.0892fe81.png": "/static/media/thumbnail.0892fe81.png",
@@ -109,7 +110,7 @@
   "entrypoints": [
     "static/js/runtime-main.431b0d4c.js",
     "static/js/2.e4b27a74.chunk.js",
-    "static/css/main.8d658fe0.chunk.css",
-    "static/js/main.301fa27a.chunk.js"
+    "static/css/main.2da3e067.chunk.css",
+    "static/js/main.c76c19cd.chunk.js"
   ]
 }
