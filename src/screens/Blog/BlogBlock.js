@@ -2,6 +2,19 @@ import { Component } from "react";
 
 import { ExtURL } from "../../components";
 
+function make_temp_id(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
+
+
 class BlogBlock extends Component {
 	constructor(props) {
 		super(props);
@@ -157,32 +170,40 @@ function convertBlock(block) {
   function parseText(t,i) {
     // expecting format: 
     //	{ content: string, annotations: string[] href: string or null }
+    let tempTextKey = make_temp_id(6)
+    if(typeof t === "string") {
+      // This is merely a string.
+      return <span key={`${tempTextKey}-text-${i}`}>{t}</span>;
+    }
     let text = <>{t.content}</>
-    t.annotations.forEach(a=>{
-      switch(a) {
-        case 'bold':
-          text = <strong>{text}</strong>;
-          break;
-        case 'italic':
-          text = <i>{text}</i>;
-          break;
-        case 'strikethrough':
-          text = <s>{text}</s>;
-          break;
-        case 'underline':
-          text = <u>{text}</u>;
-          break;
-        case 'code':
-          text = <code>{text}</code>
-          break;
-        default:
-          if (colorMap[a]) text = <span style={colorMap[a]}>{text}</span>
-      }
-    });
+    if (t.hasOwnProperty("annotations") && Array.isArray(t.annotations) && t.annotations.length > 0) {
+      t.annotations.forEach(a=>{
+        switch(a) {
+          case 'bold':
+            text = <strong>{text}</strong>;
+            break;
+          case 'italic':
+            text = <i>{text}</i>;
+            break;
+          case 'strikethrough':
+            text = <s>{text}</s>;
+            break;
+          case 'underline':
+            text = <u>{text}</u>;
+            break;
+          case 'code':
+            text = <code>{text}</code>
+            break;
+          default:
+            if (colorMap[a]) text = <span style={colorMap[a]}>{text}</span>
+        }
+      });
+    }
     if (t.href) text = <ExtURL href={t.href}>{text}</ExtURL>;
-    return <span key={`${block.id}-text-${i}`}>{text}</span>;
+    return <span key={`${tempTextKey}-text-${i}`}>{text}</span>;
   }
 
+  let tempKey = make_temp_id(6)
   let content = null, text = null;
   switch(block.type) {
     case 'heading_1':
@@ -198,11 +219,13 @@ function convertBlock(block) {
       content = <h4>{block.contents.map((c,i)=>parseText(c,i))}</h4>;
       break;
     case 'column_list':
+      let tempKey1 = make_temp_id(6)
+      let tempKey2 = make_temp_id(6)
       text = block.contents.map((c)=>{
         return (
-          <div key={`${block.id}-${c.id}`} className='blogColumn'>
+          <div key={`${tempKey}-${tempKey1}`} className='blogColumn'>
             {c.contents.map((c2)=>{
-              return <div key={`${block.id}-${c.id}-${c2.id}`}>{convertBlock(c2)}</div>;
+              return <div key={`${tempKey}-${tempKey1}-${tempKey2}`}>{convertBlock(c2)}</div>;
             })}
           </div>
         );
@@ -211,19 +234,19 @@ function convertBlock(block) {
       break;
     case 'bulleted_list':
       text = block.contents.map((c,i)=>{
-        return <li key={`${block.id}-${i}`}>{convertBlock(c)}</li>;
+        return <li key={`${tempKey}-${i}`}>{convertBlock(c)}</li>;
       });
       content = <ul>{text}</ul>;
       break;
     case 'numbered_list':
       text = block.contents.map((c,i)=>{
-        return <li key={`${block.id}-${i}`}>{convertBlock(c)}</li>;
+        return <li key={`${tempKey}-${i}`}>{convertBlock(c)}</li>;
       });
       content = <ol>{text}</ol>;
       break;
     case 'code':
       text = block.contents.map((c,i)=>{
-        return <code key={`${block.id}-${i}`}>{parseText(c,i)}</code>
+        return <code key={`${tempKey}-${i}`}>{parseText(c,i)}</code>
       });
       content = (
         <figure>
@@ -254,6 +277,13 @@ function convertBlock(block) {
     case 'divider':
       content = <hr />
       break;
+    case 'vspace':
+      content = <div style={{height:block.contents[0]}} />;
+      break;
+    case 'video_embed':
+      let { width, height, src, title, frameborder, allow, allowfullscreen } = block.contents[0];
+      content = <iframe width="100%" height={height} src={src} title={title} frameborder={frameborder} allow={allow} allowfullscreen={allowfullscreen}></iframe>;
+      break;
     default:
       // The default case is a simple paragraph
       text = block.contents.map((c,i)=>parseText(c,i))
@@ -266,7 +296,7 @@ function convertBlock(block) {
         {block.children.map((child,child_i)=>{
           //console.log(child);
           return (
-            <div key={`${block.id}-child-${block.id}`} className='blogBlockChild'>
+            <div key={`${tempKey}-child-${tempKey}`} className='blogBlockChild'>
               {convertBlock(child)}
             </div>
           );

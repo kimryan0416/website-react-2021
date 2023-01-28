@@ -20,8 +20,11 @@ import PentatonicData from "./Pentatonic/Pentatonic";
 import LivestreamsData from "./Livestreams/Livestreams";
 import ServiceSearchData from "./ServiceSearch/ServiceSearch";
 
+import Siggraph2023Data from "./Siggraph2023/siggraph2023";
+
 const projects = {
 	work:[
+		Siggraph2023Data,
 		MIMOData,
 		UMichInternData,
 		TucanFitnessData,
@@ -69,6 +72,7 @@ const projects = {
 		}
 	],
 	research:[
+		Siggraph2023Data,
 		UMichInternData,
 		MoLData,
 		VRKeyboardData,

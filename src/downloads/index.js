@@ -5,6 +5,7 @@ import pentatonic from "./AnnieZhang.BorisChan.CindyWang.RyanKim-ToneSequencerRe
 import serviceSearch from "./Brind-Chen-Kee-Kim-Kim-Xu_HCI_ServiceSearch.pdf";
 import serviceSearchPoster from "./ServiceSearch_Poster.pdf";
 import livestreams from "./Chen-Kennedy-Kim-Kim-Daye_Live_Streams_CMC.pdf";
+import siggraph2023 from "./Siggraph2023_PrePrint.pdf";
 
 export {
 	resume,
@@ -14,4 +15,5 @@ export {
 	serviceSearch,
 	serviceSearchPoster,
 	livestreams,
+	siggraph2023
 }
