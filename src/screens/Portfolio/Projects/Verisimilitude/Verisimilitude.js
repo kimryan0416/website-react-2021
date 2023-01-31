@@ -21,7 +21,7 @@ const content = {
         "url": siggraph2023
       },
       {
-        "text": "SIGGRAPH 2023 Video",
+        "text": "Video Description",
         "url": "https://youtu.be/6_tKPxGTxwQ"
       }
     ],
@@ -116,13 +116,13 @@ const content = {
 <img className="PortfolioContentImage" src={v1_2} alt="Ver. 1.2" />
 */
 
-const Siggraph2023Data = {
+const VerisimilitudeData = {
 	umbrella:"Virtual Reality Research & Projects",
-	key:"siggraph2023",
+	key:"verisimilitude",
 	thumbnail:thumbnail,
-	title:"[SIGGRAPH 2023] Building Verisimilitude in VR With High-Fidelity Local Action Models",
-	url:"siggraph2023",
+	title:"Building Verisimilitude in VR With High-Fidelity Local Action Models",
+	url:"verisimilitude",
 	content:<PortfolioItemContent data={content} />
 }
 
-export default Siggraph2023Data;
+export default VerisimilitudeData;
