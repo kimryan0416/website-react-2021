@@ -6,7 +6,7 @@ import {
 import { useMobile } from '../../hooks/';
 
 const PortfolioDisplay = (props) => {
-	const [ enlargened, setEnlargened ] = useState(false);
+	const [ enlargened, setEnlargened ] = useState(true);
 	const isMobile = useMobile();
 	const toggleEnlarge = _ => { setEnlargened(e=>!e); }
 

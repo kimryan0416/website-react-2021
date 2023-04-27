@@ -22,6 +22,8 @@ import ServiceSearchData from "./ServiceSearch/ServiceSearch";
 
 import VerisimilitudeData from "./Verisimilitude/Verisimilitude";
 
+import CSGY6613Project from "./CSGY6613Project/csgy6613project";
+
 const projects = {
 	work:[
 		VerisimilitudeData,
@@ -55,6 +57,7 @@ const projects = {
 			type:"Web Projects",
 			description:<p>As someone who has worked extensively with web programming, I have worked on various projects ranging from browser web apps to JavaScript programs. Work experience and skillset includes HTML, CSS, JavaScript, PHP, SQL, and Python.</p>,
 			items:[
+				CSGY6613Project,
 				TucanFitnessData,
 				OnePlaceData,
 				SMPData,

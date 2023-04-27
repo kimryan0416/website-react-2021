@@ -280,9 +280,13 @@ function convertBlock(block) {
     case 'vspace':
       content = <div style={{height:block.contents[0]}} />;
       break;
+    case 'youtube_embed':
+      let { yt_height, yt_src } = block.contents[0];
+      content = <iframe width="100%" height={yt_height} src={yt_src} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+      break;
     case 'video_embed':
-      let { width, height, src, title, frameborder, allow, allowfullscreen } = block.contents[0];
-      content = <iframe width="100%" height={height} src={src} title={title} frameborder={frameborder} allow={allow} allowfullscreen={allowfullscreen}></iframe>;
+      let { width, height, src, title, frameborder, allow, allowfullscreen, style} = block.contents[0];
+      content = <iframe width="100%" height={height} src={src} title={title} frameborder={frameborder} allow={allow} allowfullscreen={allowfullscreen} style={style}></iframe>;
       break;
     default:
       // The default case is a simple paragraph
