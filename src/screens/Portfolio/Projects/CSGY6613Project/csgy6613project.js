@@ -269,7 +269,44 @@ const content = {
         {content:"main.py",annotations:["code"]},
         " page and both the Sentiment Analysis and Patent Acceptance Prediction function similarly, I developed a custom python class called ",
         {content:"ModelImplementation",annotations:["code"]},
-        " that's used by both and allows for switching between different models. ",
+        " that's used by both and allows for switching between different models:"
+      ]
+    },
+    {
+      id:"17_code",
+      type:"code",
+      contents:[
+        "class ModelImplementation(object):",
+        "\n  def __init__(",
+        "\n    self,",
+        "\n    transformer_model_name,",
+        "\n    model_transformer,", 
+        "\n    tokenizer_model_name,",
+        "\n    tokenizer_func,",
+        "\n    pipeline_func,", 
+        "\n    parser_func,",
+        "\n    classifier_args={},",
+        "\n    placeholders=[\"\"]",
+        "\n  ):",
+        "\n    self.transformer_model_name = transformer_model_name",
+        "\n    self.tokenizer_model_name = tokenizer_model_name",
+        "\n    self.placeholders = placeholders",
+        "\n",
+        "\n    self.model = model_transformer.from_pretrained(self.transformer_model_name)",
+        "\n    self.tokenizer = tokenizer_func.from_pretrained(self.tokenizer_model_name)",
+        "\n    self.classifier = pipeline_func(model=self.model, tokenizer=self.tokenizer, padding=True, truncation=True, **classifier_args)",
+        "\n    self.parser = parser_func",
+        "\n",
+        "\n  def predict(self, val):",
+        "\n    result = self.classifier(val)",
+        "\n    return self.parser(self, result)"
+      ],
+      misc:{caption:""}
+    },
+    {
+      id:"17_after",
+      type:"paragraph",
+      contents:[
         "The main idea is that for every model that's needed, we create a new instance of this class. ",
         "In each case, we can store a reference to the tokenizer, model, and pipeline; ",
         "the model will then use that tokenizer, model, and pipeline when making predictions. ",
