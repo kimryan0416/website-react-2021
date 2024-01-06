@@ -17,11 +17,11 @@ const content = {
     "external_links": [
       {
         "text": "Online HuggingFace Space Demo",
-        "url": "https://huggingface.co/spaces/rk2546/csgy-6613-project-rk2546"
+        "url": "https://huggingface.co/spaces/rk2546/csgy-6613-project-rk2546-backup"
       },
       {
         "text": "[PRIVATE] Github Repo",
-        "url": "https://github.com/cs-gy-6613-assignments/cs-gy-6613-project-rk2546"
+        "url": "https://github.com/cs-gy-6613-assignments/cs-gy-6613-project-rk2546-backup"
       }
     ],
     "platforms": [
@@ -109,7 +109,7 @@ const content = {
       id:"embedding",
       type:"video_embed",
       contents:[{
-        src:"https://rk2546-csgy-6613-project-rk2546.hf.space",
+        src:"https://rk2546-csgy-6613-project-rk2546-backup.hf.space",
         width:"850",
         height:1000,
         frameborder:"0",
