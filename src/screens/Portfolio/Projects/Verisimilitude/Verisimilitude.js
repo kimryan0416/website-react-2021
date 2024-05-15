@@ -1,5 +1,5 @@
 import PortfolioItemContent from '../../PortfolioItemContent';
-import { siggraph2023 } from "../../../../downloads";
+import { sigsimpads2024 } from "../../../../downloads";
 import { 
 	thumbnail,
 } from "./assets";
@@ -9,7 +9,7 @@ const content = {
     //"id": "8138b1be-96b0-475d-8b00-a924139a7a6d",
     "title": "Building Verisimilitude in VR With High-Fidelity Local Action Models: A Demonstration Supporting Road-Crossing Experiments",
     "icon_url": thumbnail,
-    "description": "Submission for SIGGRAPH 2023 - Journal Track",
+    "description": "Accepted into ACM SIGSIM PADS 2024",
     "status": "Completed",
     "dates":[
       {header:'Completed',dates:[{year:'2022',day:'Sep 1'},{year:'2023',day:'Jan 25'}]}
@@ -17,8 +17,8 @@ const content = {
     "latest_version": "1.0",
     "external_links": [
       {
-        "text": "Download PDF (11.7 mB)",
-        "url": siggraph2023
+        "text": "Download PDF (7 mB)",
+        "url": sigsimpads2024
       },
       {
         "text": "Video Description",
