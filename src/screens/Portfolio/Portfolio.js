@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { 
-	Switch,
+	Routes,
 	Route,
 	Link,
-	withRouter,
 } from "react-router-dom";
 
 import "./Portfolio.css";
@@ -14,6 +13,7 @@ import {
 	Image, 
 	Button,
 	ExtURL,
+	WithRouter
 } from "../../components";
 import {
 	useMobile
@@ -27,6 +27,7 @@ import projects from "./Projects";
 const oneplace = projects.work.filter(p=>p.key==="oneplace")[0];
 const tucanfitness = projects.work.filter(p=>p.key==="tucanfitness")[0];
 
+
 const Portfolio = (props) => {
 	const [ project, setProject ] = useState(null);
 
@@ -37,102 +38,33 @@ const Portfolio = (props) => {
 	const goBack = (to) => { props.history.push(to); }
 
 	return (
-		<Switch>
+		<Routes>
 			<Route 
-				path="/portfolio/work" 
-				component={()=> 
-					<PortfolioPage page="Work Experience">
-						<p>Particular experiences working in universities, startups, and companies. I've worked in <strong>research internships</strong>, <strong>contract positions</strong>, and <strong>startup companies</strong>.</p>
-						<Divider space={24} />
-						<div className="PortfolioItems">
-							{projects.work.map((p,i)=>{
-								return <PortfolioItem key={`work_${i}`} data={p} linkTo={`/portfolio/work/${p.url}`} handler={handleItemClick} />
-							})}
-						</div>
-						<Switch>
-							{projects.work.map(p=>{
-								return (
-									<Route 
-										exact path={`/portfolio/work/${p.url}`}
-										component={()=> <PortfolioDisplay goBack={()=>{goBack("/portfolio/work")}}>{p.content}</PortfolioDisplay>}
-									/>
-								)
-							})}
-						</Switch>
-					</PortfolioPage>
-				}
+				path="/work" 
+				element={<p>Work</p>}
 			/>
 			<Route 
-				path="/portfolio/projects" 
-				component={()=> 
-					<PortfolioPage page="Personal Projects">
-						{projects.projects.map((p,i)=>{
-							return (
-								<>
-									<h4>{p.type}</h4>
-									{p.description}
-									<Divider space={24} />
-									<div key={`projects_${i}`} className="PortfolioItems">
-										{p.items.map((p2,i2)=>{
-											return <PortfolioItem key={`projects_${i}_${i2}`} data={p2} linkTo={`/portfolio/projects/${p2.url}`} handler={handleItemClick} />
-										})}
-									</div>
-									<Divider space={24} />
-								</>
-							)
-						})}
-						<Switch>
-							{projects.projects.map((p,i)=>{
-								return p.items.map((p2,i2)=>{
-									return (
-										<Route 
-											key={`projects_item_${i}_${i2}`}
-											exact path={`/portfolio/projects/${p2.url}`}
-											component={()=> <PortfolioDisplay goBack={()=>{goBack("/portfolio/projects")}}>{p2.content}</PortfolioDisplay>}
-										/>
-									)
-								})
-							})}
-						</Switch>
-					</PortfolioPage>
-				}
+				path="/projects" 
+				element={<p>Projects</p>}
 			/>
 			<Route 
-				path="/portfolio/research" 
-				component={()=> 
-					<PortfolioPage page="Research Papers">
-						<Divider space={24} />
-						<div className="PortfolioItems">
-							{projects.research.map((p,i)=>{
-								return <PortfolioItem key={`research_${i}`} data={p} linkTo={`/portfolio/research/${p.url}`} handler={handleItemClick} />
-							})}
-						</div>
-						<Switch>
-							{projects.research.map(p=>{
-								return (
-									<Route 
-										exact path={`/portfolio/research/${p.url}`}
-										component={()=> <PortfolioDisplay goBack={()=>{goBack("/portfolio/research")}}>{p.content}</PortfolioDisplay>}
-									/>
-								)
-							})}
-						</Switch>
-					</PortfolioPage>
-				}
+				path="/research" 
+				element={<p>Research</p>}
+			/>
+			
+			<Route 
+				exact path="/oneplace"
+				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{oneplace.content}</PortfolioDisplay>}
 			/>
 			<Route 
-				exact path="/portfolio/oneplace"
-				component={()=> <PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{oneplace.content}</PortfolioDisplay>}
+				exact path="/tucanfitness"
+				element={<PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{tucanfitness.content}</PortfolioDisplay>}
 			/>
 			<Route 
-				exact path="/portfolio/tucanfitness"
-				component={()=> <PortfolioDisplay goBack={()=>{goBack("/portfolio")}}>{tucanfitness.content}</PortfolioDisplay>}
+				path="/"
+				element={<PortfolioHome />}
 			/>
-			<Route 
-				path="/portfolio"
-				component={()=> <PortfolioHome />}
-			/>
-		</Switch>
+		</Routes>
 	);
 }
 
@@ -210,7 +142,7 @@ const PortfolioHome = (props) => {
 }
 
 const PortfolioPage = (props) => {
-	const history = useHistory();
+	const history = useNavigate();
 	const isMobile = useMobile();
 
 	const HandleOtherLink = (e) => {
@@ -282,4 +214,4 @@ const PortfolioPage = (props) => {
 	);
 }
 
-export default withRouter(Portfolio);
+export default WithRouter(Portfolio);

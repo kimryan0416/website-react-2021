@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  Switch,
+  Routes,
   Route,
-  Redirect
+  Navigate
 } from "react-router-dom";
 
 import { 
@@ -25,21 +25,21 @@ const App = () => {
     <div className={(isMobile)?"App Mobile":"App"}>
       <Nav />
       <main>
-        <Switch>
+        <Routes>
           <Route 
             path="/portfolio" 
-            component={()=> <Portfolio />} 
+            element={<Portfolio />} 
           />
           <Route 
             path="/blog"
-            component={()=> <Blog />}
+            element={<Blog />}
           />
           <Route 
             path="/" 
-            component={()=> <Home />} 
+            element={<Home />} 
           />
-          <Redirect to="/" />
-        </Switch>
+          
+        </Routes>
       </main>
     </div>
   );

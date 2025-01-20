@@ -1,7 +1,7 @@
 import { 
-	Switch,
+	Routes,
 	Route,
-	Redirect,
+	Navigate,
 } from "react-router-dom";
 
 import {
@@ -26,23 +26,26 @@ const Blog = (props) => {
 	}
 	return (
 		<div className="Blog">
-			<Switch>
+			<Routes>
 				{blog.posts.map((p,i)=>{
 					return (
 						<Route 
 							key={`blog_post_item_${i}`}
 							exact path={`/blog/${p.blog_url}`}
-							component={()=> <BlogFrame current={p} />}
+							element={()=> <BlogFrame current={p} />}
 						/>
 					)
 				})}
 				<Route
 					exact 
 					path="/blog"
-					component={()=> <BlogHome />}
+					element={()=> <BlogHome />}
 				/>
-				<Redirect to='/blog' />
-			</Switch>
+				<Route
+					path="*"
+					element={<Navigate to='/blog' />}
+				/>
+			</Routes>
 		</div>
 	);
 }

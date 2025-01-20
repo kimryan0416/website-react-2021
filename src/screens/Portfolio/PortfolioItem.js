@@ -1,11 +1,11 @@
 import { 
 	Link,
-	withRouter,
 } from "react-router-dom";
 
 import { 
 	Divider, 
 	Image,
+	WithRouter
 } from "../../components";
 
 function PortfolioItem(props) {
@@ -32,4 +32,4 @@ function PortfolioItem(props) {
 	);
 }
 
-export default withRouter(PortfolioItem);
+export default WithRouter(PortfolioItem);
